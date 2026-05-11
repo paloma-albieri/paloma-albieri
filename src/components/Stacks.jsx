@@ -1,9 +1,9 @@
 function Stacks({ copy }) {
   const stacks = [
     { cat: 'Design', tools: ['Figma', 'Adobe Creative Suite'] },
-    { cat: 'Frontend', tools: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
+    { cat: 'Frontend', tools: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'MUI'] },
     { cat: 'Backend', tools: ['Node.js', 'TypeScript', 'PostgreSQL', 'Supabase'] },
-    { cat: 'DevOps', tools: ['Vercel', 'Docker', 'GitHub Actions', 'AWS'] },
+    { cat: 'DevOps', tools: ['Vercel', 'Docker'] },
   ]
 
   return (

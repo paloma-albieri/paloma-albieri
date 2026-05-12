@@ -1,0 +1,111 @@
+{
+  "marker": {
+    "top_left": "パロマ・アルビエリ · BRASIL ⇄ JAPAN",
+    "top_right_availability": "対応可能 · 2026年Q3",
+    "bottom": "Take 01 · 04:23:26 · 詳細はこちら"
+  },
+  "nav": {
+    "pacotes": "プラン",
+    "stacks": "技術",
+    "sobre": "プロフィール",
+    "contato": "お問い合わせ"
+  },
+  "hero": {
+    "top_marker": "パロマ・アルビエリ · BRASIL ⇄ JAPAN",
+    "headline": "サイトとSNS、別々にしてはもったいない。",
+    "subheadline": "SNS運用とサイト開発を一人で、一貫して。静岡県磐田市を拠点に、ブラジル人顧客をターゲットにしたデジタル戦略と開発を提供しています。",
+    "meta_base": "拠点 · 静岡・磐田",
+    "meta_foco": "事業 · SNS運用 + 開発",
+    "meta_idiomas": "言語 · 日 / ポル",
+    "cta_primary": "WhatsAppで15分間の相談",
+    "cta_secondary": "プランを見る"
+  },
+  "about": {
+    "overline": "// プロフィール",
+    "h2": "本番で動くシステム。",
+    "p1": "2022年に製造業での勤務を目的に磐田市へ来日しました。1年半後に社内唯一のIT担当として人事異動しました。",
+    "p2": "React、TypeScript、PostgreSQL、Dockerを用いて社内システムを一人で設計・開発しました。14拠点で稼働し、確認作業の所要時間を2分から25秒に短縮。",
+    "p3": "現在は、中小企業向けにデジタル戦略と開発を提供しています。ブラジルと日本、両方の顧客を担当します。",
+    "p4": "代理店ではありません。開発を外部委託もしません。バズる投稿を売ることもしません。SNSからサイトまで一貫したデジタル上の存在を提供します。目的は唯一、顧客の購入決定です。"
+  },
+  "services_marquee": {
+    "items": ["SNS運用", "ランディングページ", "コーポレートサイト", "リード導線", "広告運用", "月次サポート"]
+  },
+  "stack": {
+    "marker": "// 使用技術",
+    "h2": "本番で信頼している技術。",
+    "sub": "デザイン、コード、インフラを一つの流れとして動かす設計。スピード、保守性、コスト予測性で選定。",
+    "footer_note": "本番環境での経験をもとに、運用まで見て設計します。"
+  },
+  "instagram": {
+    "overline": "INSTAGRAM",
+    "title": "仕事は公開の場でも動いています。",
+    "lead": "SNS、サイト、運用をつなげる考え方と制作の裏側を、最近の投稿から見ることができます。",
+    "empty": "現在フィードを読み込めません。Instagramのプロフィールは引き続きご覧いただけます。",
+    "follow": "Instagramを見る",
+    "talk": "WhatsAppで相談",
+    "post_cta": "投稿を見る"
+  },
+  "packages": {
+    "overline": "月額プラン",
+    "title": "始め方は4通り。",
+    "lead": "金額は打ち合わせ後にご提案します。まず事業の状況、現在の運用、購入までの流れを確認します。",
+    "diagnostic": "見積もり前の診断",
+    "cta": "診断を依頼する",
+    "page_title": "固定価格ではなく、必要な形から。",
+    "page_lead": "各プランには明確な土台があります。ただし最終的な範囲は、チャネル、運用体制、商業目標によって決まります。",
+    "micro": {
+      "name": "Micro",
+      "fit": "販売前に最低限の導線を整えたい方向け。",
+      "outcome": "プロフィール、リンク、投稿方針、次の30日間の優先順位を整理します。",
+      "includes": ["現状診断", "プロフィールとリンク調整", "初期コンテンツ案", "30日間の優先順位"]
+    },
+    "starter": {
+      "name": "Starter",
+      "fit": "発信はあるが、継続性を作りたい中小企業向け。",
+      "outcome": "投稿の流れ、編集方針、月次の運用を整えます。",
+      "includes": ["月次コンテンツ計画", "投稿とReelsの企画", "販売意図のあるStories", "月次レポート"]
+    },
+    "growth": {
+      "name": "Growth",
+      "badge": "推奨",
+      "fit": "SNSとサイトを一つの流れにしたい方向け。",
+      "outcome": "Instagram、ランディングページ、問い合わせ導線をまとめます。",
+      "includes": ["Starterの全て", "1ページのランディングページ", "基本的なSEO", "フォームまたはCTA導線"]
+    },
+    "full": {
+      "name": "Full",
+      "fit": "発信、サイト、広告、運用確認まで必要な方向け。",
+      "outcome": "月次で集客の流れを作り、数字を見ながら調整します。",
+      "includes": ["Growthの全て", "広告運用", "基本的なリード導線", "月次レビュー"]
+    }
+  },
+  "contact": {
+    "overline": "お問い合わせ",
+    "headline": "SNSとサイトを一つにまとめるタイミングです。",
+    "sub": "営業日に24時間以内に返信いたします。送信時刻により、ブラジルまたは日本時間で対応します。",
+    "channels_email": "contato@palomaalbieri.com",
+    "channels_whatsapp": "WhatsApp",
+    "channels_instagram": "@paloma.albieri",
+    "channels_calendar": "15分間のミーティング予約",
+    "form_name": "お名前",
+    "form_company": "会社名",
+    "form_email": "メールアドレス",
+    "form_message": "プロジェクトについて",
+    "submit": "送信",
+    "submit_sending": "送信中",
+    "success_message": "受付しました。24時間以内に返信いたします。",
+    "error_message": "現在送信できませんでした。1分後に再度お試しいただくか、contato@palomaalbieri.comまで直接お送りください。"
+  },
+  "portfolio": {
+    "overline": "アーカイブ",
+    "miaucafe_title": "Miaucafé",
+    "miaucafe_copy": "非公開参照用のアーカイブページです。公開メニューとサイトマップには表示されません。",
+    "connect_title": "Construtora Connect",
+    "connect_copy": "非公開参照用のアーカイブページです。公開メニューとサイトマップには表示されません。"
+  },
+  "footer": {
+    "copyright": "© 2026 Paloma Albieri. 静岡県磐田市より。",
+    "links_label": "Instagram · WhatsApp · contato@palomaalbieri.com"
+  }
+}

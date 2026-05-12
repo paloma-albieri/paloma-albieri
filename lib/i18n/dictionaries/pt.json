@@ -1,0 +1,118 @@
+{
+  "marker": {
+    "top_left": "PALOMA ALBIERI · BRASIL ⇄ JAPAN",
+    "top_right_availability": "DISPONÍVEL · Q3 2026",
+    "bottom": "Take 01 · 04:23:26 · Pressione · Sobre mim"
+  },
+  "nav": {
+    "pacotes": "Pacotes",
+    "stacks": "Stacks",
+    "sobre": "Sobre",
+    "contato": "Contato"
+  },
+  "hero": {
+    "top_marker": "PALOMA ALBIERI · BRASIL ⇄ JAPAN",
+    "headline": "Sua presença digital não pode ser silo.",
+    "subheadline": "Estrategista digital com mão na execução. Faço estratégia e desenvolvimento integrados, do post ao site, para PME no Brasil e estabelecimentos no Japão. Brasileira em Iwata.",
+    "meta_base": "BASE · IWATA / SHIZUOKA",
+    "meta_foco": "FOCO · ESTRATÉGIA + DEV",
+    "meta_idiomas": "IDIOMAS · PT / JP",
+    "cta_primary": "Conversa de 15 minutos no WhatsApp",
+    "cta_secondary": "Ver pacotes"
+  },
+  "about": {
+    "overline": "// SOBRE",
+    "h2": "Sistemas que performam.",
+    "p1": "Cheguei em Iwata em 2022 para trabalhar em manufatura. Em 18 meses passei da linha de produção para a responsável de TI da empresa.",
+    "p2": "Construí sozinha um sistema interno em React, TypeScript, Postgres e Docker que rodou em 14 setores. Reduziu o tempo de conferência de 2 minutos para 25 segundos por pessoa. É software em produção, em manufatura japonesa, com responsabilidade nominal minha.",
+    "p3": "Hoje faço estratégia digital com mão na execução. Atendo PME no Brasil e estabelecimentos brasileiros e japoneses no Japão.",
+    "p4": "Não sou agência. Não terceirizo desenvolvimento. Não vendo viralização. Vendo presença digital integrada, do post ao site, com objetivo único: fazer seu cliente fechar."
+  },
+  "services_marquee": {
+    "items": [
+      "ESTRATÉGIA DE CONTEÚDO",
+      "LANDING PAGE",
+      "SITE INSTITUCIONAL",
+      "AUTOMAÇÃO DE LEAD",
+      "TRÁFEGO PAGO",
+      "GESTÃO MENSAL"
+    ]
+  },
+  "stack": {
+    "marker": "// CENTRAL DE COMANDO",
+    "h2": "Ferramentas que confio em produção.",
+    "sub": "Uma grade calibrada: design, código e infraestrutura operando como um único organismo. Cada ferramenta selecionada para velocidade, manutenibilidade e custo previsível.",
+    "footer_note": "Experiência real em produção, com responsabilidade nominal e atenção a operação."
+  },
+  "instagram": {
+    "overline": "INSTAGRAM",
+    "title": "O trabalho também acontece em público.",
+    "lead": "Posts recentes sobre presença digital, execução e bastidores de quem une conteúdo, site e operação.",
+    "empty": "O feed não carregou agora. O perfil continua ativo no Instagram.",
+    "follow": "Seguir no Instagram",
+    "talk": "Conversar no WhatsApp",
+    "post_cta": "Ver post"
+  },
+  "packages": {
+    "overline": "PACOTES MENSAIS",
+    "title": "Quatro formas de começar.",
+    "lead": "O orçamento vem depois da conversa. Primeiro entendo o momento do negócio, a operação atual e o que precisa mudar para o cliente chegar até a compra.",
+    "diagnostic": "Diagnóstico antes de orçamento",
+    "cta": "Pedir diagnóstico",
+    "page_title": "Pacotes sem fórmula pronta.",
+    "page_lead": "Cada pacote parte de uma base clara, mas a composição final depende do canal, da rotina e do objetivo comercial. A reunião serve para definir o escopo certo antes de falar em investimento.",
+    "micro": {
+      "name": "Micro",
+      "fit": "Para quem precisa organizar o mínimo antes de vender.",
+      "outcome": "Clareza de posicionamento, bio, linha editorial e primeiros ajustes de presença.",
+      "includes": ["Diagnóstico de presença digital", "Ajuste de bio e links", "Roteiro inicial de conteúdo", "Prioridades para os próximos 30 dias"]
+    },
+    "starter": {
+      "name": "Starter",
+      "fit": "Para PME com presença ativa que precisa de cadência.",
+      "outcome": "Conteúdo consistente, rotina editorial e canais menos soltos.",
+      "includes": ["Planejamento mensal de conteúdo", "Posts e Reels com linha editorial", "Stories com intenção comercial", "Relatório mensal de leitura prática"]
+    },
+    "growth": {
+      "name": "Growth",
+      "badge": "RECOMENDADO",
+      "fit": "Para quem precisa unir social e site num fluxo só.",
+      "outcome": "Instagram, landing page e captação funcionando como uma única frente.",
+      "includes": ["Tudo do Starter", "Landing page de uma página", "SEO básico", "Formulário ou CTA de lead"]
+    },
+    "full": {
+      "name": "Full",
+      "fit": "Para negócios que precisam de conteúdo, site, tráfego e acompanhamento.",
+      "outcome": "Um sistema mensal de aquisição com execução próxima e leitura de dados.",
+      "includes": ["Tudo do Growth", "Tráfego pago sob gestão", "Automação básica de lead", "Revisão mensal de campanha e página"]
+    }
+  },
+  "contact": {
+    "overline": "CONTATO",
+    "headline": "Pronta para sair do silo. Vamos conversar.",
+    "sub": "Resposta em até 24 horas úteis, considerando Brasília ou Japão conforme o horário que você escrever.",
+    "channels_email": "contato@palomaalbieri.com",
+    "channels_whatsapp": "WhatsApp",
+    "channels_instagram": "@paloma.albieri",
+    "channels_calendar": "Agendar reunião de 15 minutos",
+    "form_name": "Seu nome",
+    "form_company": "Empresa",
+    "form_email": "E-mail",
+    "form_message": "Sobre o projeto",
+    "submit": "Enviar",
+    "submit_sending": "Enviando",
+    "success_message": "Recebido. Resposta em até 24 horas úteis.",
+    "error_message": "Não consegui enviar agora. Tenta de novo em 1 minuto, ou manda direto para contato@palomaalbieri.com."
+  },
+  "portfolio": {
+    "overline": "ARQUIVO",
+    "miaucafe_title": "Miaucafé",
+    "miaucafe_copy": "Projeto arquivado para consulta privada. A página não aparece no menu público nem no sitemap.",
+    "connect_title": "Construtora Connect",
+    "connect_copy": "Projeto arquivado para consulta privada. A página não aparece no menu público nem no sitemap."
+  },
+  "footer": {
+    "copyright": "© 2026 Paloma Albieri. Iwata, Shizuoka.",
+    "links_label": "Instagram · WhatsApp · contato@palomaalbieri.com"
+  }
+}

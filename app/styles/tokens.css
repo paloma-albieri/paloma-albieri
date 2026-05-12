@@ -1,0 +1,86 @@
+:root {
+  --paper: oklch(.14 .01 270);
+  --paper-2: oklch(.18 .01 270);
+  --paper-light: oklch(.985 .003 60);
+  --paper-rose: oklch(.93 .055 10);
+
+  --ink: oklch(.97 .003 60);
+  --ink-2: oklch(.82 .005 60);
+  --ink-3: oklch(.62 .005 60);
+  --ink-dark: oklch(.14 .01 270);
+
+  --line: oklch(.28 .01 270);
+  --shock: oklch(.68 .24 8);
+  --shock-glow: oklch(.72 .26 8);
+  --pastel: oklch(.32 .08 10);
+  --pastel-2: oklch(.25 .06 10);
+
+  --font-display: "Fraunces", "Instrument Serif", Georgia, serif;
+  --font-body: "Inter Tight", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --text-h1: 104px;
+  --text-h2: 88px;
+  --text-h3: 40px;
+  --text-lead: 20px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-mono: 14px;
+  --text-marker: 12px;
+
+  --weight-display: 300;
+  --weight-body: 400;
+  --weight-body-bold: 500;
+  --weight-mono: 400;
+
+  --tracking-display: -0.035em;
+  --tracking-h2: -0.03em;
+  --tracking-body: 0;
+  --tracking-mono: 0;
+
+  --leading-display: 0.92;
+  --leading-h2: 0.95;
+  --leading-body: 1.55;
+  --leading-mono: 1.4;
+
+  --max: 1440px;
+  --gutter: clamp(20px, 4vw, 56px);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  --pad-hero: 120px var(--gutter) 80px;
+  --pad-topbar: 18px var(--gutter);
+
+  --border-thin: 1px;
+  --border-cta: 0.833px;
+  --border-color: var(--ink-dark);
+
+  --radius-pill: 999px;
+  --radius-card: 0px;
+
+  --motion-fast: 180ms;
+  --motion-base: 280ms;
+  --motion-slow: 480ms;
+  --motion-ease-editorial: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --bg-primary: var(--paper-light);
+  --bg-inverse: var(--paper);
+  --bg-card-about: var(--paper-rose);
+  --bg-topbar: oklch(.985 .003 60 / 0.72);
+
+  --text-primary: var(--ink-dark);
+  --text-secondary: var(--ink-3);
+  --text-inverse: var(--ink);
+  --text-accent: var(--shock);
+}

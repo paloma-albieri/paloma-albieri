@@ -1,19 +1,39 @@
 {
-  "name": "paloma-albieri",
+  "name": "palomaalbieri-site-v2",
+  "version": "0.1.0",
   "private": true,
-  "version": "3.1.0",
-  "type": "module",
+  "description": "Site de Paloma Albieri com Next.js, PT/JP e Instagram vivo.",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test:copy": "node --test tests/copy.test.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "clsx": "^2.1.0",
+    "next": "^14.2.0",
+    "next-intl": "^3.15.0",
+    "nodemailer": "^6.9.13",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "zod": "^3.23.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^5.0.8"
+    "@netlify/plugin-nextjs": "^5.5.0",
+    "@types/node": "^20.12.0",
+    "@types/nodemailer": "^6.4.15",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
   }
 }

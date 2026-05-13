@@ -17,7 +17,7 @@ export async function Hero({ lang }: { lang: Locale }) {
           <div className="relative aspect-[4/5] min-h-[360px] overflow-hidden border border-ink-dark bg-paper-rose sm:aspect-[16/10] lg:aspect-[9/12] lg:min-h-0">
             <video
               className="h-full w-full object-cover"
-              src="/assets/3d.mp4"
+              src="/assets/3D.mp4"
               autoPlay
               muted
               loop

@@ -9,9 +9,28 @@ export async function Hero({ lang }: { lang: Locale }) {
     <section className="min-h-[calc(100vh-72px)] bg-paper-light pt-[120px]" id="top">
       <div className="container-shell pb-20">
         <p className="label-mono mb-12 text-ink-3">{t('top_marker')}</p>
-        <div className="max-w-[1100px]">
-          <h1 className="display-h1 max-w-[12ch] text-ink-dark">{t('headline')}</h1>
-          <p className="body-lead mt-8 text-ink-dark">{t('subheadline')}</p>
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:gap-16">
+          <div>
+            <h1 className="display-h1 max-w-[12ch] text-ink-dark">{t('headline')}</h1>
+            <p className="body-lead mt-8 text-ink-dark">{t('subheadline')}</p>
+          </div>
+          <div className="relative hidden aspect-[9/12] overflow-hidden border border-ink-dark bg-paper-rose lg:block">
+            <video
+              className="h-full w-full object-cover"
+              src="/assets/3D.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Vídeo visual de apresentação da Paloma Albieri"
+            />
+            <div className="pointer-events-none absolute inset-0 border-[12px] border-paper-light/20" />
+            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4 text-shock">
+              <span className="label-mono text-[10px]">{t('meta_base')}</span>
+              <span className="h-2 w-2 rounded-full bg-shock" aria-hidden="true" />
+            </div>
+          </div>
         </div>
         <div className="mt-12 flex flex-wrap gap-3">
           <CTAPill href="https://wa.me/817020122563" variant="filled-shock" external>

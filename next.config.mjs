@@ -4,20 +4,7 @@ const withNextIntl = createNextIntlPlugin('./lib/i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**.cdninstagram.com'
-      },
-      {
-        protocol: 'https',
-        hostname: '**.fbcdn.net'
-      }
-    ],
-    formats: ['image/avif', 'image/webp']
-  }
+  reactStrictMode: true
 };
 
 export default withNextIntl(nextConfig);

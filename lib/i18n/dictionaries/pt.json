@@ -13,7 +13,7 @@
   "hero": {
     "top_marker": "PALOMA ALBIERI · BRASIL ⇄ JAPAN",
     "headline": "Sua presença digital precisa trabalhar conectada.",
-    "subheadline": "Estrategista digital com mão na execução. Faço estratégia e desenvolvimento integrados, do post ao site, para PME no Brasil e estabelecimentos no Japão. Brasileira em Iwata.",
+    "subheadline": "Estrategista digital com mão na execução. Faço estratégia e desenvolvimento integrados, do post ao site, para empresas no Brasil e estabelecimentos no Japão. Brasileira em Iwata.",
     "meta_base": "BASE · IWATA / SHIZUOKA",
     "meta_foco": "FOCO · ESTRATÉGIA + DEV",
     "meta_idiomas": "IDIOMAS · PT / JP",
@@ -25,7 +25,7 @@
     "h2": "Sistemas que performam.",
     "p1": "Cheguei em Iwata em 2022 para trabalhar em manufatura. Em 18 meses passei da linha de produção para a responsável de TI da empresa.",
     "p2": "Construí sozinha um sistema interno em React, TypeScript, Postgres e Docker que rodou em 14 setores. Reduziu o tempo de conferência de 2 minutos para 25 segundos por pessoa. É software em produção, em manufatura japonesa, com responsabilidade nominal minha.",
-    "p3": "Hoje faço estratégia digital com mão na execução. Atendo PME no Brasil e estabelecimentos brasileiros e japoneses no Japão.",
+    "p3": "Hoje faço estratégia digital com mão na execução. Atendo empresas no Brasil e estabelecimentos brasileiros e japoneses no Japão.",
     "p4": "Não sou agência. Não terceirizo desenvolvimento. Não vendo viralização. Vendo presença digital integrada, do post ao site, com objetivo único: fazer seu cliente fechar."
   },
   "services_marquee": {
@@ -54,37 +54,57 @@
     "post_cta": "Ver post"
   },
   "packages": {
-    "overline": "PACOTES MENSAIS",
-    "title": "Quatro formas de começar.",
-    "lead": "O orçamento vem depois da conversa. Primeiro entendo o momento do negócio, a operação atual e o que precisa mudar para o cliente chegar até a compra.",
-    "diagnostic": "Diagnóstico antes de orçamento",
-    "cta": "Pedir diagnóstico",
-    "page_title": "Pacotes sem fórmula pronta.",
-    "page_lead": "Cada pacote parte de uma base clara, mas a composição final depende do canal, da rotina e do objetivo comercial. A reunião serve para definir o escopo certo antes de falar em investimento.",
+    "overline": "FORMAS DE COMEÇAR",
+    "title": "Presença digital não começa igual para todo mundo.",
+    "lead": "Antes de montar uma proposta, eu olho para o momento do seu negócio: como o cliente te encontra, o que ele entende quando chega no seu perfil, para onde ele vai depois do post e o que pode estar travando a decisão.",
+    "diagnostic": "Primeiro eu entendo o caminho. Depois monto a proposta.",
+    "cta": "Quero entender o melhor caminho",
+    "page_title": "Sem fórmula pronta. O ponto de partida depende do seu momento.",
+    "page_lead": "Cada formato tem uma base clara, mas o escopo final depende dos seus canais, da rotina do negócio e do que precisa acontecer para o cliente sair da dúvida e chegar até a compra.",
     "micro": {
-      "name": "Micro",
-      "fit": "Para quem precisa organizar o mínimo antes de vender.",
-      "outcome": "Clareza de posicionamento, bio, linha editorial e primeiros ajustes de presença.",
-      "includes": ["Diagnóstico de presença digital", "Ajuste de bio e links", "Roteiro inicial de conteúdo", "Prioridades para os próximos 30 dias"]
+      "name": "Base em Ordem",
+      "fit": "Para quem sabe que precisa aparecer melhor, mas ainda está com bio, links, mensagem e conteúdo soltos.",
+      "outcome": "Uma presença mais clara, com posicionamento, bio, links e próximos passos definidos para os primeiros 30 dias.",
+      "includes": [
+        "Leitura da presença atual",
+        "Ajuste de bio e links",
+        "Direção inicial de conteúdo",
+        "Prioridades para os próximos 30 dias"
+      ]
     },
     "starter": {
-      "name": "Starter",
-      "fit": "Para PME com presença ativa que precisa de cadência.",
-      "outcome": "Conteúdo consistente, rotina editorial e canais menos soltos.",
-      "includes": ["Planejamento mensal de conteúdo", "Posts e Reels com linha editorial", "Stories com intenção comercial", "Relatório mensal de leitura prática"]
+      "name": "Presença com Ritmo",
+      "fit": "Para negócios que já postam, mas sentem que o conteúdo ainda não cria confiança nem leva o cliente para a próxima ação.",
+      "outcome": "Uma rotina de conteúdo com direção, intenção de venda e leitura prática do que precisa melhorar.",
+      "includes": [
+        "Planejamento mensal de conteúdo",
+        "Posts e Reels com linha editorial",
+        "Stories com intenção comercial",
+        "Leitura mensal dos próximos ajustes"
+      ]
     },
     "growth": {
-      "name": "Growth",
-      "badge": "RECOMENDADO",
-      "fit": "Para quem precisa unir social e site num fluxo só.",
-      "outcome": "Instagram, landing page e captação funcionando como uma única frente.",
-      "includes": ["Tudo do Starter", "Landing page de uma página", "SEO básico", "Formulário ou CTA de lead"]
+      "name": "Do Post ao Site",
+      "badge": "MELHOR PONTO DE VIRADA",
+      "fit": "Para quem não quer depender só do Instagram e precisa transformar atenção em contato, orçamento ou pedido.",
+      "outcome": "Instagram, página e chamada para ação trabalhando juntos para conduzir o cliente até a decisão.",
+      "includes": [
+        "Tudo do Presença com Ritmo",
+        "Landing page de uma página",
+        "Ajustes básicos para busca",
+        "Formulário ou chamada direta para contato"
+      ]
     },
     "full": {
-      "name": "Full",
-      "fit": "Para negócios que precisam de conteúdo, site, tráfego e acompanhamento.",
-      "outcome": "Um sistema mensal de aquisição com execução próxima e leitura de dados.",
-      "includes": ["Tudo do Growth", "Tráfego pago sob gestão", "Automação básica de lead", "Revisão mensal de campanha e página"]
+      "name": "Operação Digital",
+      "fit": "Para negócios que precisam parar de tratar post, site, anúncio e atendimento como coisas separadas.",
+      "outcome": "Um sistema mensal de presença, captação e melhoria com conteúdo, página, tráfego e leitura de dados.",
+      "includes": [
+        "Tudo do Do Post ao Site",
+        "Gestão de tráfego pago",
+        "Fluxo básico de contato",
+        "Revisão mensal de campanha, página e conteúdo"
+      ]
     }
   },
   "contact": {

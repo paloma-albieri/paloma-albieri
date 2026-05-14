@@ -16,20 +16,21 @@ export function ContactForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const payload = {
-      name: formData.get('name'),
-      company: formData.get('company'),
-      email: formData.get('email'),
-      message: formData.get('message'),
-      website: formData.get('website'),
-      lang
-    };
+    formData.set('form-name', 'contact');
+    formData.set('lang', lang);
+
+    const encoded = new URLSearchParams();
+    formData.forEach((value, key) => {
+      if (typeof value === 'string') {
+        encoded.append(key, value);
+      }
+    });
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/__forms.html', {
         method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(payload)
+        headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        body: encoded.toString()
       });
 
       if (response.ok) {
@@ -49,7 +50,16 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="website"
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-6"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="lang" value={lang} />
       <input
         type="text"
         name="website"

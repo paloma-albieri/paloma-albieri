@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paloma Albieri — Design System v1.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #08090D;
+  --paper-2: #101116;
+  --paper-light: #FCFAF8;
+  --paper-rose: #FFD9DF;
+  --ink: #F7F5F3;
+  --ink-2: #C7C3C1;
+  --ink-3: #888583;
+  --ink-dark: #08090D;
+  --line: #27292E;
+  --shock: #FF397C;
+  --shock-glow: #FF3985;
+  --pastel: #541E29;
+  --pastel-2: #39131B;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--paper-light); color: var(--ink-dark); font-family: 'Inter Tight', system-ui, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.shell { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+.section { padding: 80px 0; }
+.section + .section { border-top: 1px solid var(--ink-dark); }
+.section-dark { background: var(--paper); color: var(--ink); }
+.section-dark .section-border { border-color: var(--line); }
+.section-rose { background: var(--paper-rose); }
+h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 300; font-size: clamp(40px, 6vw, 72px); line-height: 0.92; letter-spacing: -0.035em; }
+h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 300; font-size: clamp(28px, 4vw, 48px); line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 32px; }
+h3 { font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 12px; line-height: 1.4; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; }
+.lead { font-size: clamp(18px, 2vw, 20px); line-height: 1.4; max-width: 56ch; color: var(--ink-3); }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* Hero */
+.hero { padding: 120px 0 80px; }
+.hero-sub { margin-top: 24px; max-width: 44ch; }
+.tension { display: inline-block; margin-top: 32px; padding: 8px 16px; border: 1px solid var(--shock); color: var(--shock); font-family: 'JetBrains Mono', monospace; font-size: 14px; }
+
+/* Colors */
+.color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 24px; }
+.color-card { border: 1px solid var(--ink-dark); }
+.color-swatch { height: 100px; }
+.color-info { padding: 12px; font-size: 14px; }
+.color-info .mono { margin-bottom: 4px; display: block; font-size: 11px; }
+.color-hex { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+.color-usage { font-size: 12px; color: var(--ink-3); margin-top: 6px; }
+
+/* Typography */
+.type-specimen { margin-top: 32px; display: flex; flex-direction: column; gap: 24px; }
+.type-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: baseline; padding: 24px 0; border-bottom: 1px solid rgba(8,9,13,0.12); }
+.type-meta { font-size: 12px; color: var(--ink-3); }
+.type-sample-display { font-family: 'Fraunces', serif; font-weight: 300; }
+.type-sample-body { font-family: 'Inter Tight', sans-serif; }
+.type-sample-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Components */
+.component-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; align-items: center; }
+.cta-pill { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 12px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1; text-decoration: none; transition: all 180ms cubic-bezier(0.2,0.8,0.2,1); cursor: pointer; }
+.cta-outline-ink { border: 0.833px solid var(--ink-dark); background: transparent; color: var(--ink-dark); }
+.cta-outline-ink:hover { background: var(--ink-dark); color: var(--paper-light); }
+.cta-outline-inverse { border: 0.833px solid var(--ink); background: transparent; color: var(--ink); }
+.cta-outline-inverse:hover { background: var(--ink); color: var(--paper); }
+.cta-filled-shock { border: 0.833px solid transparent; background: var(--shock); color: var(--ink-dark); }
+.cta-filled-shock:hover { background: var(--shock-glow); }
+.cta-filled-ink { border: 0.833px solid transparent; background: var(--ink-dark); color: var(--paper-light); }
+.cta-filled-ink:hover { background: var(--shock); color: var(--ink-dark); }
+
+/* Cards */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 24px; }
+.card { padding: 24px; }
+.card-default { border: 1px solid var(--ink-dark); background: var(--paper-light); }
+.card-recommended { border: 2px solid var(--shock); background: var(--paper-rose); }
+.card-dark { border: 1px solid var(--line); background: var(--paper-2); color: var(--ink); }
+.card h4 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 32px; letter-spacing: -0.02em; line-height: 1; }
+.card p { margin-top: 12px; font-size: 14px; line-height: 1.55; }
+
+/* Spacing */
+.space-row { display: flex; align-items: center; gap: 16px; margin-top: 8px; }
+.space-bar { height: 24px; background: var(--shock); opacity: 0.7; }
+.space-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; min-width: 80px; }
+
+/* Signature */
+.signature-demo { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.sig-card { padding: 32px; border: 1px solid var(--ink-dark); }
+.sig-card h4 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 36px; letter-spacing: -0.02em; line-height: 0.95; }
+.sig-card .mono { margin-bottom: 12px; color: var(--ink-3); }
+.sig-card p { margin-top: 16px; font-size: 14px; line-height: 1.55; }
+
+@media (max-width: 768px) {
+  .type-row { grid-template-columns: 1fr; }
+  .signature-demo { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="section hero">
+  <div class="shell">
+    <p class="mono" style="color:var(--ink-3); margin-bottom:24px;">DESIGN SYSTEM v1.0</p>
+    <h1>Paloma Albieri<br>Brand System.</h1>
+    <p class="lead hero-sub">Estrategista digital que conecta post e site. Precisao tecnica com calor humano, do Brasil ao Japao.</p>
+    <div class="tension">BRUTALIDADE EDITORIAL x CALOR ORGANICO</div>
+  </div>
+</div>
+
+<!-- COLORS -->
+<div class="section">
+  <div class="shell">
+    <h3>// PALETA DE CORES</h3>
+    <h2>13 tokens. Zero ambiguidade.</h2>
+    <p class="lead">Nomes derivados do universo editorial: paper para superficies, ink para texto, shock para o acento que quebra a sobriedade.</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#08090D"></div>
+        <div class="color-info"><span class="mono">paper / ink-dark</span><span class="color-hex">#08090D</span><p class="color-usage">Background escuro + texto em fundo claro</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#101116"></div>
+        <div class="color-info"><span class="mono">paper-2</span><span class="color-hex">#101116</span><p class="color-usage">Cards em contexto escuro</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FCFAF8; border-bottom:1px solid rgba(8,9,13,0.12)"></div>
+        <div class="color-info"><span class="mono">paper-light</span><span class="color-hex">#FCFAF8</span><p class="color-usage">Background claro principal</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FFD9DF"></div>
+        <div class="color-info"><span class="mono">paper-rose</span><span class="color-hex">#FFD9DF</span><p class="color-usage">Destaque quente: about, contato</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#F7F5F3; border-bottom:1px solid rgba(8,9,13,0.12)"></div>
+        <div class="color-info"><span class="mono">ink</span><span class="color-hex">#F7F5F3</span><p class="color-usage">Texto em fundo escuro</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#C7C3C1"></div>
+        <div class="color-info"><span class="mono">ink-2</span><span class="color-hex">#C7C3C1</span><p class="color-usage">Texto secundario (dark)</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#888583"></div>
+        <div class="color-info"><span class="mono">ink-3</span><span class="color-hex">#888583</span><p class="color-usage">Texto terciario, overlines</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#27292E"></div>
+        <div class="color-info"><span class="mono">line</span><span class="color-hex">#27292E</span><p class="color-usage">Bordas em contexto escuro</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FF397C"></div>
+        <div class="color-info"><span class="mono">shock</span><span class="color-hex">#FF397C</span><p class="color-usage">Acento primario: CTAs, badges</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FF3985"></div>
+        <div class="color-info"><span class="mono">shock-glow</span><span class="color-hex">#FF3985</span><p class="color-usage">Hover do acento</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#541E29"></div>
+        <div class="color-info"><span class="mono">pastel</span><span class="color-hex">#541E29</span><p class="color-usage">Profundidade em overlays</p></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#39131B"></div>
+        <div class="color-info"><span class="mono">pastel-2</span><span class="color-hex">#39131B</span><p class="color-usage">Profundidade maxima</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="section">
+  <div class="shell">
+    <h3>// TIPOGRAFIA</h3>
+    <h2>Serif suave. Sans precisa. Mono tecnico.</h2>
+    <p class="lead">O eixo de tensao se manifesta aqui: Fraunces light nos titulos (calor) contra JetBrains Mono uppercase nos labels (brutalidade).</p>
+    <div class="type-specimen">
+      <div class="type-row">
+        <div class="type-meta"><strong>Display</strong><br>Fraunces 300<br>-0.035em tracking<br>0.92 line-height</div>
+        <div class="type-sample-display" style="font-size:clamp(36px,5vw,72px); line-height:0.92; letter-spacing:-0.035em;">Sistemas que performam.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>H2</strong><br>Fraunces 300<br>-0.03em tracking<br>0.95 line-height</div>
+        <div class="type-sample-display" style="font-size:clamp(28px,4vw,48px); line-height:0.95; letter-spacing:-0.03em;">Quatro formas de comecar.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Lead</strong><br>Inter Tight 400<br>20px / 1.4</div>
+        <div class="type-sample-body" style="font-size:20px; line-height:1.4; max-width:56ch;">Estrategista digital com mao na execucao. Faco estrategia e desenvolvimento integrados, do post ao site.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Body</strong><br>Inter Tight 400<br>16px / 1.55</div>
+        <div class="type-sample-body" style="font-size:16px; line-height:1.55;">Construi sozinha um sistema interno em React, TypeScript, Postgres e Docker que rodou em 14 setores. Reduziu o tempo de conferencia de 2 minutos para 25 segundos por pessoa.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Mono Label</strong><br>JetBrains Mono 400<br>12px / uppercase<br>0.04em tracking</div>
+        <div class="type-sample-mono" style="font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">// CENTRAL DE COMANDO &nbsp;&nbsp; DISPONIVEL · Q3 2026 &nbsp;&nbsp; PACOTES MENSAIS</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Mono CTA</strong><br>JetBrains Mono 400<br>14px / pill</div>
+        <div><span class="cta-pill cta-outline-ink">Pedir diagnostico <span>&#x2197;</span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPONENTS -->
+<div class="section">
+  <div class="shell">
+    <h3>// COMPONENTES</h3>
+    <h2>Botoes, cards, inputs.</h2>
+
+    <h3 style="margin-top:48px;">CTA PILLS — FUNDO CLARO</h3>
+    <div class="component-row">
+      <span class="cta-pill cta-outline-ink">Outline Ink &#x2197;</span>
+      <span class="cta-pill cta-filled-shock">Filled Shock &#x2197;</span>
+      <span class="cta-pill cta-filled-ink">Filled Ink &#x2197;</span>
+    </div>
+
+    <div class="section-dark" style="padding:32px; margin-top:24px;">
+      <h3>CTA PILLS — FUNDO ESCURO</h3>
+      <div class="component-row">
+        <span class="cta-pill cta-outline-inverse">Outline Inverse &#x2197;</span>
+        <span class="cta-pill cta-filled-shock">Filled Shock &#x2197;</span>
+      </div>
+    </div>
+
+    <h3 style="margin-top:48px;">CARDS</h3>
+    <div class="card-grid">
+      <div class="card card-default">
+        <p class="mono" style="color:var(--ink-3); margin-bottom:12px;">DEFAULT</p>
+        <h4>Micro</h4>
+        <p>Border 1px ink-dark, radius 0px, bg paper-light.</p>
+      </div>
+      <div class="card card-recommended">
+        <p class="mono" style="color:var(--shock); margin-bottom:12px;">RECOMENDADO</p>
+        <h4>Growth</h4>
+        <p>Border 2px shock, radius 0px, bg paper-rose.</p>
+      </div>
+      <div class="card card-dark">
+        <p class="mono" style="color:var(--ink-2); margin-bottom:12px;">DARK</p>
+        <h4>Design</h4>
+        <p style="color:var(--ink-2);">Border 1px line, radius 0px, bg paper-2.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SPACING -->
+<div class="section">
+  <div class="shell">
+    <h3>// ESPACAMENTO</h3>
+    <h2>Escala de 4px.</h2>
+    <div style="margin-top:24px;">
+      <div class="space-row"><span class="space-label">4px (1)</span><div class="space-bar" style="width:4px"></div></div>
+      <div class="space-row"><span class="space-label">8px (2)</span><div class="space-bar" style="width:8px"></div></div>
+      <div class="space-row"><span class="space-label">12px (3)</span><div class="space-bar" style="width:12px"></div></div>
+      <div class="space-row"><span class="space-label">16px (4)</span><div class="space-bar" style="width:16px"></div></div>
+      <div class="space-row"><span class="space-label">24px (6)</span><div class="space-bar" style="width:24px"></div></div>
+      <div class="space-row"><span class="space-label">32px (8)</span><div class="space-bar" style="width:32px"></div></div>
+      <div class="space-row"><span class="space-label">48px (12)</span><div class="space-bar" style="width:48px"></div></div>
+      <div class="space-row"><span class="space-label">64px (16)</span><div class="space-bar" style="width:64px"></div></div>
+      <div class="space-row"><span class="space-label">96px (24)</span><div class="space-bar" style="width:96px"></div></div>
+      <div class="space-row"><span class="space-label">128px (32)</span><div class="space-bar" style="width:128px"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNATURE PATTERN -->
+<div class="section section-rose">
+  <div class="shell">
+    <h3>// PADRAO DE ASSINATURA</h3>
+    <h2>The Editorial Edge.</h2>
+    <p class="lead">Toda composicao deve conter pelo menos 2 de 3 elementos: borda afiada (0px), label mono uppercase, headline Fraunces light.</p>
+    <div class="signature-demo">
+      <div class="sig-card">
+        <p class="mono" style="color:var(--ink-3);">// SOBRE</p>
+        <h4>Sistemas que performam.</h4>
+        <p>Cheguei em Iwata em 2022. Em 18 meses passei da linha de producao para a responsavel de TI.</p>
+        <span class="cta-pill cta-outline-ink" style="margin-top:16px;">Conversar &#x2197;</span>
+      </div>
+      <div class="sig-card" style="background:var(--paper); color:var(--ink); border-color:var(--line);">
+        <p class="mono" style="color:var(--ink-2);">// STACKS</p>
+        <h4 style="color:var(--ink);">Ferramentas que confio.</h4>
+        <p style="color:var(--ink-2);">Design, codigo e infra operando como um unico organismo.</p>
+        <span class="cta-pill cta-outline-inverse" style="margin-top:16px;">Ver mais &#x2197;</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOTION -->
+<div class="section">
+  <div class="shell">
+    <h3>// MOVIMENTO</h3>
+    <h2>Contido. Editorial.</h2>
+    <div style="margin-top:24px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+      <div style="padding:24px; border:1px solid var(--ink-dark);">
+        <p class="mono" style="color:var(--ink-3); margin-bottom:8px;">FAST</p>
+        <p style="font-size:32px; font-family:'Fraunces',serif; font-weight:300;">180ms</p>
+        <p style="font-size:13px; color:var(--ink-3); margin-top:8px;">Hover em CTAs, cor</p>
+      </div>
+      <div style="padding:24px; border:1px solid var(--ink-dark);">
+        <p class="mono" style="color:var(--ink-3); margin-bottom:8px;">BASE</p>
+        <p style="font-size:32px; font-family:'Fraunces',serif; font-weight:300;">280ms</p>
+        <p style="font-size:13px; color:var(--ink-3); margin-top:8px;">Transicoes padrao</p>
+      </div>
+      <div style="padding:24px; border:1px solid var(--ink-dark);">
+        <p class="mono" style="color:var(--ink-3); margin-bottom:8px;">SLOW</p>
+        <p style="font-size:32px; font-family:'Fraunces',serif; font-weight:300;">480ms</p>
+        <p style="font-size:13px; color:var(--ink-3); margin-top:8px;">Transicoes de secao</p>
+      </div>
+    </div>
+    <p class="mono" style="margin-top:16px; color:var(--ink-3);">EASING: cubic-bezier(0.2, 0.8, 0.2, 1) — editorial</p>
+  </div>
+</div>
+
+<footer style="padding:48px 0; border-top:1px solid var(--ink-dark);">
+  <div class="shell" style="display:flex; justify-content:space-between; align-items:center;">
+    <p class="mono" style="color:var(--ink-3);">&copy; 2026 PALOMA ALBIERI. IWATA, SHIZUOKA.</p>
+    <p class="mono" style="color:var(--ink-3);">DESIGN SYSTEM v1.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

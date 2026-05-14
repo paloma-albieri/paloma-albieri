@@ -27,7 +27,7 @@ export function ContactForm() {
     });
 
     try {
-      const response = await fetch('/__forms.html', {
+      const response = await fetch('/forms/contact.html', {
         method: 'POST',
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
         body: encoded.toString()
@@ -53,8 +53,6 @@ export function ContactForm() {
     <form
       name="contact"
       method="POST"
-      data-netlify="true"
-      netlify-honeypot="website"
       onSubmit={handleSubmit}
       className="flex flex-col gap-6"
     >

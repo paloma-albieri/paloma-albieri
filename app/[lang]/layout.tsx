@@ -61,7 +61,7 @@ export default function LocaleLayout({
         <NextIntlClientProvider locale={params.lang} messages={messages}>
           <Header lang={params.lang} />
           {children}
-          <Footer />
+          <Footer lang={params.lang} />
         </NextIntlClientProvider>
         <script
           type="application/ld+json"

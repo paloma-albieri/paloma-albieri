@@ -40,9 +40,35 @@
   },
   "stack": {
     "marker": "// CENTRAL DE COMANDO",
-    "h2": "Ferramentas que confio em produção.",
-    "sub": "Uma grade calibrada: design, código e infraestrutura operando como um único organismo. Cada ferramenta selecionada para velocidade, manutenibilidade e custo previsível.",
-    "footer_note": "Experiência real em produção, com responsabilidade nominal e atenção a operação."
+    "h2": "Ferramentas para estratégia, análise e tecnologia.",
+    "sub": "A presença digital precisa de marketing e engenharia trabalhando juntas. Uso ferramentas de conteúdo, leitura de dados, desenvolvimento e infraestrutura para conectar post, site, automação e decisão de compra.",
+    "groups": [
+      {
+        "title": "Estratégia",
+        "tools": ["Notion", "Google Sheets", "Pesquisa de público", "Mapa de jornada"]
+      },
+      {
+        "title": "Conteúdo",
+        "tools": ["Canva", "Figma", "Adobe CC", "CapCut"]
+      },
+      {
+        "title": "Análise",
+        "tools": ["Google Analytics", "Search Console", "Meta Business Suite", "Instagram Insights"]
+      },
+      {
+        "title": "Frontend",
+        "tools": ["Next.js", "React", "TypeScript", "Tailwind", "HTML", "CSS"]
+      },
+      {
+        "title": "Dados & Backend",
+        "tools": ["Supabase", "PostgreSQL", "SQL", "API Routes", "Server Actions"]
+      },
+      {
+        "title": "Infra & Deploy",
+        "tools": ["Netlify", "Vercel", "Docker", "GitHub", "Git"]
+      }
+    ],
+    "footer_note": "Marketing, design, dados e desenvolvimento no mesmo fluxo, com leitura prática do que precisa melhorar."
   },
   "instagram": {
     "overline": "INSTAGRAM",
@@ -115,24 +141,132 @@
     "channels_whatsapp": "WhatsApp",
     "channels_instagram": "@paloma.albieri",
     "channels_calendar": "Agendar reunião de 15 minutos",
+    "form_marker": "BRIEF INICIAL",
+    "form_eta": "2 minutos · sem proposta genérica",
+    "form_prompt": "Me conte onde a presença digital está travando hoje.",
     "form_name": "Seu nome",
     "form_company": "Empresa",
+    "form_contact": "Como prefere ser contatado?",
+    "form_contact_email": "E-mail",
+    "form_contact_phone": "Telefone / WhatsApp",
+    "form_contact_social": "Rede social",
+    "form_contact_required": "Escolha pelo menos um canal para eu conseguir responder.",
     "form_email": "E-mail",
+    "form_phone": "Telefone ou WhatsApp",
+    "form_social": "Instagram, LinkedIn ou outra rede",
     "form_message": "Sobre o projeto",
+    "form_reassurance": "Eu leio antes de responder. A ideia é entender o contexto, não empurrar pacote.",
     "submit": "Enviar",
-    "submit_sending": "Enviando",
+    "submit_sending": "Enviando seu briefing",
+    "success_marker": "BRIEF RECEBIDO",
+    "success_title": "Agora eu leio o caminho antes de propor o próximo passo.",
     "success_message": "Recebido. Resposta em até 24 horas úteis.",
+    "success_next": "Se fizer sentido, eu volto com uma leitura objetiva: o que ajustar primeiro, qual formato combina com o momento e por onde começar sem desperdiçar energia.",
+    "success_again": "Enviar outra mensagem",
+    "error_marker": "ENVIO NÃO CONCLUÍDO",
     "error_message": "Não consegui enviar agora. Tenta de novo em 1 minuto, ou manda direto para contato@palomaalbieri.com."
   },
   "portfolio": {
     "overline": "ARQUIVO",
+    "title": "Portfólio em construção, com projetos arquivados para consulta.",
+    "lead": "Alguns trabalhos ficam em páginas privadas ou semi-públicas para preservar contexto, cliente e escopo. Aqui estão os arquivos disponíveis para navegação.",
+    "project_label": "PROJETO",
+    "project_cta": "Abrir projeto",
+    "paloma_title": "Paloma Albieri",
+    "paloma_copy": "O case da própria marca: estratégia, social media, design e tecnologia trabalhando como um sistema de autoridade e conversão.",
     "miaucafe_title": "Miaucafé",
     "miaucafe_copy": "Projeto arquivado para consulta privada. A página não aparece no menu público nem no sitemap.",
     "connect_title": "Construtora Connect",
-    "connect_copy": "Projeto arquivado para consulta privada. A página não aparece no menu público nem no sitemap."
+    "connect_copy": "Projeto arquivado para consulta privada. A página não aparece no menu público nem no sitemap.",
+    "paloma_case": {
+      "overline": "CASE · MARCA PRÓPRIA",
+      "title": "Paloma Albieri",
+      "lead": "Este site foi pensado como um produto de posicionamento: uma landing page que mostra, na própria experiência, como social media, estratégia e tecnologia podem operar juntos.",
+      "proof": ["Social media + tech", "Pesquisa de campo", "Estratégia de conversão"],
+      "thesis_label": "TESE DO PROJETO",
+      "thesis": "Somos o nosso maior cliente: se a promessa é conectar conteúdo, site e venda, a própria marca precisa provar esse método antes de vender para outras empresas.",
+      "research_label": "PESQUISA",
+      "research_title": "O que observamos antes de desenhar.",
+      "research": [
+        {
+          "title": "Campo real",
+          "text": "O projeto parte da observação de pequenos negócios brasileiros e japoneses no Japão: muitos têm presença em redes sociais, mas pouca clareza sobre próximo passo, diferenciação e canal de conversão."
+        },
+        {
+          "title": "Decisão do cliente",
+          "text": "A página foi estruturada para responder dúvidas que aparecem antes do contato: quem executa, qual experiência existe, que ferramentas entram no processo e por que não é só postagem."
+        },
+        {
+          "title": "Prova de capacidade",
+          "text": "A narrativa destaca experiência real em TI, produção e operação, porque a venda aqui depende de confiança técnica e não apenas de estética."
+        },
+        {
+          "title": "Comportamento digital",
+          "text": "O fluxo considera que o cliente pode chegar pelo Instagram, indicação, busca ou WhatsApp. Por isso, a página organiza contexto, pacotes, stack e contato sem exigir uma jornada linear."
+        }
+      ],
+      "design_label": "DESIGN SYSTEM",
+      "design_title": "Editorial, técnico e direto.",
+      "design_text": "A identidade visual mistura contraste editorial, tipografia serifada, estrutura de interface e um acento rosa vivo. O resultado evita cara de agência genérica e posiciona a marca como uma operação autoral, estratégica e capaz de executar.",
+      "process_label": "PROCESSO",
+      "process_title": "Como pensamos o desenvolvimento.",
+      "process": [
+        {
+          "title": "Posicionamento",
+          "text": "Antes da interface, definimos a promessa central: presença digital integrada, do post ao site. Isso orientou headline, pacotes, prova técnica e chamada para contato."
+        },
+        {
+          "title": "Arquitetura da página",
+          "text": "A LP foi organizada para conduzir leitura: tese no hero, história de autoridade, serviços, stack híbrida, prova social viva pelo Instagram, pacotes e formulário editorial."
+        },
+        {
+          "title": "Experiência e interação",
+          "text": "Adicionamos microinterações, revelações no scroll, hover states, progresso de leitura e um formulário com escolha de canal para deixar a experiência mais humana e responsiva."
+        },
+        {
+          "title": "Implementação",
+          "text": "O desenvolvimento usa Next.js, TypeScript, Tailwind, internacionalização PT/JP, sitemap, robots, Netlify Forms e estrutura preparada para crescer com novos cases."
+        }
+      ],
+      "tools_label": "FERRAMENTAS",
+      "tools_title": "A stack por trás do case.",
+      "tools": [
+        {
+          "title": "Estratégia & conteúdo",
+          "tools": ["Pesquisa de campo", "Linha editorial", "Mapa de jornada", "Canva", "Figma"]
+        },
+        {
+          "title": "Design & interface",
+          "tools": ["Design system", "Fraunces", "Inter Tight", "Tailwind", "Motion"]
+        },
+        {
+          "title": "Tecnologia",
+          "tools": ["Next.js", "React", "TypeScript", "next-intl", "Netlify"]
+        },
+        {
+          "title": "Conversão & análise",
+          "tools": ["Netlify Forms", "WhatsApp", "Instagram", "SEO técnico", "Sitemap"]
+        }
+      ],
+      "closing_label": "RESULTADO",
+      "closing_name": "Paloma Albieri",
+      "closing_line_1": "não é só uma marca pessoal. É um",
+      "closing_method": "método vivo",
+      "closing_line_2": "onde estratégia, conteúdo e tecnologia viram ",
+      "closing_outcome": "caminho de contato",
+      "closing_support": "O case prova a promessa no próprio produto: presença digital com tese, direção editorial, sistema visual, stack técnica e conversão pensados juntos.",
+      "result_stack_label": "O QUE FICA CLARO",
+      "result_highlights": [
+        "A marca tem uma tese: social media e tecnologia não competem, se completam.",
+        "O método aparece na navegação, no formulário, no portfólio e na forma de apresentar a stack.",
+        "A página não depende só de estética: ela organiza confiança, contexto e próximo passo."
+      ],
+      "cta": "Quero pensar meu projeto assim"
+    }
   },
   "footer": {
     "copyright": "© 2026 Paloma Albieri. Iwata, Shizuoka.",
-    "links_label": "Instagram · WhatsApp · contato@palomaalbieri.com"
+    "links_label": "Links do rodapé",
+    "portfolio": "Portfólio"
   }
 }

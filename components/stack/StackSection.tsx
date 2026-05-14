@@ -1,15 +1,14 @@
 import { useTranslations } from 'next-intl';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
-const stacks = [
-  ['Design', ['Figma', 'Adobe CC']],
-  ['Frontend', ['Next.js', 'React', 'TypeScript', 'Tailwind']],
-  ['Dados', ['Supabase', 'PostgreSQL']],
-  ['Infra', ['Docker', 'Netlify']]
-] as const;
+type StackGroup = {
+  title: string;
+  tools: string[];
+};
 
 export function StackSection() {
   const t = useTranslations('stack');
+  const stacks = t.raw('groups') as StackGroup[];
 
   return (
     <section className="bg-paper text-ink" id="stacks">
@@ -23,8 +22,8 @@ export function StackSection() {
             <p className="body-lead text-ink-2">{t('sub')}</p>
           </ScrollReveal>
         </div>
-        <div className="mt-16 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {stacks.map(([title, tools], index) => (
+        <div className="mt-16 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {stacks.map(({ title, tools }, index) => (
             <ScrollReveal key={title} delay={index > 1 ? 'medium' : 'short'}>
               <section className="interactive-card group h-full border border-line bg-paper-2 p-6 hover:border-shock">
                 <h3 className="label-mono mb-5 text-ink">{title}</h3>

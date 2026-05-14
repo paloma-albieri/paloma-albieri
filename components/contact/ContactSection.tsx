@@ -35,7 +35,7 @@ export function ContactSection() {
               ))}
             </div>
           </ScrollReveal>
-          <ScrollReveal delay="short" className="interactive-card border border-ink-dark bg-paper-light p-6 sm:p-8">
+          <ScrollReveal delay="short" className="interactive-card border border-ink-dark bg-paper-light p-5 sm:p-8">
             <ContactForm />
           </ScrollReveal>
         </div>

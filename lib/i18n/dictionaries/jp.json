@@ -32,10 +32,36 @@
     "items": ["SNS運用", "ランディングページ", "コーポレートサイト", "問い合わせ導線", "広告運用", "月次サポート"]
   },
   "stack": {
-    "marker": "// 使用技術",
-    "h2": "本番で信頼している技術。",
-    "sub": "デザイン、コード、インフラを一つの流れとして動かす設計。スピード、保守性、コスト予測性で選定。",
-    "footer_note": "本番環境での経験をもとに、運用まで見て設計します。"
+    "marker": "// 運用ツール",
+    "h2": "戦略、分析、技術をつなぐツール。",
+    "sub": "オンライン導線にはマーケティングとエンジニアリングの両方が必要です。コンテンツ、データ分析、開発、インフラを一つの流れとして見ています。",
+    "groups": [
+      {
+        "title": "戦略",
+        "tools": ["Notion", "Google Sheets", "顧客リサーチ", "導線設計"]
+      },
+      {
+        "title": "コンテンツ",
+        "tools": ["Canva", "Figma", "Adobe CC", "CapCut"]
+      },
+      {
+        "title": "分析",
+        "tools": ["Google Analytics", "Search Console", "Meta Business Suite", "Instagram Insights"]
+      },
+      {
+        "title": "フロントエンド",
+        "tools": ["Next.js", "React", "TypeScript", "Tailwind", "HTML", "CSS"]
+      },
+      {
+        "title": "データ & バックエンド",
+        "tools": ["Supabase", "PostgreSQL", "SQL", "API Routes", "Server Actions"]
+      },
+      {
+        "title": "インフラ & デプロイ",
+        "tools": ["Netlify", "Vercel", "Docker", "GitHub", "Git"]
+      }
+    ],
+    "footer_note": "マーケティング、デザイン、データ、開発を分けずに、改善点まで見て運用します。"
   },
   "instagram": {
     "overline": "INSTAGRAM",
@@ -88,24 +114,132 @@
     "channels_whatsapp": "WhatsApp",
     "channels_instagram": "@paloma.albieri",
     "channels_calendar": "15分間のミーティング予約",
+    "form_marker": "初回ヒアリング",
+    "form_eta": "約2分 · 定型提案なし",
+    "form_prompt": "今、オンライン導線のどこで止まっているか教えてください。",
     "form_name": "お名前",
     "form_company": "会社名",
+    "form_contact": "希望の連絡方法",
+    "form_contact_email": "メール",
+    "form_contact_phone": "電話 / WhatsApp",
+    "form_contact_social": "SNS",
+    "form_contact_required": "返信できるように、少なくとも一つ選択してください。",
     "form_email": "メールアドレス",
+    "form_phone": "電話番号またはWhatsApp",
+    "form_social": "Instagram、LinkedInなど",
     "form_message": "プロジェクトについて",
+    "form_reassurance": "内容を読んでから返信します。目的は、状況を理解することです。",
     "submit": "送信",
-    "submit_sending": "送信中",
+    "submit_sending": "内容を送信中",
+    "success_marker": "受付完了",
+    "success_title": "次の提案の前に、まず流れを確認します。",
     "success_message": "受付しました。24時間以内に返信いたします。",
+    "success_next": "必要であれば、最初に直すべき点、合う進め方、無駄なく始める順番を整理して返信します。",
+    "success_again": "もう一度送る",
+    "error_marker": "送信できませんでした",
     "error_message": "現在送信できません。1分後に再度お試しいただくか、contato@palomaalbieri.comまで直接お送りください。"
   },
   "portfolio": {
     "overline": "アーカイブ",
+    "title": "制作実績アーカイブ",
+    "lead": "一部の案件は、クライアントや制作範囲に配慮して限定的なアーカイブとして掲載しています。現在閲覧できるプロジェクトはこちらです。",
+    "project_label": "プロジェクト",
+    "project_cta": "詳細を見る",
+    "paloma_title": "Paloma Albieri",
+    "paloma_copy": "自社ブランドのケーススタディ。SNS、戦略、デザイン、技術を一つの信頼と問い合わせ導線として設計しました。",
     "miaucafe_title": "Miaucafé",
     "miaucafe_copy": "非公開参照用のアーカイブページです。公開メニューとサイトマップには表示されません。",
     "connect_title": "Construtora Connect",
-    "connect_copy": "非公開参照用のアーカイブページです。公開メニューとサイトマップには表示されません。"
+    "connect_copy": "非公開参照用のアーカイブページです。公開メニューとサイトマップには表示されません。",
+    "paloma_case": {
+      "overline": "CASE · 自社ブランド",
+      "title": "Paloma Albieri",
+      "lead": "このサイトは、ポジショニングのためのプロダクトとして設計しました。SNS、戦略、技術が一つの流れとして機能することを、サイト体験そのもので示しています。",
+      "proof": ["SNS + 技術", "現場リサーチ", "問い合わせ導線"],
+      "thesis_label": "プロジェクトの考え方",
+      "thesis": "私たちは自分たち自身が一番大きなクライアントです。投稿、サイト、問い合わせをつなぐと言うなら、まず自社ブランドでその方法を証明する必要があります。",
+      "research_label": "リサーチ",
+      "research_title": "設計前に見たこと。",
+      "research": [
+        {
+          "title": "現場感",
+          "text": "日本にあるブラジル系・日本の小規模事業では、SNSは動いていても、次の行動、差別化、問い合わせ導線が曖昧なケースが多くあります。"
+        },
+        {
+          "title": "顧客の判断",
+          "text": "誰が実行するのか、どんな経験があるのか、どのツールを使うのか、なぜ投稿だけではないのかを、問い合わせ前に理解できる構成にしました。"
+        },
+        {
+          "title": "信頼の証明",
+          "text": "見た目だけではなく、IT、製造現場、運用での経験を前面に出すことで、技術的な信頼を伝える設計にしています。"
+        },
+        {
+          "title": "デジタル行動",
+          "text": "Instagram、紹介、検索、WhatsAppなど、入口は一つではありません。そのため、文脈、プラン、使用ツール、問い合わせを自然に辿れる流れにしました。"
+        }
+      ],
+      "design_label": "デザインシステム",
+      "design_title": "編集的で、技術的で、直接的。",
+      "design_text": "セリフ体の強い見出し、UIとしての構造、赤いアクセントを組み合わせました。一般的な代理店サイトではなく、戦略と実装力を持つ個人ブランドとして見えることを重視しています。",
+      "process_label": "プロセス",
+      "process_title": "どう開発したか。",
+      "process": [
+        {
+          "title": "ポジショニング",
+          "text": "最初に、投稿からサイトまでつながるオンライン導線という中心メッセージを決めました。これが見出し、プラン、技術的証明、問い合わせ導線を決めています。"
+        },
+        {
+          "title": "ページ構成",
+          "text": "ヒーロー、実績につながるプロフィール、サービス、ハイブリッドなスタック、Instagram、プラン、問い合わせフォームの順に、読み進めやすい構造にしました。"
+        },
+        {
+          "title": "体験とインタラクション",
+          "text": "スクロール表示、ホバー、読み進みの感覚、連絡方法を選べるフォームなどを入れ、人が使うページとしての手触りを作りました。"
+        },
+        {
+          "title": "実装",
+          "text": "Next.js、TypeScript、Tailwind、PT/JP対応、sitemap、robots、Netlify Formsを使い、今後のケース追加にも対応できる構成にしています。"
+        }
+      ],
+      "tools_label": "ツール",
+      "tools_title": "このケースを支えるスタック。",
+      "tools": [
+        {
+          "title": "戦略 & コンテンツ",
+          "tools": ["現場リサーチ", "編集方針", "導線設計", "Canva", "Figma"]
+        },
+        {
+          "title": "デザイン & UI",
+          "tools": ["Design system", "Fraunces", "Inter Tight", "Tailwind", "Motion"]
+        },
+        {
+          "title": "技術",
+          "tools": ["Next.js", "React", "TypeScript", "next-intl", "Netlify"]
+        },
+        {
+          "title": "問い合わせ & 分析",
+          "tools": ["Netlify Forms", "WhatsApp", "Instagram", "SEO", "Sitemap"]
+        }
+      ],
+      "closing_label": "結果",
+      "closing_name": "Paloma Albieri",
+      "closing_line_1": "は単なる個人ブランドではありません。これは",
+      "closing_method": "生きたメソッド",
+      "closing_line_2": "です。戦略、コンテンツ、技術が",
+      "closing_outcome": "問い合わせへの流れ",
+      "closing_support": "このケースは、約束をサイト自体で証明しています。戦略、編集方針、ビジュアルシステム、技術スタック、コンバージョンを一緒に設計しました。",
+      "result_stack_label": "伝わること",
+      "result_highlights": [
+        "SNSと技術は競合するものではなく、補完し合うものだと伝わります。",
+        "メソッドは、ナビゲーション、フォーム、ポートフォリオ、スタックの見せ方に現れています。",
+        "見た目だけではなく、信頼、文脈、次の行動を整理するページになっています。"
+      ],
+      "cta": "自分のプロジェクトも相談する"
+    }
   },
   "footer": {
     "copyright": "© 2026 Paloma Albieri. 静岡県磐田市より。",
-    "links_label": "Instagram · WhatsApp · contato@palomaalbieri.com"
+    "links_label": "フッターリンク",
+    "portfolio": "ポートフォリオ"
   }
 }

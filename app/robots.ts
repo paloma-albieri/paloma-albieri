@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/pt/portfolio/', '/jp/portfolio/']
+        disallow: ['/api/']
       }
     ],
     sitemap: 'https://palomaalbieri.com/sitemap.xml'

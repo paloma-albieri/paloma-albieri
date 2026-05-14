@@ -74,14 +74,14 @@ export function ContactForm() {
           name="name"
           required
           minLength={2}
-          className="border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+          className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
         />
       </label>
       <label className="flex flex-col gap-2">
         <span className="label-mono text-ink-3">{t('form_company')}</span>
         <input
           name="company"
-          className="border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+          className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
         />
       </label>
       <label className="flex flex-col gap-2">
@@ -90,7 +90,7 @@ export function ContactForm() {
           name="email"
           type="email"
           required
-          className="border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+          className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
         />
       </label>
       <label className="flex flex-col gap-2">
@@ -100,7 +100,7 @@ export function ContactForm() {
           required
           minLength={30}
           rows={5}
-          className="resize-y border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+          className="field-line resize-y border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
         />
       </label>
       <button

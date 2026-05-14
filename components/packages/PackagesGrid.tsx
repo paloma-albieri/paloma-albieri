@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { clsx } from 'clsx';
 import { CTAPill } from '@/components/ui/CTAPill';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import type { Locale } from '@/lib/i18n/config';
 
 const packageKeys = ['micro', 'starter', 'growth', 'full'] as const;
@@ -15,8 +16,8 @@ function PackageCard({ packageKey, compact = false }: { packageKey: PackageKey; 
   return (
     <article
       className={clsx(
-        'flex flex-col border bg-paper-light p-6 text-ink-dark sm:p-8',
-        isRecommended ? 'border-2 border-shock bg-paper-rose' : 'border-ink-dark'
+        'interactive-card group flex h-full flex-col border bg-paper-light p-6 text-ink-dark sm:p-8',
+        isRecommended ? 'border-2 border-shock bg-paper-rose' : 'border-ink-dark hover:border-shock'
       )}
     >
       {badge && <p className="label-mono mb-6 text-shock">{badge}</p>}
@@ -28,7 +29,7 @@ function PackageCard({ packageKey, compact = false }: { packageKey: PackageKey; 
       {!compact && (
         <ul className="mt-8 flex flex-col gap-3 text-sm leading-relaxed">
           {includes.map((item) => (
-            <li key={item} className="border-t border-[oklch(.14_.01_270_/_0.18)] pt-3">
+            <li key={item} className="border-t border-[oklch(.14_.01_270_/_0.18)] pt-3 transition-colors group-hover:border-[oklch(.68_.24_8_/_0.42)]">
               {item}
             </li>
           ))}
@@ -60,13 +61,13 @@ export function PackagesGrid({
     <section className="bg-paper-light" id="pacotes">
       <div className="container-shell section-pad">
         <div className="mb-12 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <div>
+          <ScrollReveal>
             <p className="label-mono mb-8 text-ink-3">{t('overline')}</p>
             <h2 className="display-h2 text-ink-dark">
               {variant === 'page' ? t('page_title') : t('title')}
             </h2>
-          </div>
-          <div className="lg:pt-20">
+          </ScrollReveal>
+          <ScrollReveal delay="short" className="lg:pt-20">
             <p className="body-lead text-ink-dark">
               {variant === 'page' ? t('page_lead') : t('lead')}
             </p>
@@ -75,11 +76,13 @@ export function PackagesGrid({
                 {t('diagnostic')}
               </CTAPill>
             )}
-          </div>
+          </ScrollReveal>
         </div>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {packageKeys.map((key) => (
-            <PackageCard key={key} packageKey={key} compact={compact} />
+          {packageKeys.map((key, index) => (
+            <ScrollReveal key={key} delay={index > 1 ? 'medium' : 'short'}>
+              <PackageCard packageKey={key} compact={compact} />
+            </ScrollReveal>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ContactForm } from './ContactForm';
 
 const links = [
@@ -16,7 +17,7 @@ export function ContactSection() {
       <div className="container-shell section-pad">
         <p className="label-mono mb-8 text-ink-dark">{t('overline')}</p>
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-          <div>
+          <ScrollReveal>
             <h2 className="display-h2 text-ink-dark">{t('headline')}</h2>
             <p className="body-lead mt-8 text-ink-dark">{t('sub')}</p>
             <div className="mt-10 flex flex-col border-t border-ink-dark">
@@ -26,17 +27,17 @@ export function ContactSection() {
                   href={href}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="flex items-center justify-between gap-4 border-b border-ink-dark py-4 text-sm"
+                  className="link-row flex items-center justify-between gap-4 border-b border-ink-dark py-4 text-sm"
                 >
                   <span className="label-mono text-[10px] text-ink-dark">{key.replace('channels_', '')}</span>
                   <strong className="font-normal">{t(key)}</strong>
                 </a>
               ))}
             </div>
-          </div>
-          <div className="border border-ink-dark bg-paper-light p-6 sm:p-8">
+          </ScrollReveal>
+          <ScrollReveal delay="short" className="interactive-card border border-ink-dark bg-paper-light p-6 sm:p-8">
             <ContactForm />
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { isLocale } from '@/lib/i18n/config';
-import { personJsonLd } from '@/lib/seo/jsonld';
+import { buildJsonLd } from '@/lib/seo/jsonld';
 import '@/app/styles/globals.css';
 
 export const dynamic = 'force-dynamic';
@@ -51,6 +51,7 @@ export default function LocaleLayout({
 
   const messages = useMessages();
   const bodyFont = params.lang === 'jp' ? 'font-[var(--font-jp)]' : 'font-body';
+  const jsonLd = buildJsonLd(params.lang);
 
   return (
     <html
@@ -65,7 +66,7 @@ export default function LocaleLayout({
         </NextIntlClientProvider>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </body>
     </html>

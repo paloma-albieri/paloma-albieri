@@ -8,7 +8,7 @@ import type { Locale } from '@/lib/i18n/config';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 
 const navTargets = [
-  ['pacotes', 'pacotes'],
+  ['pacotes', 'servicos'],
   ['stacks', 'stacks'],
   ['sobre', 'sobre'],
   ['contato', 'contato']
@@ -52,7 +52,7 @@ export function Header({ lang }: { lang: Locale }) {
           {navTargets.map(([key, target]) => (
             <a
               key={key}
-              href={key === 'pacotes' ? `/${lang}/pacotes` : `/${lang}#${target}`}
+              href={key === 'pacotes' ? `/${lang}/servicos` : `/${lang}#${target}`}
               className="label-mono relative text-[11px] text-ink-dark transition-colors after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-shock after:transition-transform after:duration-200 hover:text-shock hover:after:scale-x-100"
             >
               {t(`nav.${key}`)}

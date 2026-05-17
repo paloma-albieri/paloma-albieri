@@ -7,6 +7,11 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
         disallow: ['/api/']
+      },
+      {
+        userAgent: ['OAI-SearchBot', 'ChatGPT-User', 'GPTBot', 'Bingbot', 'Googlebot'],
+        allow: '/',
+        disallow: ['/api/']
       }
     ],
     sitemap: 'https://palomaalbieri.com/sitemap.xml'

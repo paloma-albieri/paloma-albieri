@@ -26,7 +26,7 @@ export async function Hero({ lang }: { lang: Locale }) {
           <CTAPill href="https://wa.me/817020122563" variant="filled-shock" external>
             {t('cta_primary')}
           </CTAPill>
-          <CTAPill href={`/${lang}/pacotes`} variant="outline-ink">
+          <CTAPill href={`/${lang}/servicos`} variant="outline-ink">
             {t('cta_secondary')}
           </CTAPill>
         </ScrollReveal>

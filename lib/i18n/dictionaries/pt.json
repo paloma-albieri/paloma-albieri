@@ -5,7 +5,7 @@
     "bottom": "Take 01 · 04:23:26 · Pressione · Sobre mim"
   },
   "nav": {
-    "pacotes": "Pacotes",
+    "pacotes": "Serviços",
     "stacks": "Stacks",
     "sobre": "Sobre",
     "contato": "Contato"
@@ -13,62 +13,63 @@
   "hero": {
     "top_marker": "PALOMA ALBIERI · BRASIL ⇄ JAPAN",
     "headline": "Sua presença digital precisa trabalhar conectada.",
-    "subheadline": "Estrategista digital com mão na execução. Faço estratégia e desenvolvimento integrados, do post ao site, para empresas no Brasil e estabelecimentos no Japão. Brasileira em Iwata.",
-    "meta_base": "BASE · IWATA / SHIZUOKA",
+    "subheadline": "Estrategista digital com mão na execução. Uno estratégia, conteúdo e desenvolvimento para marcas e empresas que precisam organizar presença digital, do post ao site. Brasileira no Japão.",
+    "meta_base": "BASE · JAPÃO",
     "meta_foco": "FOCO · ESTRATÉGIA + DEV",
     "meta_idiomas": "IDIOMAS · PT / JP",
     "cta_primary": "Conversa de 15 minutos no WhatsApp",
-    "cta_secondary": "Ver pacotes"
+    "cta_secondary": "Ver serviços"
   },
   "about": {
     "overline": "// SOBRE",
-    "h2": "Sistemas que performam.",
-    "p1": "Cheguei em Iwata em 2022 para trabalhar em manufatura. Em 18 meses passei da linha de produção para a responsável de TI da empresa.",
-    "p2": "Construí sozinha um sistema interno em React, TypeScript, Postgres e Docker que rodou em 14 setores. Reduziu o tempo de conferência de 2 minutos para 25 segundos por pessoa. É software em produção, em manufatura japonesa, com responsabilidade nominal minha.",
-    "p3": "Hoje faço estratégia digital com mão na execução. Atendo empresas no Brasil e estabelecimentos brasileiros e japoneses no Japão.",
-    "p4": "Não sou agência. Não terceirizo desenvolvimento. Não vendo viralização. Vendo presença digital integrada, do post ao site, com objetivo único: fazer seu cliente fechar."
+    "h2": "Presença digital com direção, conteúdo e estrutura.",
+    "pillars": ["ESTRATÉGIA", "CONTEÚDO", "SITE", "DADOS", "AUTOMAÇÃO"],
+    "p1": "Meu trabalho começa antes do post e antes do site. Eu olho para o negócio, para o cliente, para a mensagem e para o caminho que a pessoa faz até confiar, perguntar e comprar.",
+    "p2": "Trago marketing, conteúdo e tecnologia para a mesma mesa: posicionamento, linha editorial, presença no Instagram, páginas de venda, sites, formulários, automações simples e leitura de dados. A ideia não é fazer tudo ao mesmo tempo, é entender o que resolve primeiro.",
+    "p3": "A parte técnica entra como diferencial. No Japão, passei da linha de produção para responsável de TI e construí sozinha um sistema interno em React, TypeScript, Postgres e Docker usado por 14 setores. Isso me ensinou a pensar processo, clareza e execução de verdade.",
+    "p4": "Meu foco é apoiar marcas e empresas que precisam deixar a presença digital mais clara, profissional e fácil de entender. Não vendo post solto, site bonito ou anúncio sem base. Eu organizo presença digital para que as pessoas entendam o que você vende, confiem mais rápido e saibam qual próximo passo dar."
   },
   "services_marquee": {
     "items": [
-      "ESTRATÉGIA DE CONTEÚDO",
-      "LANDING PAGE",
-      "SITE INSTITUCIONAL",
-      "AUTOMAÇÃO DE LEAD",
-      "TRÁFEGO PAGO",
-      "GESTÃO MENSAL"
+      "PLANEJAR",
+      "MOSTRAR",
+      "EXPLICAR",
+      "ORGANIZAR",
+      "ATRAIR",
+      "MELHORAR"
     ]
   },
   "stack": {
     "marker": "// CENTRAL DE COMANDO",
-    "h2": "Ferramentas para estratégia, análise e tecnologia.",
-    "sub": "A presença digital precisa de marketing e engenharia trabalhando juntas. Uso ferramentas de conteúdo, leitura de dados, desenvolvimento e infraestrutura para conectar post, site, automação e decisão de compra.",
+    "h2": "Ferramentas entram depois da direção.",
+    "sub": "Eu não parto da ferramenta. Primeiro entendo o problema: clareza, conteúdo, site, atendimento, análise ou crescimento. Depois escolho a stack certa para construir, medir e melhorar.",
     "groups": [
       {
-        "title": "Estratégia",
-        "tools": ["Notion", "Google Sheets", "Pesquisa de público", "Mapa de jornada"]
+        "title": "Pensar a direção",
+        "tools": ["Notion", "Google Sheets", "Pesquisa de público", "Mapa de caminho", "Análise de concorrência", "Benchmark"]
       },
       {
-        "title": "Conteúdo",
-        "tools": ["Canva", "Figma", "Adobe CC", "CapCut"]
+        "title": "Criar a presença",
+        "tools": ["Canva", "Figma", "Adobe CC", "CapCut", "Bancos de imagem", "Direção criativa"]
       },
       {
-        "title": "Análise",
-        "tools": ["Google Analytics", "Search Console", "Meta Business Suite", "Instagram Insights"]
+        "title": "Publicar e vender",
+        "tools": ["Instagram", "Meta Business Suite", "WhatsApp", "Landing pages", "Formulários", "Calendário editorial"]
       },
       {
-        "title": "Frontend",
-        "tools": ["Next.js", "React", "TypeScript", "Tailwind", "HTML", "CSS"]
+        "title": "Construir a base",
+        "tools": ["Next.js", "React", "TypeScript", "Tailwind", "HTML", "CSS", "Vercel", "Netlify", "Supabase", "PostgreSQL", "SQL", "GitHub"]
       },
       {
-        "title": "Dados & Backend",
-        "tools": ["Supabase", "PostgreSQL", "SQL", "API Routes", "Server Actions"]
+        "title": "Organizar processos",
+        "tools": ["Google Forms", "Typeform", "Notion", "Sheets", "Automações", "CRM", "E-mail", "Integrações"]
       },
       {
-        "title": "Infra & Deploy",
-        "tools": ["Netlify", "Vercel", "Docker", "GitHub", "Git"]
+        "title": "Medir e melhorar",
+        "tools": ["Google Analytics", "Search Console", "Instagram Insights", "Meta Ads", "Google Ads", "Relatórios", "Testes"]
       }
     ],
-    "footer_note": "Marketing, design, dados e desenvolvimento no mesmo fluxo, com leitura prática do que precisa melhorar."
+    "footer_note": "A ferramenta certa depende do momento da marca. O ponto não é usar tudo, é montar o caminho com o que resolve melhor."
   },
   "instagram": {
     "overline": "INSTAGRAM",
@@ -80,73 +81,119 @@
     "post_cta": "Ver post"
   },
   "packages": {
-    "overline": "FORMAS DE COMEÇAR",
-    "title": "Presença digital não começa igual para todo mundo.",
-    "lead": "Antes de montar uma proposta, eu olho para o momento do seu negócio: como o cliente te encontra, o que ele entende quando chega no seu perfil, para onde ele vai depois do post e o que pode estar travando a decisão.",
-    "diagnostic": "Primeiro eu entendo o caminho. Depois monto a proposta.",
-    "cta": "Quero entender o melhor caminho",
-    "page_title": "Sem fórmula pronta. O ponto de partida depende do seu momento.",
-    "page_lead": "Cada formato tem uma base clara, mas o escopo final depende dos seus canais, da rotina do negócio e do que precisa acontecer para o cliente sair da dúvida e chegar até a compra.",
-    "micro": {
-      "name": "Base em Ordem",
-      "fit": "Para quem sabe que precisa aparecer melhor, mas ainda está com bio, links, mensagem e conteúdo soltos.",
-      "outcome": "Uma presença mais clara, com posicionamento, bio, links e próximos passos definidos para os primeiros 30 dias.",
-      "includes": [
-        "Leitura da presença atual",
-        "Ajuste de bio e links",
-        "Direção inicial de conteúdo",
-        "Prioridades para os próximos 30 dias"
-      ]
-    },
-    "starter": {
-      "name": "Presença com Ritmo",
-      "fit": "Para negócios que já postam, mas sentem que o conteúdo ainda não cria confiança nem leva o cliente para a próxima ação.",
-      "outcome": "Uma rotina de conteúdo com direção, intenção de venda e leitura prática do que precisa melhorar.",
-      "includes": [
-        "Planejamento mensal de conteúdo",
-        "Posts e Reels com linha editorial",
-        "Stories com intenção comercial",
-        "Leitura mensal dos próximos ajustes"
-      ]
-    },
-    "growth": {
-      "name": "Do Post ao Site",
-      "badge": "MELHOR PONTO DE VIRADA",
-      "fit": "Para quem não quer depender só do Instagram e precisa transformar atenção em contato, orçamento ou pedido.",
-      "outcome": "Instagram, página e chamada para ação trabalhando juntos para conduzir o cliente até a decisão.",
-      "includes": [
-        "Tudo do Presença com Ritmo",
-        "Landing page de uma página",
-        "Ajustes básicos para busca",
-        "Formulário ou chamada direta para contato"
-      ]
-    },
-    "full": {
-      "name": "Operação Digital",
-      "fit": "Para negócios que precisam parar de tratar post, site, anúncio e atendimento como coisas separadas.",
-      "outcome": "Um sistema mensal de presença, captação e melhoria com conteúdo, página, tráfego e leitura de dados.",
-      "includes": [
-        "Tudo do Do Post ao Site",
-        "Gestão de tráfego pago",
-        "Fluxo básico de contato",
-        "Revisão mensal de campanha, página e conteúdo"
-      ]
-    }
+    "overline": "SERVIÇOS",
+    "title": "Você não precisa comprar uma fórmula pronta. Precisa saber qual parte do digital resolver primeiro.",
+    "lead": "Eu organizo o trabalho em três momentos simples: pensar a direção, criar o que precisa ir para o ar e melhorar o que já está rodando. A proposta nasce do seu contexto, não de uma lista fechada.",
+    "diagnostic": "Ver como posso ajudar",
+    "cta": "Quero entender meu próximo passo",
+    "page_title": "Serviços claros, proposta sob medida.",
+    "page_lead": "Alguns negócios precisam de clareza antes de postar. Outros precisam de site, conteúdo, anúncio ou organização do atendimento. Por isso, eu separo o trabalho por intenção: planejar, colocar no ar e melhorar.",
+    "includes_label": "O que pode entrar",
+    "example_label": "Exemplo:",
+    "fit_label": "Ideal para:",
+    "closing": "Na conversa inicial, eu identifico se o seu momento pede estratégia, execução ou crescimento. Depois disso, monto um escopo possível, claro e sem empurrar serviço que não resolve o problema agora.",
+    "layers": [
+      {
+        "label": "01 · PENSAR",
+        "title": "Planejar",
+        "summary": "Para quando você sente que está fazendo coisa demais, mas sem direção clara. Aqui eu leio o cenário, organizo prioridades e defino o caminho antes da execução.",
+        "services": [
+          {
+            "name": "Diagnóstico Digital",
+            "promise": "Descobrir o que está travando sua presença online.",
+            "description": "Analiso Instagram, site, comunicação, conteúdo, perfil do cliente e o caminho que a pessoa faz até falar com você.",
+            "items": ["Leitura dos problemas", "Prioridades de ajuste", "Próximos passos", "Ideias práticas de melhoria"],
+            "example": "Seu Instagram está bonito, mas ninguém entende o que você vende.",
+            "fit": "quem posta e não vende, está perdido ou não sabe por onde começar."
+          },
+          {
+            "name": "Estratégia de Presença Digital",
+            "promise": "Planejar como sua marca deve aparecer, comunicar e vender melhor.",
+            "description": "Organizo posicionamento, mensagem, tom da marca, tipo de conteúdo, canais e caminho de confiança até o contato.",
+            "items": ["Direção da marca", "Estrutura de comunicação", "Ideias de conteúdo", "Organização dos canais digitais"],
+            "example": "O que falar, como mostrar e como fazer o cliente confiar.",
+            "fit": "quem quer parecer mais profissional, crescer online ou parar de postar sem direção."
+          }
+        ]
+      },
+      {
+        "label": "02 · CRIAR",
+        "title": "Colocar no ar",
+        "summary": "Para quando a estratégia precisa virar algo visível: conteúdo, página, site ou processo organizado. Aqui entram as entregas que o cliente vê e usa.",
+        "services": [
+          {
+            "name": "Gestão de Conteúdo",
+            "promise": "Criar conteúdo para sua marca aparecer melhor.",
+            "description": "Cuido de posts, reels, stories, legendas e planejamento mensal com intenção comercial e linha visual consistente.",
+            "items": ["Calendário de conteúdo", "Posts prontos", "Ideias de vídeos", "Direção criativa"],
+            "example": "Seu Instagram para de parecer abandonado.",
+            "fit": "quem não tem tempo, não sabe o que postar ou quer conteúdo mais profissional."
+          },
+          {
+            "name": "Landing Page",
+            "promise": "Uma página simples para transformar visitas em contato.",
+            "description": "Crio uma página para apresentar seu serviço, organizar as informações importantes e deixar o contato mais fácil pelo celular.",
+            "items": ["Página personalizada", "Botão de WhatsApp", "Formulário", "Versão celular"],
+            "example": "Um lugar profissional para o cliente entender e entrar em contato.",
+            "fit": "quem vende pelo Instagram, mas precisa de um ponto mais profissional para explicar a oferta."
+          },
+          {
+            "name": "Site Institucional",
+            "promise": "Um site completo para sua empresa.",
+            "description": "Desenvolvo uma estrutura com páginas, serviços, contato, empresa, portfólio e base preparada para crescer.",
+            "items": ["Site completo", "Identidade visual aplicada", "Versão celular", "Organização profissional"],
+            "example": "O endereço oficial da sua empresa na internet.",
+            "fit": "empresas que precisam transmitir confiança além das redes sociais."
+          },
+          {
+            "name": "Automação e Organização Digital",
+            "promise": "Fazer partes do atendimento funcionarem com mais ordem.",
+            "description": "Organizo formulários, respostas automáticas, captação de clientes, contatos e fluxos simples para reduzir trabalho manual.",
+            "items": ["Formulários", "Automações básicas", "Organização de atendimento", "Fluxo digital mais eficiente"],
+            "example": "O cliente preenche uma informação e o sistema já organiza tudo automaticamente.",
+            "fit": "quem perde mensagens, se enrola no atendimento ou faz tudo manualmente."
+          }
+        ]
+      },
+      {
+        "label": "03 · CRESCER",
+        "title": "Melhorar",
+        "summary": "Para quando a base já existe e precisa trazer mais resultado. Aqui eu acompanho, leio os dados, ajusto a rota e melhoro o que está no ar.",
+        "services": [
+          {
+            "name": "Gestão de Tráfego Pago",
+            "promise": "Anúncios para trazer mais pessoas certas.",
+            "description": "Crio e acompanho campanhas no Instagram, Facebook ou Google, com segmentação, análise e ajustes mensais.",
+            "items": ["Campanhas", "Segmentação", "Análise de resultados", "Melhorias mensais"],
+            "example": "Fazer mais pessoas certas encontrarem sua empresa.",
+            "fit": "quem já tem uma oferta minimamente clara e quer aumentar alcance, contatos ou pedidos."
+          },
+          {
+            "name": "Acompanhamento Estratégico",
+            "promise": "Analisar o que está funcionando e melhorar.",
+            "description": "Acompanho conteúdo, site, anúncios, comportamento dos clientes e resultados para decidir o próximo ajuste.",
+            "items": ["Reuniões", "Análise prática", "Melhorias", "Ajustes mensais"],
+            "example": "Descobrir o que está funcionando e o que precisa mudar.",
+            "fit": "quem quer continuidade sem tratar conteúdo, site e anúncio como coisas soltas."
+          }
+        ]
+      }
+    ]
   },
   "contact": {
     "overline": "CONTATO",
-    "headline": "Pronta para conectar conteúdo, site e venda. Vamos conversar.",
-    "sub": "Resposta em até 24 horas úteis, considerando Brasília ou Japão conforme o horário que você escrever.",
+    "headline": "Vamos encontrar o próximo ajuste certo para sua presença digital.",
+    "sub": "Me conte o momento da sua marca. Eu leio o contexto antes de indicar estratégia, conteúdo, site, automação ou acompanhamento.",
     "channels_email": "contato@palomaalbieri.com",
     "channels_whatsapp": "WhatsApp",
     "channels_instagram": "@paloma.albieri",
     "channels_calendar": "Agendar reunião de 15 minutos",
-    "form_marker": "BRIEF INICIAL",
-    "form_eta": "2 minutos · sem proposta genérica",
-    "form_prompt": "Me conte onde a presença digital está travando hoje.",
+    "form_marker": "LEITURA INICIAL",
+    "form_eta": "2 minutos · resposta com contexto",
+    "form_prompt": "O que precisa ficar mais claro, profissional ou eficiente no seu digital hoje?",
     "form_name": "Seu nome",
-    "form_company": "Empresa",
-    "form_contact": "Como prefere ser contatado?",
+    "form_company": "Marca ou empresa",
+    "form_contact": "Melhor canal para resposta",
     "form_contact_email": "E-mail",
     "form_contact_phone": "Telefone / WhatsApp",
     "form_contact_social": "Rede social",
@@ -154,14 +201,14 @@
     "form_email": "E-mail",
     "form_phone": "Telefone ou WhatsApp",
     "form_social": "Instagram, LinkedIn ou outra rede",
-    "form_message": "Sobre o projeto",
-    "form_reassurance": "Eu leio antes de responder. A ideia é entender o contexto, não empurrar pacote.",
-    "submit": "Enviar",
-    "submit_sending": "Enviando seu briefing",
-    "success_marker": "BRIEF RECEBIDO",
-    "success_title": "Agora eu leio o caminho antes de propor o próximo passo.",
-    "success_message": "Recebido. Resposta em até 24 horas úteis.",
-    "success_next": "Se fizer sentido, eu volto com uma leitura objetiva: o que ajustar primeiro, qual formato combina com o momento e por onde começar sem desperdiçar energia.",
+    "form_message": "Me conte o cenário",
+    "form_reassurance": "Você não precisa saber qual serviço pedir. Me conte o problema e eu te ajudo a entender o melhor próximo passo.",
+    "submit": "Quero uma leitura do meu cenário",
+    "submit_sending": "Enviando seu cenário",
+    "success_marker": "CENÁRIO RECEBIDO",
+    "success_title": "Agora eu leio o contexto antes de sugerir o próximo passo.",
+    "success_message": "Recebido. Vou olhar seu cenário com calma.",
+    "success_next": "Eu respondo com uma direção inicial: o que parece estar travando, qual caminho faz mais sentido e por onde começar sem criar trabalho desnecessário.",
     "success_again": "Enviar outra mensagem",
     "error_marker": "ENVIO NÃO CONCLUÍDO",
     "error_message": "Não consegui enviar agora. Tenta de novo em 1 minuto, ou manda direto para contato@palomaalbieri.com."
@@ -190,7 +237,7 @@
       "research": [
         {
           "title": "Campo real",
-          "text": "O projeto parte da observação de pequenos negócios brasileiros e japoneses no Japão: muitos têm presença em redes sociais, mas pouca clareza sobre próximo passo, diferenciação e canal de conversão."
+          "text": "O projeto parte da observação de marcas e empresas brasileiras e japonesas no Japão: muitas têm presença em redes sociais, mas pouca clareza sobre próximo passo, diferenciação e canal de conversão."
         },
         {
           "title": "Decisão do cliente",
@@ -202,7 +249,7 @@
         },
         {
           "title": "Comportamento digital",
-          "text": "O fluxo considera que o cliente pode chegar pelo Instagram, indicação, busca ou WhatsApp. Por isso, a página organiza contexto, pacotes, stack e contato sem exigir uma jornada linear."
+          "text": "O fluxo considera que o cliente pode chegar pelo Instagram, indicação, busca ou WhatsApp. Por isso, a página organiza contexto, serviços, stack e contato sem exigir um caminho único."
         }
       ],
       "design_label": "DESIGN SYSTEM",
@@ -213,11 +260,11 @@
       "process": [
         {
           "title": "Posicionamento",
-          "text": "Antes da interface, definimos a promessa central: presença digital integrada, do post ao site. Isso orientou headline, pacotes, prova técnica e chamada para contato."
+          "text": "Antes da interface, definimos a promessa central: presença digital integrada, do post ao site. Isso orientou headline, serviços, prova técnica e chamada para contato."
         },
         {
           "title": "Arquitetura da página",
-          "text": "A LP foi organizada para conduzir leitura: tese no hero, história de autoridade, serviços, stack híbrida, prova social viva pelo Instagram, pacotes e formulário editorial."
+          "text": "A LP foi organizada para conduzir leitura: tese no hero, história de autoridade, serviços, stack híbrida, prova social viva pelo Instagram e formulário editorial."
         },
         {
           "title": "Experiência e interação",
@@ -233,7 +280,7 @@
       "tools": [
         {
           "title": "Estratégia & conteúdo",
-          "tools": ["Pesquisa de campo", "Linha editorial", "Mapa de jornada", "Canva", "Figma"]
+          "tools": ["Pesquisa de campo", "Linha editorial", "Mapa de caminho", "Canva", "Figma"]
         },
         {
           "title": "Design & interface",
@@ -265,7 +312,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2026 Paloma Albieri. Iwata, Shizuoka.",
+    "copyright": "© 2026 Paloma Albieri. Brasileira no Japão.",
     "links_label": "Links do rodapé",
     "portfolio": "Portfólio"
   }

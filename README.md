@@ -25,7 +25,7 @@ SITE_URL=https://palomaalbieri.com
 
 - `/pt`
 - `/jp`
-- `/pt/pacotes`
-- `/jp/pacotes`
+- `/pt/servicos`
+- `/jp/servicos`
 
 Portfolio archive routes exist with `noindex,nofollow` and are excluded from the sitemap.

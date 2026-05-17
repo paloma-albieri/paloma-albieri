@@ -5,8 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     '/pt',
     '/jp',
-    '/pt/pacotes',
-    '/jp/pacotes',
+    '/pt/servicos',
+    '/jp/servicos',
     '/pt/portfolio',
     '/jp/portfolio',
     '/pt/portfolio/paloma-albieri',

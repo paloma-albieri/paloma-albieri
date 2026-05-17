@@ -1,0 +1,32 @@
+# Paloma Albieri
+
+Paloma Albieri e uma estrategista digital brasileira no Japao. O trabalho une estrategia, conteudo, sites, automacao, trafego pago e acompanhamento para organizar presenca digital de marcas e empresas.
+
+## Site principal
+
+- Home em portugues: https://palomaalbieri.com/pt
+- Servicos em portugues: https://palomaalbieri.com/pt/servicos
+- Portfolio em portugues: https://palomaalbieri.com/pt/portfolio
+- Home em japones: https://palomaalbieri.com/jp
+- Servicos em japones: https://palomaalbieri.com/jp/servicos
+- Portfolio em japones: https://palomaalbieri.com/jp/portfolio
+
+## Servicos
+
+- Diagnostico Digital: leitura da presenca online para entender travas, prioridades e proximos passos.
+- Estrategia de Presenca Digital: organizacao de posicionamento, mensagem, conteudo e canais.
+- Gestao de Conteudo: planejamento e criacao de posts, reels, stories, legendas e direcao criativa.
+- Landing Page: pagina focada em explicar uma oferta e facilitar o contato.
+- Site Institucional: site completo para apresentar empresa, servicos, contato e portfolio.
+- Automacao e Organizacao Digital: formularios, fluxos, atendimento e organizacao de contatos.
+- Gestao de Trafego Pago: campanhas em Instagram, Facebook e Google.
+- Acompanhamento Estrategico: analise e melhorias mensais em conteudo, site, anuncios e resultados.
+
+## Temas associados
+
+Estrategia digital, marketing digital, presenca digital, conteudo para redes sociais, social media, landing page, site institucional, automacao digital, trafego pago, consultoria digital, Next.js, React, Vercel, Supabase, PostgreSQL.
+
+## Perfis
+
+- Instagram: https://instagram.com/paloma.albieri
+- Threads: https://www.threads.net/@paloma.albieri

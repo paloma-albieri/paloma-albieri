@@ -96,21 +96,35 @@
   .hero-section::before {
     content: "";
     position: absolute;
-    inset: 0 auto 0 0;
+    left: max(-11vw, -150px);
+    top: clamp(92px, 14vw, 170px);
     z-index: -1;
-    width: min(15vw, 190px);
-    border-right: 1px solid oklch(.13 .055 315 / .18);
-    background: var(--shock);
+    width: clamp(180px, 28vw, 380px);
+    height: clamp(180px, 28vw, 380px);
+    transform: rotate(-12deg);
+    border: 1px solid oklch(.13 .055 315 / .16);
+    background:
+      linear-gradient(135deg, oklch(.56 .22 350 / .22), transparent 58%),
+      var(--paper-rose);
+    clip-path: polygon(8% 0, 100% 13%, 88% 100%, 0 85%);
+    opacity: .82;
   }
 
   .hero-section::after {
     content: "";
     position: absolute;
-    inset: auto 0 0 auto;
+    right: max(-10vw, -140px);
+    bottom: clamp(20px, 7vw, 90px);
     z-index: -1;
-    width: min(38vw, 560px);
-    height: 30%;
-    background: var(--wine);
+    width: clamp(220px, 34vw, 520px);
+    height: clamp(150px, 18vw, 260px);
+    transform: rotate(5deg);
+    border: 1px solid oklch(.13 .055 315 / .18);
+    background:
+      radial-gradient(circle at 82% 12%, oklch(.86 .07 72 / .72), transparent 38%),
+      linear-gradient(120deg, var(--wine), var(--plum));
+    clip-path: polygon(0 13%, 92% 0, 100% 78%, 11% 100%);
+    opacity: .9;
   }
 
   .hero-editorial-rule {
@@ -491,10 +505,17 @@
   }
 
   .editorial-section::before {
-    inset: 0 auto 0 0;
-    width: clamp(12px, 4vw, 54px);
+    left: max(-10vw, -118px);
+    top: clamp(42px, 10vw, 120px);
+    width: clamp(120px, 18vw, 260px);
+    height: clamp(150px, 24vw, 340px);
+    transform: rotate(9deg);
+    border: 1px solid oklch(.13 .055 315 / .16);
     background:
-      linear-gradient(180deg, var(--shock), var(--wine));
+      linear-gradient(145deg, oklch(.56 .22 350 / .16), transparent 64%),
+      var(--paper-rose);
+    clip-path: polygon(14% 0, 100% 7%, 82% 100%, 0 88%);
+    opacity: .78;
   }
 
   .editorial-section::after {
@@ -519,8 +540,12 @@
   }
 
   .editorial-section-instagram::before {
-    width: clamp(8px, 2vw, 28px);
-    background: var(--plum);
+    width: clamp(110px, 15vw, 220px);
+    height: clamp(120px, 17vw, 250px);
+    background:
+      linear-gradient(145deg, oklch(.32 .105 310 / .74), oklch(.56 .22 350 / .12)),
+      var(--plum);
+    opacity: .2;
   }
 
   .editorial-kicker {
@@ -644,10 +669,18 @@
   .contact-collage::before {
     content: "";
     position: absolute;
-    inset: 0 auto 0 0;
+    left: max(-12vw, -150px);
+    top: clamp(70px, 11vw, 150px);
     z-index: 0;
-    width: min(24vw, 280px);
-    background: var(--wine);
+    width: clamp(190px, 24vw, 340px);
+    height: clamp(220px, 30vw, 420px);
+    transform: rotate(-10deg);
+    border: 1px solid oklch(.13 .055 315 / .14);
+    background:
+      linear-gradient(140deg, oklch(.25 .1 325 / .24), transparent 58%),
+      var(--paper-rose);
+    clip-path: polygon(0 8%, 91% 0, 100% 86%, 18% 100%);
+    opacity: .76;
   }
 
   .contact-collage::after {

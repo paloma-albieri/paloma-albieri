@@ -41,7 +41,7 @@ export function Header({ lang }: { lang: Locale }) {
     <header
       className={clsx(
         'fixed inset-x-0 top-0 z-50 bg-[var(--bg-topbar)] backdrop-blur transition-colors duration-300',
-        scrolled && 'border-b border-[oklch(.14_.01_270_/_0.18)]'
+        scrolled && 'border-b border-[oklch(.17_.02_42_/_0.18)]'
       )}
     >
       <div className="container-shell flex items-center justify-between gap-5 py-[18px]">

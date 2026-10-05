@@ -46,7 +46,7 @@ export function HeroVisual({ meta }: HeroVisualProps) {
         <Sparkles size={22} strokeWidth={1.7} />
         <span>clareza</span>
       </div>
-      <div className="cutout cutout-blue">
+      <div className="cutout cutout-structure">
         <Layers3 size={26} strokeWidth={1.6} />
         <span>estrutura</span>
       </div>

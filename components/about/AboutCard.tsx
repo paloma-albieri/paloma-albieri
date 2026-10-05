@@ -9,12 +9,12 @@ export function AboutCard() {
   const icons = [FileText, Workflow, Cpu];
 
   return (
-    <section className="magazine-about bg-paper-light py-12" id="sobre">
+    <section className="magazine-about editorial-section bg-paper-light py-12" id="sobre">
       <div className="container-shell">
         <ScrollReveal>
           <article className="interactive-card relative overflow-hidden border border-ink-dark bg-paper-rose px-6 py-12 text-ink-dark sm:px-12 lg:px-16 lg:py-16">
             <div className="paper-grain" aria-hidden="true" />
-            <p className="label-mono mb-8 text-ink-dark">{t('overline')}</p>
+            <p className="editorial-kicker label-mono mb-8 text-ink-dark">{t('overline')}</p>
             <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
               <div>
                 <h2 className="display-h2">{t('h2')}</h2>

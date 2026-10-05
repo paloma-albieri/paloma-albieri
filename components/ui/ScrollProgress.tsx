@@ -22,7 +22,7 @@ export function ScrollProgress() {
 
   return (
     <div
-      className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[oklch(.14_.01_270_/_0.12)]"
+      className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[oklch(.17_.02_42_/_0.12)]"
       aria-hidden="true"
     >
       <div className="h-full origin-left bg-shock" style={{ transform: `scaleX(${progress})` }} />

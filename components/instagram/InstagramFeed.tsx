@@ -29,11 +29,11 @@ export async function InstagramFeed() {
   const t = await getTranslations('instagram');
 
   return (
-    <section className="bg-paper-light" id="instagram">
+    <section className="editorial-section editorial-section-instagram bg-paper-light" id="instagram">
       <div className="container-shell section-pad">
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
           <ScrollReveal>
-            <p className="label-mono mb-8 text-ink-3">{t('overline')}</p>
+            <p className="editorial-kicker label-mono mb-8 text-ink-dark">{t('overline')}</p>
             <h2 className="display-h2 max-w-[10ch] text-ink-dark">{t('title')}</h2>
             <p className="body-lead mt-8 text-ink-dark">{t('lead')}</p>
             <div className="mt-10 flex flex-wrap gap-3">
@@ -48,13 +48,21 @@ export async function InstagramFeed() {
 
           <ScrollReveal delay="short">
             <div className="grid gap-4 sm:grid-cols-2">
-              {staticPosts.map((post) => (
+              {staticPosts.map((post, index) => (
                 <a
                   key={post.title}
                   href={post.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="interactive-card flex min-h-[220px] flex-col justify-between border border-ink-dark bg-paper-light p-6 text-ink-dark"
+                  className="collage-post interactive-card flex min-h-[220px] flex-col justify-between border border-ink-dark bg-paper-light p-6 text-ink-dark"
+                  style={{
+                    background:
+                      index === 1
+                        ? 'var(--paper-warm)'
+                        : index === 2
+                          ? 'var(--paper-rose)'
+                          : 'var(--paper-light)'
+                  }}
                 >
                   <span className="label-mono text-shock">POST</span>
                   <span className="mt-8 block font-display text-4xl font-light leading-none">{post.title}</span>

@@ -8,11 +8,11 @@ export function HomeTracks({ lang }: { lang: Locale }) {
   const items = Object.values(tracks[lang]);
 
   return (
-    <section className="bg-paper-light" id="trilhas">
+    <section className="editorial-section editorial-section-tracks bg-paper-light" id="trilhas">
       <div className="container-shell section-pad">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <ScrollReveal>
-            <p className="label-mono mb-8 text-ink-3">{lang === 'pt' ? 'DUAS TRILHAS' : '2つの導線'}</p>
+            <p className="editorial-kicker label-mono mb-8 text-ink-dark">{lang === 'pt' ? 'DUAS TRILHAS' : '2つの導線'}</p>
             <h2 className="display-h2 text-ink-dark">
               {lang === 'pt' ? 'Escolha pelo sintoma, nao pelo nome do servico.' : 'サービス名ではなく、今の課題から選びます。'}
             </h2>
@@ -28,10 +28,13 @@ export function HomeTracks({ lang }: { lang: Locale }) {
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
           {items.map((track, index) => (
             <ScrollReveal key={track.key} delay={index === 0 ? 'short' : 'medium'}>
-              <article className="magazine-card interactive-card flex h-full flex-col border border-ink-dark bg-paper-light p-6 text-ink-dark sm:p-8">
+              <article
+                className="magazine-card collage-panel interactive-card flex h-full flex-col border border-ink-dark bg-paper-light p-6 text-ink-dark sm:p-8"
+                data-issue={track.key === 'presenca' ? 'campo 01' : 'campo 02'}
+              >
                 <div
                   className="magazine-card-tape mb-8 flex h-11 w-fit items-center gap-2 border border-ink-dark px-3"
-                  style={{ background: track.key === 'presenca' ? 'var(--shock)' : 'var(--structure-blue)' }}
+                  style={{ background: track.key === 'presenca' ? 'var(--shock)' : 'var(--olive)', color: 'var(--paper-light)' }}
                 >
                   {track.key === 'presenca' ? (
                     <BadgeCheck size={18} strokeWidth={1.6} aria-hidden="true" />
@@ -45,7 +48,7 @@ export function HomeTracks({ lang }: { lang: Locale }) {
                   {track.homeTitle}
                 </h3>
                 <p className="mt-6 text-base leading-relaxed text-ink-dark">{track.symptom}</p>
-                <p className="mt-5 border-t border-[oklch(.14_.01_270_/_0.18)] pt-5 text-sm leading-relaxed text-ink-3">
+                <p className="mt-5 border-t border-[oklch(.17_.02_42_/_0.18)] pt-5 text-sm leading-relaxed text-ink-3">
                   {track.summary}
                 </p>
                 <div className="mt-8">

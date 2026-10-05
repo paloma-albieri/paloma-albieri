@@ -20,10 +20,10 @@ type ColorToken = {
 };
 
 const colorTokens: ColorToken[] = [
-  { name: 'Ink', value: 'oklch(.14 .01 270)', className: 'bg-ink-dark' },
-  { name: 'Paper', value: 'oklch(.985 .003 60)', className: 'bg-paper-light' },
-  { name: 'Rose', value: 'oklch(.93 .055 10)', className: 'bg-paper-rose' },
-  { name: 'Shock', value: 'oklch(.68 .24 8)', className: 'bg-shock' }
+  { name: 'Ink', value: 'oklch(.17 .02 42)', className: 'bg-ink-dark' },
+  { name: 'Paper', value: 'oklch(.975 .012 78)', className: 'bg-paper-light' },
+  { name: 'Warm', value: 'oklch(.91 .035 43)', className: 'bg-paper-rose' },
+  { name: 'Vermelho', value: 'oklch(.48 .16 29)', className: 'bg-shock' }
 ];
 
 export function generateMetadata({ params }: { params: { lang: string } }): Metadata {

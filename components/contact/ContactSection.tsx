@@ -15,9 +15,9 @@ export function ContactSection({ track = 'home' }: { track?: ContactTrack }) {
   const t = useTranslations('contact');
 
   return (
-    <section className="bg-paper-rose" id="contato">
+    <section className="contact-collage bg-paper-rose" id="contato">
       <div className="container-shell section-pad">
-        <p className="label-mono mb-8 text-ink-dark">{t('overline')}</p>
+        <p className="editorial-kicker label-mono mb-8 text-ink-dark">{t('overline')}</p>
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           <ScrollReveal>
             <h2 className="display-h2 text-ink-dark">{t('headline')}</h2>

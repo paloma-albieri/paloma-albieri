@@ -12,7 +12,7 @@ export function TrackPage({ lang, trackKey }: { lang: Locale; trackKey: TrackKey
     <main className="pt-20">
       <section
         className={isPresence ? 'bg-shock text-ink-dark' : 'text-ink'}
-        style={isPresence ? undefined : { background: 'var(--olive)' }}
+        style={isPresence ? undefined : { background: 'var(--plum)' }}
       >
         <div className="container-shell section-pad">
           <ScrollReveal>

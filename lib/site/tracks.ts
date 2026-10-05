@@ -32,20 +32,18 @@ export const tracks: Record<Locale, Record<TrackKey, TrackContent>> = {
       title: 'Presenca digital para quem chega e nao sabe o que fazer depois.',
       symptom: 'As pessoas chegam pelo Instagram, indicacao ou busca, mas o caminho ate o contato ainda esta confuso.',
       summary:
-        'Organizo mensagem, conteudo, canais e proximos passos para a marca aparecer com clareza e transformar atencao em conversa.',
+        'Organizo mensagem, experiencia web e proximos passos para a marca aparecer com clareza e transformar atencao em conversa qualificada.',
       services: [
-        'Diagnostico Digital',
-        'Estrategia de Presenca',
-        'Gestao de Conteudo',
-        'Reposicionamento de marca',
-        'Gestao de Trafego Pago',
-        'Acompanhamento Estrategico'
+        'Diagnostico Estrategico Digital',
+        'Sites & Experiencias Web',
+        'Direcao de conteudo e comunicacao',
+        'Direcao Digital'
       ],
       tools: [
         { title: 'Pensar a direcao', text: 'Leitura do negocio, publico, mensagem, concorrencia e caminho de confianca.' },
-        { title: 'Criar a presenca', text: 'Linha editorial, conteudo, identidade aplicada e paginas de conversao.' },
-        { title: 'Publicar e vender', text: 'Calendario, Instagram, WhatsApp, landing pages e chamadas claras para contato.' },
-        { title: 'Medir e melhorar', text: 'Leitura de dados, ajustes mensais, anuncios e melhoria continua.' }
+        { title: 'Criar a experiencia', text: 'Mensagem, hierarquia, paginas, formulario e chamadas claras para contato.' },
+        { title: 'Conectar canais', text: 'Instagram, WhatsApp, site, agenda e pontos de conversao trabalhando juntos.' },
+        { title: 'Medir e decidir', text: 'Leitura de dados essenciais, prioridades e proximos ciclos com criterio.' }
       ],
       proof:
         'A propria marca Paloma Albieri funciona como case vivo: conteudo, site, estrategia e formulario trabalham juntos para gerar conversa qualificada.',
@@ -58,12 +56,12 @@ export const tracks: Record<Locale, Record<TrackKey, TrackContent>> = {
       title: 'Estrutura digital para processo que nao pode depender de memoria.',
       symptom: 'Seu atendimento, cadastro, venda ou organizacao interna ainda depende de alguem lembrar o proximo passo.',
       summary:
-        'Construo bases digitais simples e evolutivas: paginas, sites, formularios, automacoes e sistemas internos por fases.',
-      services: ['Landing Page', 'Site Institucional', 'Automacao e Organizacao Digital', 'Sistema Interno'],
+        'Construo bases digitais simples e evolutivas: experiencias web, processos, automacoes, IA delimitada e sistemas por fases.',
+      services: ['Sites & Experiencias Web', 'Automacao, IA & Processos', 'Sistemas & Produtos Digitais', 'Direcao Digital'],
       tools: [
         { title: 'Construir a base', text: 'Next.js, React, TypeScript, Tailwind, Supabase, PostgreSQL e GitHub.' },
-        { title: 'Organizar processos', text: 'Formularios, bancos simples, fluxos de atendimento, automacoes e paineis.' },
-        { title: 'Abrir escopo por fases', text: 'Primeiro o que destrava, depois o que escala. Sem empilhar complexidade cedo demais.' },
+        { title: 'Organizar processos', text: 'Formularios, CRM, fluxos de atendimento, automacoes, IA delimitada e paineis.' },
+        { title: 'Abrir escopo por fases', text: 'Diagnostico ou discovery quando houver incerteza, depois implementacao com criterios claros.' },
         { title: 'Traduzir tecnologia', text: 'Explico o que cada parte faz para a pessoa decidir com clareza, nao por susto.' }
       ],
       proof:
@@ -80,12 +78,12 @@ export const tracks: Record<Locale, Record<TrackKey, TrackContent>> = {
       symptom: 'Instagram、紹介、検索から人は来ているのに、問い合わせまでの流れがまだ曖昧な状態です。',
       summary:
         'ブランドの伝え方、投稿、媒体、次の行動を整理し、見られるだけで終わらない導線を作ります。',
-      services: ['デジタル診断', '発信戦略', 'コンテンツ運用', 'ブランド再整理', '広告運用', '戦略サポート'],
+      services: ['デジタル戦略診断', 'Webサイト・Web体験', 'コンテンツとコミュニケーションの方向性', 'デジタルディレクション'],
       tools: [
         { title: '方向性を考える', text: '事業、顧客、メッセージ、競合、信頼までの流れを確認します。' },
-        { title: '見せ方を作る', text: '投稿設計、ビジュアル、ページ、問い合わせ導線を整えます。' },
-        { title: '公開して売る', text: 'Instagram、WhatsApp、ランディングページ、明確なCTAを組みます。' },
-        { title: '測って改善する', text: '数字を見ながら、内容、広告、導線を継続的に調整します。' }
+        { title: '体験を作る', text: 'メッセージ、ページ、フォーム、明確なCTAを整えます。' },
+        { title: '導線をつなげる', text: 'Instagram、WhatsApp、サイト、予約導線を一つの流れとして見ます。' },
+        { title: '測って判断する', text: '必要な数字を見て、優先順位と次のサイクルを決めます。' }
       ],
       proof:
         'Paloma Albieri自身のブランドが実例です。コンテンツ、サイト、戦略、フォームが一つの問い合わせ導線として動いています。',
@@ -99,11 +97,11 @@ export const tracks: Record<Locale, Record<TrackKey, TrackContent>> = {
       symptom: '問い合わせ、予約、販売、社内整理が、まだ誰かの記憶や手作業に頼っている状態です。',
       summary:
         'ページ、サイト、フォーム、自動化、社内システムを段階的に作り、事業の流れを整理します。',
-      services: ['ランディングページ', '企業サイト', '自動化とデジタル整理', '社内システム'],
+      services: ['Webサイト・Web体験', '自動化・AI・業務プロセス', 'システム・デジタルプロダクト', 'デジタルディレクション'],
       tools: [
         { title: '土台を作る', text: 'Next.js、React、TypeScript、Tailwind、Supabase、PostgreSQL、GitHub。' },
-        { title: '流れを整理する', text: 'フォーム、簡単なデータベース、問い合わせ管理、基本的な自動化。' },
-        { title: '段階で進める', text: 'まず止まっている所を直し、その後で拡張します。' },
+        { title: '流れを整理する', text: 'フォーム、CRM、問い合わせ管理、自動化、限定的なAI活用。' },
+        { title: '段階で進める', text: '不確実性が高い時は診断やDiscoveryから始め、基準を決めて実装します。' },
         { title: '技術を翻訳する', text: '何を作るのか、なぜ必要なのかを分かる言葉で説明します。' }
       ],
       proof:
@@ -118,11 +116,11 @@ export const diagnostics: Record<Locale, DiagnosticContent> = {
     eyebrow: 'Diagnostico Estrategico Digital',
     title: 'Uma entrega paga para entender prioridade, caminho e escopo antes de executar.',
     lead:
-      'Depois da triagem inicial, o diagnostico aprofunda o cenario e organiza um dossie com leitura do problema, frente prioritaria, riscos, proximos passos e recomendacao de execucao.',
+      'Depois da triagem inicial, o diagnostico aprofunda o cenario e organiza um dossie com problema prioritario, evidencias, riscos, plano de acao e recomendacao de proximo servico.',
     details: [
       { title: 'Entrada', text: 'A triagem publica vem antes. Eu analiso o contexto e so convido para conversa quando houver aderencia.' },
       { title: 'Entrega', text: 'Dossie em Notion e PDF, apresentacao on-line e uma rodada de esclarecimentos por periodo definido.' },
-      { title: 'Uso', text: 'Serve para decidir se o proximo passo e presenca, processos, sistema, acompanhamento ou pausa estrategica.' }
+      { title: 'Uso', text: 'Serve para decidir se o proximo passo e web, processos, sistema, direcao digital, indicacao externa ou pausa estrategica.' }
     ],
     cta: 'Solicitar triagem'
   },

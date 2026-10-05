@@ -28,14 +28,14 @@ function ServiceCard({ service, compact }: { service: Service; compact: boolean 
       <p className="mt-5 text-base leading-relaxed">{service.promise}</p>
       {!compact && (
         <>
-          <p className="mt-5 border-t border-[oklch(.17_.02_42_/_0.18)] pt-5 text-sm leading-relaxed">
+          <p className="mt-5 border-t border-[oklch(.13_.055_315_/_0.18)] pt-5 text-sm leading-relaxed">
             {service.description}
           </p>
           <div className="mt-6">
             <p className="label-mono mb-3 text-ink-3">{t('includes_label')}</p>
             <ul className="flex flex-col gap-2 text-sm leading-relaxed">
               {service.items.map((item) => (
-                <li key={item} className="border-t border-[oklch(.17_.02_42_/_0.14)] pt-2">
+                <li key={item} className="border-t border-[oklch(.13_.055_315_/_0.14)] pt-2">
                   {item}
                 </li>
               ))}

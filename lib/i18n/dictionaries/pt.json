@@ -84,99 +84,75 @@
   },
   "packages": {
     "overline": "SERVIÇOS",
-    "title": "Você não precisa comprar uma fórmula pronta. Precisa saber qual parte do digital resolver primeiro.",
-    "lead": "Eu organizo o trabalho em três momentos simples: pensar a direção, criar o que precisa ir para o ar e melhorar o que já está rodando. A proposta nasce do seu contexto, não de uma lista fechada.",
+    "title": "Você não precisa comprar uma fórmula pronta. Precisa resolver o problema digital certo.",
+    "lead": "Eu organizo o trabalho a partir do problema dominante: clareza, presença web, processos, produto digital ou direção contínua. A proposta nasce do seu contexto, não de uma lista fechada.",
     "diagnostic": "Ver como posso ajudar",
-    "cta": "Quero entender meu próximo passo",
-    "page_title": "Serviços claros, proposta sob medida.",
-    "page_lead": "Alguns negócios precisam de clareza antes de postar. Outros precisam de site, conteúdo, anúncio ou organização do atendimento. Por isso, eu separo o trabalho por intenção: planejar, colocar no ar e melhorar.",
+    "cta": "Quero entender qual serviço faz sentido",
+    "page_title": "Serviços digitais com escopo, critério e direção.",
+    "page_lead": "Alguns problemas pedem diagnóstico antes de executar. Outros pedem uma experiência web, automação, produto digital ou direção mensal. O serviço certo depende do gargalo, do risco e do próximo avanço possível.",
     "includes_label": "O que pode entrar",
     "example_label": "Exemplo:",
     "fit_label": "Ideal para:",
-    "closing": "Na conversa inicial, eu identifico se o seu momento pede estratégia, execução ou crescimento. Depois disso, monto um escopo possível, claro e sem empurrar serviço que não resolve o problema agora.",
+    "closing": "Na leitura inicial, eu identifico se o seu momento pede diagnóstico, construção, automação, produto digital, direção contínua ou nenhum serviço agora. O escopo vem depois do problema, não antes.",
     "layers": [
       {
-        "label": "01 · PENSAR",
-        "title": "Planejar",
-        "summary": "Para quando você sente que está fazendo coisa demais, mas sem direção clara. Aqui eu leio o cenário, organizo prioridades e defino o caminho antes da execução.",
+        "label": "01 · DIAGNOSTICAR",
+        "title": "Estratégia Digital & Diagnóstico",
+        "summary": "Para quando falta clareza, prioridade ou direção. Antes de construir qualquer coisa, eu investigo o que está travando o negócio e organizo uma decisão.",
         "services": [
           {
-            "name": "Diagnóstico Digital",
-            "promise": "Descobrir o que está travando sua presença online.",
-            "description": "Analiso Instagram, site, comunicação, conteúdo, perfil do cliente e o caminho que a pessoa faz até falar com você.",
-            "items": ["Leitura dos problemas", "Prioridades de ajuste", "Próximos passos", "Ideias práticas de melhoria"],
-            "example": "Seu Instagram está bonito, mas ninguém entende o que você vende.",
-            "fit": "quem posta e não vende, está perdido ou não sabe por onde começar."
-          },
-          {
-            "name": "Estratégia de Presença Digital",
-            "promise": "Planejar como sua marca deve aparecer, comunicar e vender melhor.",
-            "description": "Organizo posicionamento, mensagem, tom da marca, tipo de conteúdo, canais e caminho de confiança até o contato.",
-            "items": ["Direção da marca", "Estrutura de comunicação", "Ideias de conteúdo", "Organização dos canais digitais"],
-            "example": "O que falar, como mostrar e como fazer o cliente confiar.",
-            "fit": "quem quer parecer mais profissional, crescer online ou parar de postar sem direção."
+            "name": "Diagnóstico Estratégico Digital",
+            "promise": "Transformar sintomas soltos em problema prioritário, evidências e plano de ação.",
+            "description": "Leio o contexto do negócio, oferta, público, caminho, canais, ferramentas e processos relacionados ao gargalo principal.",
+            "items": ["Dossiê em Notion e PDF", "Reunião de apresentação", "Prioridades e recomendação", "Plano de ação e critérios de sucesso"],
+            "example": "Antes de investir em site, automação ou sistema, entender qual problema precisa ser resolvido primeiro.",
+            "fit": "quem sabe que algo não funciona, mas ainda não tem clareza de causa, prioridade ou escopo."
           }
         ]
       },
       {
-        "label": "02 · CRIAR",
-        "title": "Colocar no ar",
-        "summary": "Para quando a estratégia precisa virar algo visível: conteúdo, página, site ou processo organizado. Aqui entram as entregas que o cliente vê e usa.",
+        "label": "02 · WEB",
+        "title": "Sites & Experiências Web",
+        "summary": "Para quando a presença própria precisa explicar melhor, gerar confiança e conduzir uma ação importante para o negócio.",
         "services": [
           {
-            "name": "Gestão de Conteúdo",
-            "promise": "Criar conteúdo para sua marca aparecer melhor.",
-            "description": "Cuido de posts, reels, stories, legendas e planejamento mensal com intenção comercial e linha visual consistente.",
-            "items": ["Calendário de conteúdo", "Posts prontos", "Ideias de vídeos", "Direção criativa"],
-            "example": "Seu Instagram para de parecer abandonado.",
-            "fit": "quem não tem tempo, não sabe o que postar ou quer conteúdo mais profissional."
-          },
-          {
-            "name": "Landing Page",
-            "promise": "Uma página simples para transformar visitas em contato.",
-            "description": "Crio uma página para apresentar seu serviço, organizar as informações importantes e deixar o contato mais fácil pelo celular.",
-            "items": ["Página personalizada", "Botão de WhatsApp", "Formulário", "Versão celular"],
-            "example": "Um lugar profissional para o cliente entender e entrar em contato.",
-            "fit": "quem vende pelo Instagram, mas precisa de um ponto mais profissional para explicar a oferta."
-          },
-          {
-            "name": "Site Institucional",
-            "promise": "Um site completo para sua empresa.",
-            "description": "Desenvolvo uma estrutura com páginas, serviços, contato, empresa, portfólio e base preparada para crescer.",
-            "items": ["Site completo", "Identidade visual aplicada", "Versão celular", "Organização profissional"],
-            "example": "O endereço oficial da sua empresa na internet.",
-            "fit": "empresas que precisam transmitir confiança além das redes sociais."
-          },
-          {
-            "name": "Automação e Organização Digital",
-            "promise": "Fazer partes do atendimento funcionarem com mais ordem.",
-            "description": "Organizo formulários, respostas automáticas, captação de clientes, contatos e fluxos simples para reduzir trabalho manual.",
-            "items": ["Formulários", "Automações básicas", "Organização de atendimento", "Fluxo digital mais eficiente"],
-            "example": "O cliente preenche uma informação e o sistema já organiza tudo automaticamente.",
-            "fit": "quem perde mensagens, se enrola no atendimento ou faz tudo manualmente."
+            "name": "Experiência Web",
+            "promise": "Criar uma presença web clara, confiável e funcional.",
+            "description": "Organizo objetivo, arquitetura da informação, mensagem, interface, desenvolvimento, publicação e conversões.",
+            "items": ["Landing page ou site", "Arquitetura e navegação", "Formulários e integrações", "SEO técnico essencial e analytics"],
+            "example": "Uma página de serviço, campanha, portfólio ou site multilíngue que conduz o cliente ao próximo passo.",
+            "fit": "profissionais e empresas que dependem só de Instagram, indicação ou um site que já não representa a oferta."
           }
         ]
       },
       {
-        "label": "03 · CRESCER",
-        "title": "Melhorar",
-        "summary": "Para quando a base já existe e precisa trazer mais resultado. Aqui eu acompanho, leio os dados, ajusto a rota e melhoro o que está no ar.",
+        "label": "03 · PROCESSOS",
+        "title": "Automação, IA & Processos",
+        "summary": "Para quando retrabalho, demora, erros ou informação perdida atrapalham atendimento, operação e acompanhamento.",
         "services": [
           {
-            "name": "Gestão de Tráfego Pago",
-            "promise": "Anúncios para trazer mais pessoas certas.",
-            "description": "Crio e acompanho campanhas no Instagram, Facebook ou Google, com segmentação, análise e ajustes mensais.",
-            "items": ["Campanhas", "Segmentação", "Análise de resultados", "Melhorias mensais"],
-            "example": "Fazer mais pessoas certas encontrarem sua empresa.",
-            "fit": "quem já tem uma oferta minimamente clara e quer aumentar alcance, contatos ou pedidos."
+            "name": "Fluxos e automações",
+            "promise": "Transformar processo manual ou fragmentado em fluxo mais simples e rastreável.",
+            "description": "Mapeio entradas, decisões, responsáveis, exceções e saídas para desenhar um fluxo viável com ferramentas, dados e supervisão.",
+            "items": ["Mapeamento do processo", "Formulários e intake", "CRM, pipelines e alertas", "Automações, dashboards ou IA delimitada"],
+            "example": "O cliente envia uma informação, o fluxo registra status, responsável, follow-up e próximos passos.",
+            "fit": "negócios que perdem mensagens, repetem tarefas, duplicam informações ou querem usar IA com objetivo claro."
           },
           {
-            "name": "Acompanhamento Estratégico",
-            "promise": "Analisar o que está funcionando e melhorar.",
-            "description": "Acompanho conteúdo, site, anúncios, comportamento dos clientes e resultados para decidir o próximo ajuste.",
-            "items": ["Reuniões", "Análise prática", "Melhorias", "Ajustes mensais"],
-            "example": "Descobrir o que está funcionando e o que precisa mudar.",
-            "fit": "quem quer continuidade sem tratar conteúdo, site e anúncio como coisas soltas."
+            "name": "Sistemas & Produtos Digitais",
+            "promise": "Construir produto digital quando ferramentas prontas já não sustentam o processo.",
+            "description": "Conduzo discovery, escopo de MVP, regras, dados, permissões, interface, implementação por fases e evolução.",
+            "items": ["Product Discovery", "MVP por fases", "Autenticação, papéis e banco de dados", "Deploy, testes e documentação"],
+            "example": "Portal, painel, ferramenta interna ou sistema com usuários, regras e dados próprios.",
+            "fit": "empresas cujo processo precisa de login, permissões, workflows, documentos ou experiência própria."
+          },
+          {
+            "name": "Direção Digital",
+            "promise": "Dar continuidade, critério e coordenação às decisões digitais do negócio.",
+            "description": "Acompanho prioridades, resultados, backlog, site, caminho do cliente, ferramentas, parceiros e próximos ciclos com capacidade mensal definida.",
+            "items": ["Reunião estratégica periódica", "Priorização de backlog", "Direção de conteúdo e comunicação", "Documentação de decisões"],
+            "example": "Manter presença, experiência, processos e tecnologia evoluindo sem contratar uma equipe completa.",
+            "fit": "negócios com base digital existente, muitas demandas e pouca priorização contínua."
           }
         ]
       }
@@ -222,7 +198,7 @@
     "project_label": "PROJETO",
     "project_cta": "Abrir projeto",
     "paloma_title": "Paloma Albieri",
-    "paloma_copy": "O case da própria marca: estratégia, social media, design e tecnologia trabalhando como um sistema de autoridade e conversão.",
+    "paloma_copy": "O case da própria marca: estratégia, comunicação, design e tecnologia trabalhando como um sistema de autoridade e conversão.",
     "miaucafe_title": "Miaucafé",
     "miaucafe_copy": "Projeto arquivado para consulta privada. A página não aparece no menu público nem no sitemap.",
     "connect_title": "Construtora Connect",
@@ -230,7 +206,7 @@
     "paloma_case": {
       "overline": "CASE · MARCA PRÓPRIA",
       "title": "Paloma Albieri",
-      "lead": "Este site foi pensado como um produto de posicionamento: uma landing page que mostra, na própria experiência, como social media, estratégia e tecnologia podem operar juntos.",
+      "lead": "Este site foi pensado como um produto de posicionamento: uma landing page que mostra, na própria experiência, como comunicação, estratégia e tecnologia podem operar juntas.",
       "proof": ["Social media + tech", "Pesquisa de campo", "Estratégia de conversão"],
       "thesis_label": "TESE DO PROJETO",
       "thesis": "Somos o nosso maior cliente: se a promessa é conectar conteúdo, site e venda, a própria marca precisa provar esse método antes de vender para outras empresas.",
@@ -306,7 +282,7 @@
       "closing_support": "O case prova a promessa no próprio produto: presença digital com tese, direção editorial, sistema visual, stack técnica e conversão pensados juntos.",
       "result_stack_label": "O QUE FICA CLARO",
       "result_highlights": [
-        "A marca tem uma tese: social media e tecnologia não competem, se completam.",
+        "A marca tem uma tese: comunicação e tecnologia não competem, se completam.",
         "O método aparece na navegação, no formulário, no portfólio e na forma de apresentar a stack.",
         "A página não depende só de estética: ela organiza confiança, contexto e próximo passo."
       ],

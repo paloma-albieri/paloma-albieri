@@ -5,26 +5,26 @@ const baseUrl = 'https://palomaalbieri.com';
 const services = [
   'Triagem digital',
   'Diagnostico Estrategico Digital',
-  'Presenca, mensagem e conversao',
-  'Processos, automacao e IA',
-  'Sistema ou produto digital',
-  'Direcao e evolucao'
+  'Sites e Experiencias Web',
+  'Automacao, IA e Processos',
+  'Sistemas e Produtos Digitais',
+  'Direcao Digital'
 ];
 
 const localized = {
   pt: {
     language: 'pt-BR',
     description:
-      'Estrategista digital brasileira no Japao. Organiza presenca digital e estrutura digital para marcas e empresas.',
+      'Estrategista digital brasileira no Japao. Diagnostica, estrutura e constroi solucoes digitais para melhorar presenca, processos e operacao.',
     serviceDescription:
-      'Triagem publica e diagnostico estrategico para identificar prioridade antes de executar presenca digital, processos, sites, automacoes ou sistemas.'
+      'Diagnostico estrategico, sites e experiencias web, automacao, IA, sistemas, produtos digitais e direcao digital para resolver problemas reais de negocio.'
   },
   jp: {
     language: 'ja-JP',
     description:
-      '日本在住のブラジル人デジタルストラテジスト。戦略、コンテンツ、Webサイト、自動化、広告運用を整理します。',
+      '日本在住のブラジル人デジタルストラテジスト。診断、Web体験、自動化、AI、システム、デジタルディレクションを整理します。',
     serviceDescription:
-      '初回チェックとデジタル戦略診断で、発信、業務、サイト、自動化、システムの優先順位を整理します。'
+      'デジタル戦略診断、Web体験、自動化、AI、システム、デジタルディレクションで事業課題を整理します。'
   }
 } as const;
 
@@ -64,12 +64,12 @@ export function buildJsonLd(lang: Locale) {
           'estrategia digital',
           'presenca digital',
           'marketing digital',
-          'conteudo para redes sociais',
           'landing pages',
           'sites institucionais',
           'sistemas internos',
           'automacao digital',
-          'trafego pago',
+          'inteligencia artificial aplicada a processos',
+          'direcao digital',
           'Next.js',
           'React',
           'Supabase',
@@ -91,10 +91,10 @@ export function buildJsonLd(lang: Locale) {
           'Marketing digital',
           'Diagnostico digital',
           'Triagem digital',
-          'Presenca digital',
-          'Desenvolvimento de sites',
-          'Sistemas internos',
-          'Automacao digital'
+          'Sites e experiencias web',
+          'Automacao e IA',
+          'Sistemas e produtos digitais',
+          'Direcao digital'
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',

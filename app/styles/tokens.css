@@ -1,26 +1,26 @@
 :root {
-  --paper: oklch(.16 .018 42);
-  --paper-2: oklch(.22 .024 38);
-  --paper-light: oklch(.975 .012 78);
-  --paper-rose: oklch(.91 .035 43);
-  --paper-warm: oklch(.95 .025 68);
+  --paper: oklch(.13 .055 315);
+  --paper-2: oklch(.19 .065 315);
+  --paper-light: oklch(.976 .014 82);
+  --paper-rose: oklch(.935 .038 12);
+  --paper-warm: oklch(.955 .045 68);
 
-  --ink: oklch(.97 .01 78);
-  --ink-2: oklch(.83 .012 72);
-  --ink-3: oklch(.48 .025 55);
-  --ink-dark: oklch(.17 .02 42);
+  --ink: oklch(.982 .012 82);
+  --ink-2: oklch(.83 .018 65);
+  --ink-3: oklch(.43 .035 320);
+  --ink-dark: oklch(.13 .055 315);
 
-  --line: oklch(.31 .024 42);
-  --shock: oklch(.48 .16 29);
-  --shock-glow: oklch(.58 .18 31);
-  --wine: oklch(.28 .1 24);
-  --burnt-red: oklch(.4 .14 32);
-  --olive: oklch(.43 .07 107);
-  --clay: oklch(.55 .09 54);
-  --straw: oklch(.82 .08 82);
-  --structure-accent: var(--olive);
-  --pastel: oklch(.34 .06 34);
-  --pastel-2: oklch(.27 .05 32);
+  --line: oklch(.29 .045 315);
+  --shock: oklch(.56 .22 350);
+  --shock-glow: oklch(.66 .24 355);
+  --wine: oklch(.25 .1 325);
+  --burnt-red: oklch(.4 .15 345);
+  --plum: oklch(.32 .105 310);
+  --champagne: oklch(.86 .07 72);
+  --straw: oklch(.91 .05 65);
+  --structure-accent: var(--plum);
+  --pastel: oklch(.82 .06 8);
+  --pastel-2: oklch(.5 .08 330);
 
   --font-display: "Fraunces", "Instrument Serif", Georgia, serif;
   --font-body: "Inter Tight", system-ui, -apple-system, sans-serif;
@@ -85,7 +85,7 @@
   --bg-primary: var(--paper-light);
   --bg-inverse: var(--paper);
   --bg-card-about: var(--paper-rose);
-  --bg-topbar: oklch(.975 .012 78 / 0.78);
+  --bg-topbar: oklch(.976 .014 82 / 0.84);
 
   --text-primary: var(--ink-dark);
   --text-secondary: var(--ink-3);

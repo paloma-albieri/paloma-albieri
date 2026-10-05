@@ -34,7 +34,7 @@ export function HomeTracks({ lang }: { lang: Locale }) {
               >
                 <div
                   className="magazine-card-tape mb-8 flex h-11 w-fit items-center gap-2 border border-ink-dark px-3"
-                  style={{ background: track.key === 'presenca' ? 'var(--shock)' : 'var(--olive)', color: 'var(--paper-light)' }}
+                  style={{ background: track.key === 'presenca' ? 'var(--shock)' : 'var(--plum)', color: 'var(--paper-light)' }}
                 >
                   {track.key === 'presenca' ? (
                     <BadgeCheck size={18} strokeWidth={1.6} aria-hidden="true" />
@@ -48,7 +48,7 @@ export function HomeTracks({ lang }: { lang: Locale }) {
                   {track.homeTitle}
                 </h3>
                 <p className="mt-6 text-base leading-relaxed text-ink-dark">{track.symptom}</p>
-                <p className="mt-5 border-t border-[oklch(.17_.02_42_/_0.18)] pt-5 text-sm leading-relaxed text-ink-3">
+                <p className="mt-5 border-t border-[oklch(.13_.055_315_/_0.18)] pt-5 text-sm leading-relaxed text-ink-3">
                   {track.summary}
                 </p>
                 <div className="mt-8">

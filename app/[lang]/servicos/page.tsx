@@ -13,9 +13,9 @@ export default function ServicesPage({ params }: { params: { lang: Locale } }) {
   const copy = {
     pt: {
       eyebrow: 'Servicos',
-      title: 'Cinco frentes para organizar o problema antes de vender uma solucao.',
+      title: 'Cinco serviços para resolver o problema certo, na ordem certa.',
       lead:
-        'A pessoa nao precisa escolher um pacote. A triagem identifica qual frente pede atencao primeiro e evita comprar post, site ou automacao sem base.',
+        'A pessoa nao precisa escolher um pacote. A triagem identifica se o proximo passo e diagnostico, web, automacao, sistema ou direcao digital.',
       diagnostic: 'Solicitar triagem',
       fronts: [
         {
@@ -23,28 +23,28 @@ export default function ServicesPage({ params }: { params: { lang: Locale } }) {
           text: 'Entrada paga e adaptavel para mapear gargalo, prioridade, risco e escopo antes da execucao.'
         },
         {
-          title: 'Presenca, mensagem e conversao',
-          text: 'Clareza de oferta, posicionamento, conteudo, canais e caminho ate o contato.'
+          title: 'Sites & Experiencias Web',
+          text: 'Presenca web clara, confiavel e funcional, conectada ao caminho do cliente e a uma acao relevante.'
         },
         {
-          title: 'Processos, automacao e IA',
-          text: 'Fluxos manuais, atendimento, cadastro, organizacao interna, formularios e automacoes simples.'
+          title: 'Automacao, IA & Processos',
+          text: 'Fluxos mais simples, rastreaveis e eficientes para reduzir tempo, erros, retrabalho e perda de informacao.'
         },
         {
-          title: 'Sistema ou produto digital',
-          text: 'Sites, landing pages, portais, ferramentas internas e produtos digitais por fases.'
+          title: 'Sistemas & Produtos Digitais',
+          text: 'Produtos digitais para processos que exigem dados, usuarios, permissoes, regras e experiencia propria.'
         },
         {
-          title: 'Direcao e evolucao',
-          text: 'Acompanhamento estrategico, priorizacao, leitura de dados e melhoria continua.'
+          title: 'Direcao Digital',
+          text: 'Coordenacao continua para priorizar e evoluir presenca, experiencia, processos e tecnologia com criterio.'
         }
       ]
     },
     jp: {
       eyebrow: 'サービス',
-      title: '売る前に課題を整理する、5つの領域。',
+      title: '正しい課題を、正しい順番で解決する5つのサービス。',
       lead:
-        '最初からサービスを選ぶ必要はありません。初回チェックで、投稿、サイト、自動化、仕組みのどこから整えるべきかを見ます。',
+        '最初からサービスを選ぶ必要はありません。初回チェックで、診断、Web、業務整理、システム、継続的な方向性のどれが必要かを見ます。',
       diagnostic: '初回チェックを送る',
       fronts: [
         {
@@ -52,20 +52,20 @@ export default function ServicesPage({ params }: { params: { lang: Locale } }) {
           text: '制作前に課題、優先度、リスク、必要な範囲を整理する有料診断です。'
         },
         {
-          title: '発信、メッセージ、問い合わせ',
-          text: '提供内容、見せ方、投稿、媒体、問い合わせまでの流れを整えます。'
+          title: 'Webサイト・Web体験',
+          text: '顧客の流れと事業目的につながる、分かりやすく信頼できるWeb体験を作ります。'
         },
         {
-          title: '業務、 自動化、AI',
-          text: '手作業、問い合わせ、登録、社内整理、フォーム、簡単な自動化を見直します。'
+          title: '自動化・AI・業務プロセス',
+          text: '手作業、ミス、情報の抜け漏れを減らすために、業務の流れを整理し自動化します。'
         },
         {
-          title: 'システム、デジタル商品',
-          text: 'サイト、ランディングページ、ポータル、社内ツール、デジタル商品を段階的に作ります。'
+          title: 'システム・デジタルプロダクト',
+          text: 'データ、ユーザー、権限、ルールが必要な業務を、段階的なプロダクトとして設計します。'
         },
         {
-          title: '方向性と改善',
-          text: '戦略サポート、優先順位、データ確認、継続的な改善を行います。'
+          title: 'デジタルディレクション',
+          text: '発信、体験、業務、技術をつなげながら、毎月の優先順位と改善を整理します。'
         }
       ]
     }

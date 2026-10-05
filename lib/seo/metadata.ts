@@ -5,13 +5,13 @@ const baseSeo = {
   pt: {
     title: 'Paloma Albieri | Presença digital integrada',
     description:
-      'Estrategista digital brasileira no Japão. Estratégia, conteúdo, sites, automação e tráfego para marcas e empresas.',
+      'Estrategista digital brasileira no Japão. Diagnóstico, sites, automação, IA, sistemas e direção digital para marcas e empresas.',
     ogLocale: 'pt_BR'
   },
   jp: {
     title: 'パロマ・アルビエリ | SNSとサイトを一つの流れに',
     description:
-      '日本在住のブラジル人デジタルストラテジスト。ブランドや企業向けにSNS運用、サイト制作、問い合わせ導線、広告運用を整理します。',
+      '日本在住のブラジル人デジタルストラテジスト。診断、Web制作、自動化、AI、システム、デジタルディレクションを整理します。',
     ogLocale: 'ja_JP'
   }
 } as const;
@@ -22,19 +22,19 @@ const pageSeo = {
     servicos: {
       title: 'Serviços digitais | Presença e estrutura | Paloma Albieri',
       description:
-        'Escolha entre presença digital e estrutura digital: estratégia, conteúdo, sites, automação, sistemas simples, tráfego e acompanhamento.',
+        'Diagnóstico estratégico, sites e experiências web, automação, IA, sistemas, produtos digitais e direção digital para resolver problemas reais de negócio.',
       ogLocale: baseSeo.pt.ogLocale
     },
     presenca: {
       title: 'Presença digital | Estratégia, conteúdo e conversão | Paloma Albieri',
       description:
-        'Presença digital para marcas e empresas que precisam organizar mensagem, conteúdo, Instagram, tráfego e caminho até o contato.',
+        'Presença digital para marcas e empresas que precisam organizar mensagem, experiência web, canais e caminho até o contato.',
       ogLocale: baseSeo.pt.ogLocale
     },
     estrutura: {
       title: 'Estrutura digital | Sites, automação e sistemas | Paloma Albieri',
       description:
-        'Estrutura digital para processos que precisam de site, landing page, formulário, automação, organização digital ou sistema interno.',
+        'Estrutura digital para processos que precisam de experiência web, formulários, automação, IA, organização digital ou sistema interno.',
       ogLocale: baseSeo.pt.ogLocale
     },
     diagnostico: {
@@ -61,7 +61,7 @@ const pageSeo = {
     servicos: {
       title: 'デジタルサービス | 戦略・コンテンツ・サイト・広告 | パロマ・アルビエリ',
       description:
-        '発信の導線と仕組みの設計。戦略、コンテンツ、サイト、フォーム、自動化、広告運用を整理します。',
+        'デジタル戦略診断、Web体験、自動化、AI、システム、デジタルディレクションを整理します。',
       ogLocale: baseSeo.jp.ogLocale
     },
     presenca: {

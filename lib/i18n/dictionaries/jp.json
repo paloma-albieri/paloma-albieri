@@ -1,24 +1,26 @@
 {
   "marker": {
     "top_left": "パロマ・アルビエリ · BRASIL ⇄ JAPAN",
-    "top_right_availability": "対応可能 · 2026年Q3",
+    "top_right_availability": "初回チェック · 2営業日以内に返信",
     "bottom": "Take 01 · 04:23:26 · 詳細はこちら"
   },
   "nav": {
-    "pacotes": "サービス",
-    "stacks": "技術",
-    "sobre": "プロフィール",
+    "presenca": "発信",
+    "estrutura": "仕組み",
+    "diagnostico": "診断",
+    "triagem": "初回確認",
+    "portfolio": "実績",
     "contato": "お問い合わせ"
   },
   "hero": {
     "top_marker": "パロマ・アルビエリ · BRASIL ⇄ JAPAN",
-    "headline": "SNSとサイトを、売上につながる一つの流れに。",
-    "subheadline": "SNS運用、戦略、サイト制作を一つの流れで考えます。日本在住のブラジル人として、ブランドや企業の発信から問い合わせまでを整理します。",
+    "headline": "デジタルが、まだ別々に動いている状態へ。",
+    "subheadline": "発信、サイト、問い合わせ、仕組みを一つの流れとして整理します。見に来た人にも、運用する人にも、次の行動が分かる状態を作ります。",
     "meta_base": "拠点 · 日本",
-    "meta_foco": "事業 · SNS運用 + 開発",
+    "meta_foco": "対応 · 対面 / オンライン",
     "meta_idiomas": "言語 · 日 / ポル",
-    "cta_primary": "WhatsAppで15分間の相談",
-    "cta_secondary": "サービスを見る"
+    "cta_primary": "初回チェックを送る",
+    "cta_secondary": "有料診断を見る"
   },
   "about": {
     "overline": "// プロフィール",
@@ -182,7 +184,7 @@
     "channels_instagram": "@paloma.albieri",
     "channels_calendar": "15分間のミーティング予約",
     "form_marker": "初回チェック",
-    "form_eta": "約2分 · 状況を見て返信",
+    "form_eta": "約4分 · 内容を確認",
     "form_prompt": "今のオンライン発信で、もっと明確に、信頼される形に整えたい部分はどこですか。",
     "form_name": "お名前",
     "form_company": "ブランド名または会社名",
@@ -195,13 +197,13 @@
     "form_phone": "電話番号またはWhatsApp",
     "form_social": "Instagram、LinkedInなど",
     "form_message": "今の状況を教えてください",
-    "form_reassurance": "どのサービスが必要か決まっていなくても大丈夫です。今の課題を読んで、次に整えるべき点を考えます。",
-    "submit": "今の状況を見てもらう",
+    "form_reassurance": "必要なサービス名が分からなくても大丈夫です。パスワードや機密情報は入力しないでください。",
+    "submit": "初回チェックを送る",
     "submit_sending": "送信中",
     "success_marker": "内容を受け取りました",
     "success_title": "まず状況を読んでから、次の一歩を考えます。",
     "success_message": "受け取りました。内容を確認します。",
-    "success_next": "止まっている可能性がある点、合いそうな進め方、無駄なく始める順番を整理して返信します。",
+    "success_next": "2営業日以内に内容を確認します。合いそうな場合は、15分の無料相談をご案内します。",
     "success_again": "もう一度送る",
     "error_marker": "送信できませんでした",
     "error_message": "現在送信できません。1分後に再度お試しいただくか、contato@palomaalbieri.comまで直接お送りください。"

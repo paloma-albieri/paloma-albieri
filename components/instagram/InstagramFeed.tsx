@@ -2,7 +2,28 @@ import { getTranslations } from 'next-intl/server';
 import { CTAPill } from '@/components/ui/CTAPill';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
-const TAGGBOX_WIDGET_URL = 'https://widget.taggbox.com/325482?website=1';
+const staticPosts = [
+  {
+    title: 'Antes do post',
+    text: 'Presenca digital comeca no caminho: o que a pessoa entende, sente e faz depois de chegar.',
+    href: 'https://instagram.com/paloma.albieri'
+  },
+  {
+    title: 'Site nao e enfeite',
+    text: 'Um site bom organiza confianca, explica a oferta e tira o contato do improviso.',
+    href: 'https://instagram.com/paloma.albieri'
+  },
+  {
+    title: 'Processo tambem vende',
+    text: 'Quando atendimento e informacao ficam claros, a marca parece mais segura antes da conversa.',
+    href: 'https://instagram.com/paloma.albieri'
+  },
+  {
+    title: 'Brasil e Japao',
+    text: 'Duas linguas, dois contextos e uma necessidade comum: clareza para decidir o proximo passo.',
+    href: 'https://instagram.com/paloma.albieri'
+  }
+];
 
 export async function InstagramFeed() {
   const t = await getTranslations('instagram');
@@ -25,14 +46,23 @@ export async function InstagramFeed() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay="short" className="interactive-card min-h-[560px] overflow-hidden border border-ink-dark bg-paper-light sm:min-h-[640px]">
-            <iframe
-              src={TAGGBOX_WIDGET_URL}
-              title="Instagram Paloma Albieri"
-              allow="fullscreen"
-              loading="lazy"
-              className="h-[560px] w-full border-0 sm:h-[640px]"
-            />
+          <ScrollReveal delay="short">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {staticPosts.map((post) => (
+                <a
+                  key={post.title}
+                  href={post.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="interactive-card flex min-h-[220px] flex-col justify-between border border-ink-dark bg-paper-light p-6 text-ink-dark"
+                >
+                  <span className="label-mono text-shock">POST</span>
+                  <span className="mt-8 block font-display text-4xl font-light leading-none">{post.title}</span>
+                  <span className="mt-5 block text-sm leading-relaxed text-ink-3">{post.text}</span>
+                  <span className="label-mono mt-8 text-ink-dark">{t('post_cta')}</span>
+                </a>
+              ))}
+            </div>
           </ScrollReveal>
         </div>
       </div>

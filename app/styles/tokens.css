@@ -2,7 +2,7 @@
   --paper: oklch(.14 .01 270);
   --paper-2: oklch(.18 .01 270);
   --paper-light: oklch(.985 .003 60);
-  --paper-rose: oklch(.93 .055 10);
+  --paper-rose: oklch(.93 .025 48);
 
   --ink: oklch(.97 .003 60);
   --ink-2: oklch(.82 .005 60);
@@ -10,14 +10,18 @@
   --ink-dark: oklch(.14 .01 270);
 
   --line: oklch(.28 .01 270);
-  --shock: oklch(.68 .24 8);
-  --shock-glow: oklch(.72 .26 8);
+  --shock: oklch(.52 .19 28);
+  --shock-glow: oklch(.6 .22 24);
+  --wine: oklch(.33 .13 25);
+  --burnt-red: oklch(.45 .16 32);
+  --structure-blue: oklch(.46 .24 270);
   --pastel: oklch(.32 .08 10);
   --pastel-2: oklch(.25 .06 10);
 
   --font-display: "Fraunces", "Instrument Serif", Georgia, serif;
   --font-body: "Inter Tight", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-jp: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
 
   --text-h1: 104px;
   --text-h2: 88px;
@@ -66,7 +70,7 @@
   --border-cta: 0.833px;
   --border-color: var(--ink-dark);
 
-  --radius-pill: 999px;
+  --radius-pill: 2px;
   --radius-card: 0px;
 
   --motion-fast: 180ms;

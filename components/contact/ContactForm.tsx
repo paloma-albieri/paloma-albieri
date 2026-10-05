@@ -5,6 +5,15 @@ import { useState } from 'react';
 
 type Status = 'idle' | 'sending' | 'ok' | 'error';
 type ContactChannel = 'email' | 'phone' | 'social';
+type ContactTrack = 'home' | 'presenca' | 'estrutura' | 'diagnostico';
+
+type Choice = {
+  value: string;
+  label: {
+    pt: string;
+    jp: string;
+  };
+};
 
 const fields = [
   ['01', 'form_name', 'name'],
@@ -15,12 +24,29 @@ const fields = [
 
 const channels: ContactChannel[] = ['email', 'phone', 'social'];
 
-export function ContactForm() {
+const bottleneckChoices: Choice[] = [
+  { value: 'message', label: { pt: 'Minha comunicação não está clara', jp: '伝え方が整理できていない' } },
+  { value: 'site', label: { pt: 'Preciso criar ou melhorar um site', jp: 'サイトを作る、または改善したい' } },
+  { value: 'manual_process', label: { pt: 'Meus processos são manuais ou desorganizados', jp: '手作業や管理の流れが多い' } },
+  { value: 'digital_product', label: { pt: 'Preciso de um sistema ou produto digital', jp: 'システムやデジタル商品が必要' } },
+  { value: 'direction', label: { pt: 'Preciso de acompanhamento e direção', jp: '方向性と伴走が必要' } },
+  { value: 'unknown', label: { pt: 'Ainda não sei identificar o problema', jp: '何が問題かまだ分からない' } }
+];
+
+const startChoices: Choice[] = [
+  { value: 'now', label: { pt: 'Agora / nas próximas semanas', jp: '今すぐ / 数週間以内' } },
+  { value: '30_days', label: { pt: 'Em até 30 dias', jp: '30日以内' } },
+  { value: '60_days', label: { pt: 'Em 60 a 90 dias', jp: '60〜90日以内' } },
+  { value: 'exploring', label: { pt: 'Ainda estou entendendo possibilidades', jp: 'まだ可能性を確認している' } }
+];
+
+export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
   const t = useTranslations('contact');
   const lang = useLocale();
   const [status, setStatus] = useState<Status>('idle');
   const [activeField, setActiveField] = useState<string>('name');
   const [selectedChannels, setSelectedChannels] = useState<ContactChannel[]>(['email']);
+  const isDiagnostic = track === 'diagnostico';
 
   function toggleChannel(channel: ContactChannel) {
     setSelectedChannels((current) => {
@@ -43,23 +69,34 @@ export function ContactForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    formData.set('form-name', 'contact');
-    formData.set('lang', lang);
-    formData.delete('preferred_contact');
-    selectedChannels.forEach((channel) => formData.append('preferred_contact', channel));
-
-    const encoded = new URLSearchParams();
-    formData.forEach((value, key) => {
-      if (typeof value === 'string') {
-        encoded.append(key, value);
-      }
-    });
+    const payload = {
+      name: String(formData.get('name') ?? ''),
+      company: String(formData.get('company') ?? ''),
+      email: String(formData.get('email') ?? ''),
+      phone: String(formData.get('phone') ?? ''),
+      social: String(formData.get('social') ?? ''),
+      country_timezone: String(formData.get('country_timezone') ?? ''),
+      website_url: String(formData.get('website_url') ?? ''),
+      offer_summary: String(formData.get('offer_summary') ?? ''),
+      tried_before: String(formData.get('tried_before') ?? ''),
+      looking_for: String(formData.get('looking_for') ?? ''),
+      bottlenecks: formData.getAll('bottlenecks').map(String),
+      start_timing: String(formData.get('start_timing') ?? ''),
+      decision_context: String(formData.get('decision_context') ?? ''),
+      paid_diagnostic_readiness: String(formData.get('paid_diagnostic_readiness') ?? ''),
+      message: String(formData.get('message') ?? ''),
+      preferred_contact: selectedChannels,
+      lang,
+      track,
+      source_path: window.location.pathname,
+      website: String(formData.get('website') ?? '')
+    };
 
     try {
-      const response = await fetch('/forms/contact.html', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        body: encoded.toString()
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload)
       });
 
       if (response.ok) {
@@ -115,7 +152,11 @@ export function ContactForm() {
           <p className="label-mono text-[10px] text-ink-3">{t('form_eta')}</p>
         </div>
         <p className="mt-8 max-w-[38rem] font-display text-[clamp(30px,4vw,56px)] font-light leading-none tracking-[-0.03em] text-ink-dark">
-          {t('form_prompt')}
+          {isDiagnostic
+            ? lang === 'pt'
+              ? 'Vamos descobrir onde o seu digital está travando antes de falar em serviço.'
+              : 'サービスを選ぶ前に、どこで止まっているかを確認します。'
+            : t('form_prompt')}
         </p>
         <div className="mt-8 grid gap-2 sm:grid-cols-4">
           {fields.map(([number, labelKey, fieldName]) => (
@@ -131,6 +172,7 @@ export function ContactForm() {
       </div>
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="lang" value={lang} />
+      <input type="hidden" name="track" value={track} />
       <input
         type="text"
         name="website"
@@ -157,6 +199,111 @@ export function ContactForm() {
           className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
         />
       </label>
+      {isDiagnostic && (
+        <div className="contact-field flex flex-col gap-5 border-y border-ink-dark py-6">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="flex flex-col gap-2">
+              <span className="label-mono text-ink-3">
+                {lang === 'pt' ? 'País e fuso horário' : '国とタイムゾーン'}
+              </span>
+              <input
+                name="country_timezone"
+                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+                placeholder={lang === 'pt' ? 'Ex.: Japão, JST' : '例: 日本、JST'}
+              />
+            </label>
+            <label className="flex flex-col gap-2">
+              <span className="label-mono text-ink-3">
+                {lang === 'pt' ? 'Site e redes sociais' : 'サイト・SNS'}
+              </span>
+              <input
+                name="website_url"
+                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+                placeholder="https:// / @perfil"
+              />
+            </label>
+          </div>
+          <label className="flex flex-col gap-2">
+            <span className="label-mono text-ink-3">
+              {lang === 'pt' ? 'O que voce oferece?' : '何を提供していますか？'}
+            </span>
+            <input
+              name="offer_summary"
+              className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+            />
+          </label>
+          <div>
+            <span className="label-mono text-ink-3">
+              {lang === 'pt' ? 'O que parece estar travando?' : 'どこで止まっている感じがありますか？'}
+            </span>
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              {bottleneckChoices.map((choice) => (
+                <label key={choice.value} className="contact-choice">
+                  <input type="checkbox" name="bottlenecks" value={choice.value} />
+                  <span className="label-mono">{choice.label[lang as 'pt' | 'jp']}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+          <label className="flex flex-col gap-2">
+            <span className="label-mono text-ink-3">
+              {lang === 'pt' ? 'O que ja foi tentado?' : 'これまで試したこと'}
+            </span>
+            <input
+              name="tried_before"
+              className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+            />
+          </label>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="flex flex-col gap-2">
+              <span className="label-mono text-ink-3">
+                {lang === 'pt' ? 'Quem participa da decisão?' : '決定に関わる人'}
+              </span>
+              <input
+                name="decision_context"
+                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+                placeholder={lang === 'pt' ? 'Só eu, sócios, diretoria, equipe...' : '自分のみ、共同経営者、チームなど'}
+              />
+            </label>
+            <label className="flex flex-col gap-2">
+              <span className="label-mono text-ink-3">
+                {lang === 'pt' ? 'Busca orientação, execução ou os dois?' : '相談、制作、または両方？'}
+              </span>
+              <input
+                name="looking_for"
+                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+              />
+            </label>
+          </div>
+          <label className="flex flex-col gap-2">
+            <span className="label-mono text-ink-3">
+              {lang === 'pt' ? 'Quando você quer começar a resolver isso?' : 'いつ頃から進めたいですか？'}
+            </span>
+            <select
+              name="start_timing"
+              className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+              defaultValue=""
+            >
+              <option value="" disabled>
+                {lang === 'pt' ? 'Selecione uma opção' : '選択してください'}
+              </option>
+              {startChoices.map((choice) => (
+                <option key={choice.value} value={choice.value}>
+                  {choice.label[lang as 'pt' | 'jp']}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="contact-choice self-start">
+            <input type="checkbox" name="paid_diagnostic_readiness" value="yes" />
+            <span className="label-mono">
+              {lang === 'pt'
+                ? 'Estou aberta(o) a contratar um diagnóstico pago se fizer sentido.'
+                : '必要であれば有料診断を検討できます。'}
+            </span>
+          </label>
+        </div>
+      )}
       <div className="contact-field flex flex-col gap-4">
         <span className="label-mono text-ink-3">{t('form_contact')}</span>
         <div className="grid gap-2 sm:grid-cols-3">
@@ -222,7 +369,13 @@ export function ContactForm() {
         </div>
       </div>
       <label className="contact-field flex flex-col gap-2">
-        <span className="label-mono text-ink-3">{t('form_message')}</span>
+        <span className="label-mono text-ink-3">
+          {isDiagnostic
+            ? lang === 'pt'
+              ? 'Conte o cenário em poucas linhas'
+              : '現在の状況を簡単に教えてください'
+            : t('form_message')}
+        </span>
         <textarea
           name="message"
           required

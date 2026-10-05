@@ -1,24 +1,26 @@
 {
   "marker": {
     "top_left": "PALOMA ALBIERI · BRASIL ⇄ JAPAN",
-    "top_right_availability": "DISPONÍVEL · Q3 2026",
+    "top_right_availability": "TRIAGEM · RESPOSTA EM ATE 2 DIAS UTEIS",
     "bottom": "Take 01 · 04:23:26 · Pressione · Sobre mim"
   },
   "nav": {
-    "pacotes": "Serviços",
-    "stacks": "Stacks",
-    "sobre": "Sobre",
+    "presenca": "Presença",
+    "estrutura": "Estrutura",
+    "diagnostico": "Diagnóstico",
+    "triagem": "Triagem",
+    "portfolio": "Portfólio",
     "contato": "Contato"
   },
   "hero": {
     "top_marker": "PALOMA ALBIERI · BRASIL ⇄ JAPAN",
-    "headline": "Sua presença digital precisa trabalhar conectada.",
-    "subheadline": "Estrategista digital com mão na execução. Uno estratégia, conteúdo e desenvolvimento para marcas e empresas que precisam organizar presença digital, do post ao site. Brasileira no Japão.",
+    "headline": "Seu digital funciona em pedaços.",
+    "subheadline": "Uma parte aparece, outra vende, outra organiza. Eu ajudo a transformar presença e estrutura em um caminho mais claro para quem chega e para quem precisa operar.",
     "meta_base": "BASE · JAPÃO",
-    "meta_foco": "FOCO · ESTRATÉGIA + DEV",
+    "meta_foco": "ATENDIMENTO · PRESENCIAL E REMOTO",
     "meta_idiomas": "IDIOMAS · PT / JP",
-    "cta_primary": "Conversa de 15 minutos no WhatsApp",
-    "cta_secondary": "Ver serviços"
+    "cta_primary": "Solicitar triagem",
+    "cta_secondary": "Ver diagnóstico pago"
   },
   "about": {
     "overline": "// SOBRE",
@@ -189,7 +191,7 @@
     "channels_instagram": "@paloma.albieri",
     "channels_calendar": "Agendar reunião de 15 minutos",
     "form_marker": "LEITURA INICIAL",
-    "form_eta": "2 minutos · resposta com contexto",
+    "form_eta": "4 minutos · análise manual",
     "form_prompt": "O que precisa ficar mais claro, profissional ou eficiente no seu digital hoje?",
     "form_name": "Seu nome",
     "form_company": "Marca ou empresa",
@@ -202,13 +204,13 @@
     "form_phone": "Telefone ou WhatsApp",
     "form_social": "Instagram, LinkedIn ou outra rede",
     "form_message": "Me conte o cenário",
-    "form_reassurance": "Você não precisa saber qual serviço pedir. Me conte o problema e eu te ajudo a entender o melhor próximo passo.",
-    "submit": "Quero uma leitura do meu cenário",
+    "form_reassurance": "Você não precisa saber qual serviço pedir. Não envie senhas, acessos ou dados confidenciais.",
+    "submit": "Solicitar triagem",
     "submit_sending": "Enviando seu cenário",
     "success_marker": "CENÁRIO RECEBIDO",
     "success_title": "Agora eu leio o contexto antes de sugerir o próximo passo.",
     "success_message": "Recebido. Vou olhar seu cenário com calma.",
-    "success_next": "Eu respondo com uma direção inicial: o que parece estar travando, qual caminho faz mais sentido e por onde começar sem criar trabalho desnecessário.",
+    "success_next": "Eu analiso a triagem em até dois dias úteis. Se houver aderência, envio o convite para uma conversa gratuita de 15 minutos.",
     "success_again": "Enviar outra mensagem",
     "error_marker": "ENVIO NÃO CONCLUÍDO",
     "error_message": "Não consegui enviar agora. Tenta de novo em 1 minuto, ou manda direto para contato@palomaalbieri.com."

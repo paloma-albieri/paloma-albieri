@@ -1,16 +1,19 @@
 import { useTranslations } from 'next-intl';
+import { Cpu, FileText, Workflow } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export function AboutCard() {
   const t = useTranslations('about');
-  const paragraphs = ['p1', 'p2', 'p3', 'p4'] as const;
+  const paragraphs = ['p1', 'p2', 'p4'] as const;
   const pillars = t.raw('pillars') as string[];
+  const icons = [FileText, Workflow, Cpu];
 
   return (
-    <section className="bg-paper-light py-12" id="sobre">
+    <section className="magazine-about bg-paper-light py-12" id="sobre">
       <div className="container-shell">
         <ScrollReveal>
-          <article className="interactive-card bg-paper-rose px-6 py-12 text-ink-dark sm:px-12 lg:px-16 lg:py-16">
+          <article className="interactive-card relative overflow-hidden border border-ink-dark bg-paper-rose px-6 py-12 text-ink-dark sm:px-12 lg:px-16 lg:py-16">
+            <div className="paper-grain" aria-hidden="true" />
             <p className="label-mono mb-8 text-ink-dark">{t('overline')}</p>
             <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
               <div>
@@ -27,9 +30,15 @@ export function AboutCard() {
                 </div>
               </div>
               <div className="flex max-w-[58ch] flex-col gap-8 text-base leading-[1.65] sm:text-lg">
-                {paragraphs.map((key) => (
-                  <p key={key}>{t(key)}</p>
-                ))}
+                {paragraphs.map((key, index) => {
+                  const Icon = icons[index];
+                  return (
+                    <div key={key} className="about-note grid gap-4 border-l border-ink-dark pl-5 sm:grid-cols-[32px_1fr]">
+                      <Icon size={26} strokeWidth={1.5} aria-hidden="true" />
+                      <p>{t(key)}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </article>

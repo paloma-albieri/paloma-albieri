@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowUpRight, Layers3, ScanLine, Sparkles } from 'lucide-react';
 import { useRef } from 'react';
 
 type HeroVisualProps = {
@@ -34,20 +35,35 @@ export function HeroVisual({ meta }: HeroVisualProps) {
       ref={frameRef}
       onPointerMove={handlePointerMove}
       onPointerLeave={resetTilt}
-      className="hero-visual-frame relative aspect-[4/5] min-h-[360px] overflow-hidden border border-ink-dark bg-paper-rose sm:aspect-[16/10] lg:aspect-[9/12] lg:min-h-0"
+      className="hero-visual-frame magazine-collage relative aspect-[4/5] min-h-[420px] overflow-hidden border border-ink-dark bg-paper-light sm:aspect-[16/10] lg:aspect-[9/12] lg:min-h-0"
     >
-      <video
-        className="h-full w-full object-cover"
-        src="/assets/3D.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-label="Vídeo visual de apresentação da Paloma Albieri"
-      />
-      <div className="pointer-events-none absolute inset-0 border-[12px] border-paper-light/20" />
-      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4 text-shock">
+      <div className="paper-grain" aria-hidden="true" />
+      <div className="cutout cutout-hero-title">
+        <span className="label-mono">01 / FIELD NOTES</span>
+        <strong>Digital em partes.</strong>
+      </div>
+      <div className="cutout cutout-shock">
+        <Sparkles size={22} strokeWidth={1.7} />
+        <span>clareza</span>
+      </div>
+      <div className="cutout cutout-blue">
+        <Layers3 size={26} strokeWidth={1.6} />
+        <span>estrutura</span>
+      </div>
+      <div className="cutout cutout-outline">
+        <ScanLine size={28} strokeWidth={1.4} />
+        <span>triagem</span>
+      </div>
+      <div className="magazine-strip" aria-hidden="true">
+        <span>presenca</span>
+        <span>processo</span>
+        <span>site</span>
+        <span>sistema</span>
+      </div>
+      <div className="magazine-arrow" aria-hidden="true">
+        <ArrowUpRight size={54} strokeWidth={1.1} />
+      </div>
+      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4 bg-ink-dark px-3 py-2 text-paper-light">
         <span className="label-mono text-[10px]">{meta}</span>
         <span className="pulse-dot h-2 w-2 rounded-full bg-shock" aria-hidden="true" />
       </div>

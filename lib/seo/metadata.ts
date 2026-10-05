@@ -20,9 +20,33 @@ const pageSeo = {
   pt: {
     home: baseSeo.pt,
     servicos: {
-      title: 'Serviços digitais | Estratégia, conteúdo, sites e tráfego | Paloma Albieri',
+      title: 'Serviços digitais | Presença e estrutura | Paloma Albieri',
       description:
-        'Serviços para planejar, criar e melhorar presença digital: diagnóstico, estratégia, conteúdo, landing page, site institucional, automação, tráfego pago e acompanhamento.',
+        'Escolha entre presença digital e estrutura digital: estratégia, conteúdo, sites, automação, sistemas simples, tráfego e acompanhamento.',
+      ogLocale: baseSeo.pt.ogLocale
+    },
+    presenca: {
+      title: 'Presença digital | Estratégia, conteúdo e conversão | Paloma Albieri',
+      description:
+        'Presença digital para marcas e empresas que precisam organizar mensagem, conteúdo, Instagram, tráfego e caminho até o contato.',
+      ogLocale: baseSeo.pt.ogLocale
+    },
+    estrutura: {
+      title: 'Estrutura digital | Sites, automação e sistemas | Paloma Albieri',
+      description:
+        'Estrutura digital para processos que precisam de site, landing page, formulário, automação, organização digital ou sistema interno.',
+      ogLocale: baseSeo.pt.ogLocale
+    },
+    diagnostico: {
+      title: 'Diagnóstico Estratégico Digital | Paloma Albieri',
+      description:
+        'Diagnóstico pago para mapear gargalo, prioridade, risco, escopo e próximos passos antes de executar presença, processo, site ou sistema.',
+      ogLocale: baseSeo.pt.ogLocale
+    },
+    triagem: {
+      title: 'Triagem digital | Descobrir meu gargalo | Paloma Albieri',
+      description:
+        'Formulário público para identificar onde o digital está travando antes de escolher serviço, agenda ou diagnóstico pago.',
       ogLocale: baseSeo.pt.ogLocale
     },
     portfolio: {
@@ -37,7 +61,31 @@ const pageSeo = {
     servicos: {
       title: 'デジタルサービス | 戦略・コンテンツ・サイト・広告 | パロマ・アルビエリ',
       description:
-        '診断、デジタル戦略、コンテンツ制作、ランディングページ、企業サイト、自動化、広告運用、改善伴走まで整理します。',
+        '発信の導線と仕組みの設計。戦略、コンテンツ、サイト、フォーム、自動化、広告運用を整理します。',
+      ogLocale: baseSeo.jp.ogLocale
+    },
+    presenca: {
+      title: '発信の導線 | 戦略・コンテンツ・問い合わせ | パロマ・アルビエリ',
+      description:
+        'Instagram、コンテンツ、メッセージ、問い合わせまでの流れを整理するデジタル発信サポートです。',
+      ogLocale: baseSeo.jp.ogLocale
+    },
+    estrutura: {
+      title: '仕組みの設計 | サイト・フォーム・自動化 | パロマ・アルビエリ',
+      description:
+        'サイト、ランディングページ、フォーム、自動化、社内システムなど、事業の流れを整理するデジタル構築です。',
+      ogLocale: baseSeo.jp.ogLocale
+    },
+    diagnostico: {
+      title: 'デジタル戦略診断 | パロマ・アルビエリ',
+      description:
+        '制作前に課題、優先順位、リスク、必要な範囲を整理する有料のデジタル戦略診断です。',
+      ogLocale: baseSeo.jp.ogLocale
+    },
+    triagem: {
+      title: '初回チェック | 課題を見つける | パロマ・アルビエリ',
+      description:
+        'サービスを選ぶ前に、オンライン導線のどこで止まっているかを確認する公開フォームです。',
       ogLocale: baseSeo.jp.ogLocale
     },
     portfolio: {
@@ -53,7 +101,12 @@ export function buildMetadata(lang: Locale, path = ''): Metadata {
   const base = process.env.SITE_URL ?? 'https://palomaalbieri.com';
   const pageKey = path.replace(/^\/+/, '').split('/')[0] || 'home';
   const current =
-    pageKey === 'servicos' || pageKey === 'portfolio'
+    pageKey === 'servicos' ||
+    pageKey === 'presenca' ||
+    pageKey === 'estrutura' ||
+    pageKey === 'diagnostico' ||
+    pageKey === 'triagem' ||
+    pageKey === 'portfolio'
       ? pageSeo[lang][pageKey]
       : pageSeo[lang].home;
   const normalizedPath = path ? `/${path.replace(/^\/+/, '')}` : '';

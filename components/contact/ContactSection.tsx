@@ -2,6 +2,8 @@ import { useTranslations } from 'next-intl';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ContactForm } from './ContactForm';
 
+type ContactTrack = 'home' | 'presenca' | 'estrutura' | 'diagnostico';
+
 const links = [
   ['channels_email', 'mailto:contato@palomaalbieri.com'],
   ['channels_whatsapp', 'https://wa.me/817020122563'],
@@ -9,7 +11,7 @@ const links = [
   ['channels_calendar', 'https://calendar.app.google/rRpgFSAxLS5xpL1v9']
 ] as const;
 
-export function ContactSection() {
+export function ContactSection({ track = 'home' }: { track?: ContactTrack }) {
   const t = useTranslations('contact');
 
   return (
@@ -36,7 +38,7 @@ export function ContactSection() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay="short" className="interactive-card border border-ink-dark bg-paper-light p-5 sm:p-8">
-            <ContactForm />
+            <ContactForm track={track} />
           </ScrollReveal>
         </div>
       </div>

@@ -3,30 +3,28 @@ import type { Locale } from '@/lib/i18n/config';
 const baseUrl = 'https://palomaalbieri.com';
 
 const services = [
-  'Diagnostico Digital',
-  'Estrategia de Presenca Digital',
-  'Gestao de Conteudo',
-  'Landing Page',
-  'Site Institucional',
-  'Automacao e Organizacao Digital',
-  'Gestao de Trafego Pago',
-  'Acompanhamento Estrategico'
+  'Triagem digital',
+  'Diagnostico Estrategico Digital',
+  'Presenca, mensagem e conversao',
+  'Processos, automacao e IA',
+  'Sistema ou produto digital',
+  'Direcao e evolucao'
 ];
 
 const localized = {
   pt: {
     language: 'pt-BR',
     description:
-      'Estrategista digital brasileira no Japao. Une estrategia, conteudo, sites, automacao e trafego para organizar presenca digital de marcas e empresas.',
+      'Estrategista digital brasileira no Japao. Organiza presenca digital e estrutura digital para marcas e empresas.',
     serviceDescription:
-      'Servicos digitais para planejar, criar e melhorar presenca digital: diagnostico, estrategia, conteudo, landing page, site institucional, automacao, trafego pago e acompanhamento.'
+      'Triagem publica e diagnostico estrategico para identificar prioridade antes de executar presenca digital, processos, sites, automacoes ou sistemas.'
   },
   jp: {
     language: 'ja-JP',
     description:
       '日本在住のブラジル人デジタルストラテジスト。戦略、コンテンツ、Webサイト、自動化、広告運用を整理します。',
     serviceDescription:
-      '診断、デジタル戦略、コンテンツ制作、ランディングページ、企業サイト、自動化、広告運用、改善伴走を行います。'
+      '初回チェックとデジタル戦略診断で、発信、業務、サイト、自動化、システムの優先順位を整理します。'
   }
 } as const;
 
@@ -69,6 +67,7 @@ export function buildJsonLd(lang: Locale) {
           'conteudo para redes sociais',
           'landing pages',
           'sites institucionais',
+          'sistemas internos',
           'automacao digital',
           'trafego pago',
           'Next.js',
@@ -90,10 +89,12 @@ export function buildJsonLd(lang: Locale) {
         serviceType: [
           'Estrategia digital',
           'Marketing digital',
-          'Criacao de conteudo',
+          'Diagnostico digital',
+          'Triagem digital',
+          'Presenca digital',
           'Desenvolvimento de sites',
-          'Automacao digital',
-          'Trafego pago'
+          'Sistemas internos',
+          'Automacao digital'
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',

@@ -51,3 +51,7 @@ test('copy publica nao expoe valores de pacote', () => {
 test('copy publica nao menciona Charcutaria', () => {
   assert.equal(/charcutaria/i.test(text), false);
 });
+
+test('copy publica nao identifica clientes removidos do portfolio', () => {
+  assert.equal(/miaucaf[eé]|construtora\s+connect/i.test(text), false);
+});

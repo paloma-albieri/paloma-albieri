@@ -1,41 +1,62 @@
-import { ContactSection } from '@/components/contact/ContactSection';
+import { useTranslations } from 'next-intl';
+import { CheckCircle2 } from 'lucide-react';
+import { ContactForm } from '@/components/contact/ContactForm';
 import { CTAPill } from '@/components/ui/CTAPill';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import type { Locale } from '@/lib/i18n/config';
-import { diagnostics } from '@/lib/site/tracks';
 
 export function DiagnosticPage({ lang }: { lang: Locale }) {
-  const diagnostic = diagnostics[lang];
+  const t = useTranslations('diagnostic');
+  const included = t.raw('included') as string[];
 
   return (
-    <main className="pt-20">
-      <section className="bg-paper-light">
+    <main className="pt-32 lg:pt-28 xl:pt-20">
+      <section className="bg-paper text-ink">
         <div className="container-shell section-pad">
-          <ScrollReveal>
-            <p className="label-mono mb-8 text-accent">{diagnostic.eyebrow}</p>
-            <h1 className="display-h1 max-w-[13ch] text-ink-dark">{diagnostic.title}</h1>
-            <p className="body-lead mt-8 text-ink-dark">{diagnostic.lead}</p>
-            <CTAPill href={`/${lang}/triagem`} className="mt-10" variant="filled-shock">
-              {diagnostic.cta}
-            </CTAPill>
+          <ScrollReveal className="max-w-4xl">
+            <p className="mb-5 font-mono text-xs uppercase tracking-widest text-shock">{t('badge')}</p>
+            <h1 className="font-serif text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">{t('title')}</h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-3">{t('description')}</p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <CTAPill href="#aplicacao" variant="filled-ink" className="border-shock">{t('cta')}</CTAPill>
+              <CTAPill href={`/${lang}/triagem`} variant="outline-inverse">{t('secondary')}</CTAPill>
+            </div>
           </ScrollReveal>
         </div>
       </section>
-      <section className="bg-paper text-ink">
+      <section className="bg-paper-2 text-ink">
         <div className="container-shell section-pad">
-          <div className="grid gap-5 md:grid-cols-3">
-            {diagnostic.details.map((item) => (
-              <ScrollReveal key={item.title} delay="short">
-                <article className="h-full border border-line bg-paper-2 p-6">
-                  <h2 className="font-display text-4xl font-semibold leading-none">{item.title}</h2>
-                  <p className="mt-6 text-base leading-relaxed text-ink-2">{item.text}</p>
-                </article>
-              </ScrollReveal>
+          <ScrollReveal>
+            <h2 className="font-serif text-3xl font-semibold md:text-4xl">{t('included_title')}</h2>
+          </ScrollReveal>
+          <ul className="mt-10 grid gap-5 md:grid-cols-2">
+            {included.map((item, index) => (
+              <li key={item} className="min-w-0">
+                <ScrollReveal delay={index % 2 === 0 ? 'short' : 'medium'} className="h-full">
+                  <div className="flex h-full items-start gap-4 rounded-sm border border-line p-6">
+                    <CheckCircle2 size={24} strokeWidth={1} className="mt-1 shrink-0 text-shock" aria-hidden="true" />
+                    <span className="font-serif text-2xl font-semibold leading-snug">{item}</span>
+                  </div>
+                </ScrollReveal>
+              </li>
             ))}
+          </ul>
+          <div className="mt-10 border-t border-line pt-6">
+            <p className="label-mono text-ink-3">{t('deliverables_title')}</p>
+            <p className="mt-4 font-serif text-2xl font-semibold">{t('deliverables')}</p>
           </div>
         </div>
       </section>
-      <ContactSection track="diagnostico" />
+      <section className="bg-paper-light text-ink-dark" id="aplicacao">
+        <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
+          <p className="label-mono text-accent">{t('application_badge')}</p>
+          <h2 className="mt-4 font-serif text-3xl font-semibold md:text-4xl">{t('application_title')}</h2>
+          <p className="mt-5 text-base leading-relaxed text-secondary">{t('application_description')}</p>
+          <div className="mt-8 rounded-sm border border-line p-6 sm:p-8">
+            <ContactForm track="diagnostico" mode="discovery" />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

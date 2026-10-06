@@ -48,6 +48,16 @@
     padding-inline: var(--gutter);
   }
   .section-pad { padding-block: 72px; }
+  .blueprint-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, var(--ink) 4%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--ink) 4%, transparent) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
   .label-mono {
     font-family: var(--font-mono);
     font-size: 12px;

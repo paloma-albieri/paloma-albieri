@@ -15,14 +15,6 @@ type TrackContent = {
   cta: string;
 };
 
-type DiagnosticContent = {
-  eyebrow: string;
-  title: string;
-  lead: string;
-  details: { title: string; text: string }[];
-  cta: string;
-};
-
 export const tracks: Record<Locale, Record<TrackKey, TrackContent>> = {
   pt: {
     presenca: {
@@ -65,7 +57,7 @@ export const tracks: Record<Locale, Record<TrackKey, TrackContent>> = {
         { title: 'Traduzir tecnologia', text: 'Explico o que cada parte faz para a pessoa decidir com clareza, nao por susto.' }
       ],
       proof:
-        'No Japao, sai da linha de producao para TI e construi sozinha um sistema interno em React, TypeScript, Postgres e Docker usado por 14 setores. Miaucafe e Construtora Connect ficam como arquivos privados de estrutura e presenca.',
+        'No Japao, sai da linha de producao para TI e construi sozinha um sistema interno em React, TypeScript, Postgres e Docker usado por 14 setores.',
       cta: 'Quero automatizar minha operação'
     }
   },
@@ -108,32 +100,5 @@ export const tracks: Record<Locale, Record<TrackKey, TrackContent>> = {
         '日本の製造現場でライン作業から社内IT担当になり、React、TypeScript、Postgres、Dockerで14部門が使う社内システムを一人で作りました。',
       cta: '仕組みを相談する'
     }
-  }
-};
-
-export const diagnostics: Record<Locale, DiagnosticContent> = {
-  pt: {
-    eyebrow: 'Diagnostico Estrategico Digital',
-    title: 'Uma entrega paga para entender prioridade, caminho e escopo antes de executar.',
-    lead:
-      'Depois da triagem inicial, o diagnostico aprofunda o cenario e organiza um dossie com problema prioritario, evidencias, riscos, plano de acao e recomendacao de proximo servico.',
-    details: [
-      { title: 'Entrada', text: 'A triagem publica vem antes. Eu analiso o contexto e so convido para conversa quando houver aderencia.' },
-      { title: 'Entrega', text: 'Dossie em Notion e PDF, apresentacao on-line e uma rodada de esclarecimentos por periodo definido.' },
-      { title: 'Uso', text: 'Serve para decidir se o proximo passo e web, processos, sistema, direcao digital, indicacao externa ou pausa estrategica.' }
-    ],
-    cta: 'Solicitar triagem'
-  },
-  jp: {
-    eyebrow: 'デジタル戦略診断',
-    title: '制作前に、優先順位と進め方を整理する有料診断。',
-    lead:
-      '初回チェックのあと、課題、優先領域、リスク、次の進め方を整理し、NotionとPDFで診断資料を作ります。',
-    details: [
-      { title: '入口', text: 'まず公開フォームで状況を確認します。内容を見て、合う場合だけ15分相談を案内します。' },
-      { title: '納品', text: 'NotionとPDFの診断資料、オンライン説明、一定期間の確認対応を含みます。' },
-      { title: '使い方', text: '発信、業務整理、システム、伴走、または今は進めない判断のために使います。' }
-    ],
-    cta: '初回チェックを送る'
   }
 };

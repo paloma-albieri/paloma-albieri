@@ -28,4 +28,6 @@ SITE_URL=https://palomaalbieri.com
 - `/pt/servicos`
 - `/jp/servicos`
 
-Portfolio archive routes exist with `noindex,nofollow` and are excluded from the sitemap.
+The localized `/portfolio` pages present anonymized ecosystem architectures without client names or sensitive data. The `paloma-albieri` sub-route documents the site's own brand; client-specific sub-routes have been removed.
+
+`/pt/pacotes` and `/jp/pacotes` return HTTP 301 redirects to the corresponding `/diagnostico` route. There is no packages page.

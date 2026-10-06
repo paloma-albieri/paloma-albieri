@@ -1,8 +1,8 @@
 import { useLocale, useTranslations } from 'next-intl';
+import type { Locale } from '@/lib/i18n/config';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { ContactForm } from './ContactForm';
-
-type ContactTrack = 'home' | 'presenca' | 'estrutura' | 'diagnostico';
+import { ContactForm, type ContactTrack } from './ContactForm';
+import { EntryComparison } from './EntryComparison';
 
 const links = [
   ['channels_email', 'mailto:contato@palomaalbieri.com'],
@@ -13,45 +13,32 @@ const links = [
 
 export function ContactSection({ track = 'home' }: { track?: ContactTrack }) {
   const t = useTranslations('contact');
-  const locale = useLocale();
+  const lang = useLocale() as Locale;
 
   return (
     <section className="contact-collage bg-paper-rose" id="contato">
       <div className="container-shell section-pad">
-        <p className="editorial-kicker label-mono mb-8 text-ink-dark">{t('overline')}</p>
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+        <ScrollReveal>
+          <p className="editorial-kicker label-mono mb-6 text-ink-dark">{t('overline')}</p>
+          <h2 className="max-w-4xl font-serif text-3xl font-semibold leading-tight text-ink-dark md:text-4xl">{t('headline')}</h2>
+          <p className="body-lead mt-5 text-ink-dark">{t('sub')}</p>
+        </ScrollReveal>
+        <div className="mt-10"><EntryComparison lang={lang} /></div>
+        <div className="mt-10 grid gap-10 lg:grid-cols-[0.6fr_1.4fr]">
           <ScrollReveal>
-            <h2 className="display-h2 text-ink-dark">{t('headline')}</h2>
-            <p className="body-lead mt-8 text-ink-dark">{t('sub')}</p>
-            <div className="mt-10 flex flex-col border-t border-line">
+            <div className="flex flex-col border-t border-line">
               {links.map(([key, href]) => (
-                <a
-                  key={key}
-                  href={href}
-                  target={href.startsWith('http') ? '_blank' : undefined}
+                <a key={key} href={href} target={href.startsWith('http') ? '_blank' : undefined}
                   rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="link-row flex items-center justify-between gap-4 border-b border-line py-4 text-sm"
-                >
+                  className="link-row flex flex-wrap items-center justify-between gap-3 border-b border-line py-4 text-sm">
                   <span className="label-mono text-[10px] text-ink-dark">{key.replace('channels_', '')}</span>
-                  <strong className="font-normal">{t(key)}</strong>
+                  <strong className="min-w-0 break-words font-normal">{t(key)}</strong>
                 </a>
               ))}
             </div>
           </ScrollReveal>
-          <ScrollReveal delay="short">
-            {locale === 'pt' && (
-              <div className="mb-8 grid gap-4 text-sm leading-relaxed text-ink-dark">
-                <article className="border border-line bg-paper-light p-5 sm:p-6">
-                  <p>{t('triage_free')}</p>
-                </article>
-                <article className="border border-line bg-paper-rose p-5 sm:p-6">
-                  <p>{t('diagnostic_paid')}</p>
-                </article>
-              </div>
-            )}
-            <div className="interactive-card border border-line bg-paper-light p-5 sm:p-8">
-              <ContactForm track={track} />
-            </div>
+          <ScrollReveal className="rounded-sm border border-line bg-paper-light p-6 sm:p-8">
+            <ContactForm track={track} />
           </ScrollReveal>
         </div>
       </div>

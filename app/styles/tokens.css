@@ -13,6 +13,7 @@
   --line: #2E2C2A;
   --line-soft: color-mix(in srgb, var(--line) 20%, transparent);
   --shock: #FF2A85;
+  --shock-rgb: 255 42 133;
   --shock-glow: var(--shock);
   --wine: var(--paper);
   --burnt-red: var(--shock);

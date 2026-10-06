@@ -41,18 +41,133 @@
     "p4": "Meu foco é apoiar marcas e empresas que precisam deixar a presença digital mais clara, profissional e fácil de entender. Não vendo post solto, site bonito ou anúncio sem base. Eu organizo presença digital para que as pessoas entendam o que você vende, confiem mais rápido e saibam qual próximo passo dar."
   },
   "architecture": {
-    "title": "A Arquitetura Oficial por trás das soluções.",
+    "overline": "[ ARQUITETURA OFICIAL · 05 PILARES ]",
+    "title": "Engenharia digital explicada sem jargões.",
+    "description": "Cada solução é desenhada como um módulo de infraestrutura. Não vendemos peças soltas; construímos a esteira completa.",
+    "flow_label": "Fluxo do serviço",
+    "deliverables_label": "Entregáveis",
     "pillars": [
-      "Estratégia Digital & Diagnóstico",
-      "Sites & Experiências Web",
-      "Automação, IA & Processos",
-      "Sistemas & Produtos Digitais",
-      "Direção Digital"
+      {
+        "id": "strategy",
+        "tag": "[ DIAGNÓSTICO & MAPA ]",
+        "title": "Estratégia Digital & Diagnóstico",
+        "highlight": "Diagnóstico",
+        "concept": "O mapa executivo antes de colocar o primeiro tijolo digital. Entendemos a jornada do seu cliente para eliminar o improviso comercial.",
+        "flow": [
+          "Sintoma / Gargalo",
+          "Mapeamento Manual",
+          "Plano de Arquitetura"
+        ],
+        "deliverables": [
+          "Mapeamento completo da jornada de decisão do cliente",
+          "Diagnóstico de pontos céticos de comunicação e conversão",
+          "Matriz de canais (Instagram, site, atendimento, pós-venda)",
+          "Plano de ação executivo com prioridades e escopo limpo"
+        ]
+      },
+      {
+        "id": "web",
+        "tag": "[ FLAGSHIP DIGITAL ]",
+        "title": "Sites & Experiências Web",
+        "highlight": "Experiências Web",
+        "concept": "A sua sede oficial no digital. Desenvolvemos interfaces sofisticadas de alta conversão que vendem autoridade antes da primeira mensagem.",
+        "flow": [
+          "Tráfego Qualificado",
+          "Landing Page / Institutional",
+          "Conversão"
+        ],
+        "deliverables": [
+          "Landing Pages de alta conversão e páginas de vendas",
+          "Sites institucionais sofisticados para posicionamento corporativo",
+          "Redação técnica (Copywriting) focada em clareza comercial",
+          "Interface editorial exclusiva (responsividade 100% mobile/desktop)"
+        ]
+      },
+      {
+        "id": "processes",
+        "tag": "[ ENGRENAGEM OPERACIONAL ]",
+        "title": "Automação, IA & Processos",
+        "highlight": "Automação, IA",
+        "concept": "Elimine o trabalho repetitivo de enviar links e dados manualmente. Conectamos seu atendimento a fluxos previsíveis e IA delimitada.",
+        "flow": [
+          "Entrada / Formulário",
+          "Triagem Inteligente",
+          "CRM & Notificação"
+        ],
+        "deliverables": [
+          "Conexão entre formulários, e-mails, WhatsApp e CRM",
+          "Automações de triagem, roteamento de leads e notificações",
+          "Aplicação de I.A. delimitada para rotinas operacionais internas",
+          "Redução de gargalos no tempo de resposta ao cliente"
+        ]
+      },
+      {
+        "id": "products",
+        "tag": "[ INFRAESTRUTURA MODULAR ]",
+        "title": "Sistemas & Produtos Digitais",
+        "highlight": "Produtos Digitais",
+        "concept": "Plataformas e ecossistemas web sob medida desenvolvidos por fases sustentáveis, garantindo evolução conforme o negócio cresce.",
+        "flow": [
+          "MVP / Fase 01",
+          "Área de Membros / Portal",
+          "Expansão Modular"
+        ],
+        "deliverables": [
+          "Portais de clientes e áreas de membros exclusivas",
+          "Plataformas web modulares para entrega de serviços/produtos",
+          "Desenvolvimento em ciclos sustentáveis sem código pesado",
+          "Arquitetura de dados segura e protegida"
+        ]
+      },
+      {
+        "id": "direction",
+        "tag": "[ GOVERNANÇA & LIDERANÇA ]",
+        "title": "Direção Digital & Acompanhamento Continuado",
+        "highlight": "Direção Digital",
+        "concept": "Atuação como sua Diretora Digital. Garantimos a governança continuada da sua infraestrutura, orquestrando tecnologia, mensagem e parceiros operacionais de confiança.",
+        "flow": [
+          "Leitura de Dados",
+          "Governança Estratégica",
+          "Coordenação de Parceiros"
+        ],
+        "deliverables": [
+          "Acompanhamento continuado de performance e infraestrutura",
+          "Orquestração transparente de parceiros operacionais (quando exigido)",
+          "Guardiã da mensagem da marca e da consistência de conversão",
+          "Decisões de tecnologia embasadas em leitura de dados reais"
+        ]
+      }
     ]
   },
   "scope": {
-    "title": "Para garantir excelência, o que NÃO fazemos:",
-    "description": "Não oferecemos serviços isolados de tráfego pago operacional, gestão rotineira de social media ou produção recorrente de conteúdo desconectados de uma infraestrutura maior. Meu foco é construir a engenharia e a arquitetura do seu digital."
+    "stamp": "[ FILTRO DE ESCOPO · CLÁUSULA DE EXCLUSÃO ]",
+    "tag": "[ PARA GARANTIR EXCELÊNCIA & FOCO ]",
+    "title": "Para entregar alta autoridade, o que NÃO fazemos:",
+    "description": "A clareza do escopo protege seu investimento e o nosso tempo. Não vendemos peças soltas nem atuamos como braço operacional isolado.",
+    "exclusions": [
+      {
+        "id": "social",
+        "title": "Social Media Operacional Isolado",
+        "description": "Não fazemos gestão diária de feed/stories, agendamento rotineiro de posts ou criação de conteúdo contínuo sem infraestrutura estratégica."
+      },
+      {
+        "id": "ads",
+        "title": "Tráfego Pago Operacional sem Arquitetura",
+        "description": "Não atuamos apenas \"apertando botões\" em gerenciadores de anúncios. Tráfego só funciona quando a casa (site e mensagem) está pronta."
+      },
+      {
+        "id": "website",
+        "title": "\"Site Bonitinho\" sem Lógica Comercial",
+        "description": "Não desenvolvemos telas ou layouts bonitos desconectados da jornada real de decisão do seu cliente e dos seus processos de venda."
+      },
+      {
+        "id": "packages",
+        "title": "Pacotes Fechados de Prateleira",
+        "description": "Não vendemos soluções engessadas. Todo projeto começa pela compreensão do seu momento antes de definir o próximo passo."
+      }
+    ],
+    "manifesto_title": "Como atuamos em vez disso:",
+    "manifesto": "Atuo como sua Diretora Digital, desenhando a arquitetura e a engenharia do seu ecossistema. Quando o escopo do projeto exige produções operacionais específicas fora do núcleo central, acionamos parceiros de confiança com total transparência."
   },
   "services_marquee": {
     "ticker": "POSICIONAMENTO DE ALTO VALOR · ARQUITETURA WEB · AUTOMAÇÃO DE PROCESSOS · DIREÇÃO DIGITAL · BRASIL ⇄ JAPÃO ·",
@@ -106,81 +221,53 @@
     "talk": "Conversar no WhatsApp",
     "post_cta": "Ver post"
   },
-  "packages": {
-    "overline": "SERVIÇOS",
-    "title": "Você não precisa comprar uma fórmula pronta. Precisa resolver o problema digital certo.",
-    "lead": "Eu organizo o trabalho a partir do problema dominante: clareza, presença web, processos, produto digital ou direção contínua. A proposta nasce do seu contexto, não de uma lista fechada.",
-    "diagnostic": "Ver como posso ajudar",
-    "cta": "Quero entender qual serviço faz sentido",
-    "page_title": "Serviços digitais com escopo, critério e direção.",
-    "page_lead": "Alguns problemas pedem diagnóstico antes de executar. Outros pedem uma experiência web, automação, produto digital ou direção mensal. O serviço certo depende do gargalo, do risco e do próximo avanço possível.",
-    "includes_label": "O que pode entrar",
-    "example_label": "Exemplo:",
-    "fit_label": "Ideal para:",
-    "closing": "Na leitura inicial, eu identifico se o seu momento pede diagnóstico, construção, automação, produto digital, direção contínua ou nenhum serviço agora. O escopo vem depois do problema, não antes.",
-    "layers": [
-      {
-        "label": "01 · DIAGNOSTICAR",
-        "title": "Estratégia Digital & Diagnóstico",
-        "summary": "Para quando falta clareza, prioridade ou direção. Antes de construir qualquer coisa, eu investigo o que está travando o negócio e organizo uma decisão.",
-        "services": [
-          {
-            "name": "Diagnóstico Estratégico Digital",
-            "promise": "Transformar sintomas soltos em problema prioritário, evidências e plano de ação.",
-            "description": "Leio o contexto do negócio, oferta, público, caminho, canais, ferramentas e processos relacionados ao gargalo principal.",
-            "items": ["Dossiê em Notion e PDF", "Reunião de apresentação", "Prioridades e recomendação", "Plano de ação e critérios de sucesso"],
-            "example": "Antes de investir em site, automação ou sistema, entender qual problema precisa ser resolvido primeiro.",
-            "fit": "quem sabe que algo não funciona, mas ainda não tem clareza de causa, prioridade ou escopo."
-          }
-        ]
-      },
-      {
-        "label": "02 · WEB",
-        "title": "Sites & Experiências Web",
-        "summary": "Para quando a presença própria precisa explicar melhor, gerar confiança e conduzir uma ação importante para o negócio.",
-        "services": [
-          {
-            "name": "Experiência Web",
-            "promise": "Criar uma presença web clara, confiável e funcional.",
-            "description": "Organizo objetivo, arquitetura da informação, mensagem, interface, desenvolvimento, publicação e conversões.",
-            "items": ["Landing page ou site", "Arquitetura e navegação", "Formulários e integrações", "SEO técnico essencial e analytics"],
-            "example": "Uma página de serviço, campanha, portfólio ou site multilíngue que conduz o cliente ao próximo passo.",
-            "fit": "profissionais e empresas que dependem só de Instagram, indicação ou um site que já não representa a oferta."
-          }
-        ]
-      },
-      {
-        "label": "03 · PROCESSOS",
-        "title": "Automação, IA & Processos",
-        "summary": "Para quando retrabalho, demora, erros ou informação perdida atrapalham atendimento, operação e acompanhamento.",
-        "services": [
-          {
-            "name": "Fluxos e automações",
-            "promise": "Transformar processo manual ou fragmentado em fluxo mais simples e rastreável.",
-            "description": "Mapeio entradas, decisões, responsáveis, exceções e saídas para desenhar um fluxo viável com ferramentas, dados e supervisão.",
-            "items": ["Mapeamento do processo", "Formulários e intake", "CRM, pipelines e alertas", "Automações, dashboards ou IA delimitada"],
-            "example": "O cliente envia uma informação, o fluxo registra status, responsável, follow-up e próximos passos.",
-            "fit": "negócios que perdem mensagens, repetem tarefas, duplicam informações ou querem usar IA com objetivo claro."
-          },
-          {
-            "name": "Sistemas & Produtos Digitais",
-            "promise": "Construir produto digital quando ferramentas prontas já não sustentam o processo.",
-            "description": "Conduzo discovery, escopo de MVP, regras, dados, permissões, interface, implementação por fases e evolução.",
-            "items": ["Product Discovery", "MVP por fases", "Autenticação, papéis e banco de dados", "Deploy, testes e documentação"],
-            "example": "Portal, painel, ferramenta interna ou sistema com usuários, regras e dados próprios.",
-            "fit": "empresas cujo processo precisa de login, permissões, workflows, documentos ou experiência própria."
-          },
-          {
-            "name": "Direção Digital",
-            "promise": "Dar continuidade, critério e coordenação às decisões digitais do negócio.",
-            "description": "Acompanho prioridades, resultados, backlog, site, caminho do cliente, ferramentas, parceiros e próximos ciclos com capacidade mensal definida.",
-            "items": ["Reunião estratégica periódica", "Priorização de backlog", "Direção de conteúdo e comunicação", "Documentação de decisões"],
-            "example": "Manter presença, experiência, processos e tecnologia evoluindo sem contratar uma equipe completa.",
-            "fit": "negócios com base digital existente, muitas demandas e pouca priorização contínua."
-          }
-        ]
-      }
-    ]
+  "entry": {
+    "format_label": "Formato",
+    "objective_label": "Objetivo",
+    "delivery_label": "Entregáveis",
+    "return_label": "Prazo de retorno",
+    "free": {
+      "badge": "[ PASSO 01 · GRATUITO ]",
+      "title": "Triagem Inicial de Contexto",
+      "format": "Formato manual rápido (4 minutos de preenchimento).",
+      "objective": "Ler o cenário da sua marca e indicar o caminho/próximo passo mais eficiente.",
+      "deadline": "Análise individual realizada em até 2 dias úteis.",
+      "security": "Você não precisa saber qual serviço pedir. Não envie senhas ou dados confidenciais."
+    },
+    "discovery": {
+      "badge": "[ PASSO 02 · IMERSÃO PAGA ]",
+      "title": "Strategic Discovery & Diagnóstico",
+      "format": "Reunião estratégica individual + Análise de Infraestrutura.",
+      "objective": "Mapear gargalos de conversão, definir escopo, exclusões, responsabilidades, critérios e desenho da arquitetura digital antes de qualquer execução.",
+      "deliverables": "Documento Executivo de Arquitetura + Plano de Execução Técnica.",
+      "cta": "Conhecer o Diagnóstico Pago"
+    }
+  },
+  "triage": {
+    "badge": "[ TRIAGEM GRATUITA · ANÁLISE MANUAL ]",
+    "title": "Triagem Inicial de Infraestrutura Digital",
+    "description": "Um diagnóstico manual direto ao ponto para entender onde sua presença digital está travando.",
+    "cta": "Preencher Triagem Gratuita",
+    "form_title": "Leitura inicial do seu cenário"
+  },
+  "diagnostic": {
+    "badge": "[ DISCOVERY PAGO · ARQUITETURA PRÉVIA ]",
+    "title": "Compreender o problema antes de desenhar a solução.",
+    "description": "Uma imersão individual para mapear riscos, arquitetura web, automações e critérios de execução para o seu negócio.",
+    "included_title": "O que está incluso na Imersão",
+    "included": [
+      "Reunião estratégica profunda de alinhamento",
+      "Mapeamento de gargalos de comunicação, vendas e processos internos",
+      "Mapeamento de escopo, resultados esperados, responsabilidades e exclusões formais",
+      "Prancha técnica final (Blueprint do Ecossistema) com o direcionamento exato da execução"
+    ],
+    "deliverables_title": "A arquitetura antes da execução",
+    "deliverables": "Documento Executivo de Arquitetura + Plano de Execução Técnica.",
+    "cta": "Agendar Diagnóstico Estratégico",
+    "secondary": "Solicitar Triagem Gratuita",
+    "application_badge": "[ APLICAÇÃO · DISCOVERY PAGO ]",
+    "application_title": "Aplicação para Diagnóstico Estratégico",
+    "application_description": "Envie seu cenário para alinharmos a imersão, as condições e o agendamento. O envio da aplicação não confirma uma reserva ou contratação."
   },
   "contact": {
     "overline": "CONTATO",
@@ -190,14 +277,12 @@
     "channels_whatsapp": "WhatsApp",
     "channels_instagram": "@paloma.albieri",
     "channels_calendar": "Agendar reunião de 15 minutos",
-    "triage_free": "1. Triagem Gratuita: Responda ao formulário abaixo (4 minutos). Faço uma análise manual e indico o melhor caminho em até 2 dias úteis.",
-    "diagnostic_paid": "2. Diagnóstico Pago / Discovery: Uma imersão profunda para mapear gargalos, desenhar a arquitetura e definir resultados, escopo e responsabilidades antes de qualquer execução.",
-    "form_marker": "LEITURA INICIAL",
+    "form_marker": "[ TRIAGEM GRATUITA · 04 PERGUNTAS ]",
     "form_eta": "4 minutos · análise manual",
-    "form_prompt": "O que precisa ficar mais claro, profissional ou eficiente no seu digital hoje?",
+    "form_prompt": "Conte o cenário antes de escolher o serviço.",
     "form_name": "Seu nome",
     "form_company": "Marca ou empresa",
-    "form_contact": "Melhor canal para resposta",
+    "form_contact": "Melhor canal para resposta (E-mail / WhatsApp)",
     "form_contact_email": "E-mail",
     "form_contact_phone": "Telefone / WhatsApp",
     "form_contact_social": "Rede social",
@@ -205,35 +290,69 @@
     "form_email": "E-mail",
     "form_phone": "Telefone ou WhatsApp",
     "form_social": "Instagram, LinkedIn ou outra rede",
-    "form_message": "Me conte o cenário e os gargalos da sua operação digital:",
-    "form_reassurance": "Análise individual realizada em até 48 horas. Você receberá o retorno direto com a orientação mais eficiente para o seu cenário.",
-    "submit": "Enviar dados para triagem gratuita",
+    "form_message": "Detalhamento do cenário real da sua operação",
+    "form_reassurance": "A análise é feita individualmente pela Paloma Albieri em até 48 horas úteis.",
+    "submit": "Enviar Dados para Triagem Estratégica",
     "submit_sending": "Enviando seu cenário",
     "success_marker": "CENÁRIO RECEBIDO",
     "success_title": "Agora eu leio o contexto antes de sugerir o próximo passo.",
     "success_message": "Recebido. Vou olhar seu cenário com calma.",
-    "success_next": "Eu analiso a triagem em até dois dias úteis. Se houver aderência, envio o convite para uma conversa gratuita de 15 minutos.",
+    "success_next": "Paloma Albieri analisa seu cenário em até 2 dias úteis e retorna com a indicação do próximo passo mais eficiente.",
     "success_again": "Enviar outra mensagem",
     "error_marker": "ENVIO NÃO CONCLUÍDO",
-    "error_message": "Não consegui enviar agora. Tenta de novo em 1 minuto, ou manda direto para contato@palomaalbieri.com."
+    "error_message": "Não consegui enviar agora. Tenta de novo em 1 minuto, ou manda direto para contato@palomaalbieri.com.",
+    "form_name_company": "Nome e Empresa",
+    "form_bottleneck": "Qual o principal gargalo atual?",
+    "form_security": "Você não precisa saber qual serviço pedir. Não envie senhas ou dados confidenciais.",
+    "bottleneck_presence": "Presença / Mensagem",
+    "bottleneck_structure": "Estrutura / Processos",
+    "bottleneck_unknown": "Ainda não sei identificar",
+    "form_message_hint": "Descreva o cenário em pelo menos 30 caracteres. Não inclua senhas ou dados confidenciais.",
+    "discovery_marker": "[ APLICAÇÃO · DIAGNÓSTICO PAGO ]",
+    "discovery_eta": "Alinhamento prévio da imersão",
+    "discovery_prompt": "Qual problema a imersão precisa esclarecer?",
+    "discovery_reassurance": "Esta é uma aplicação para um serviço pago. O agendamento e as condições serão alinhados diretamente com você.",
+    "discovery_consent": "Entendo que o Discovery é um serviço pago e que esta aplicação não confirma uma reserva ou contratação.",
+    "discovery_submit": "Enviar Aplicação para Diagnóstico",
+    "discovery_success_title": "Aplicação recebida para o Discovery.",
+    "discovery_success_message": "Vou analisar seu cenário e retornar para alinharmos a imersão.",
+    "discovery_success_next": "Você receberá o contato com as condições e o próximo passo para agendamento antes de qualquer execução.",
+    "form_website": "Site ou rede social da empresa (opcional)"
   },
   "portfolio": {
-    "overline": "ARQUIVO",
-    "title": "Portfólio em construção, com projetos arquivados para consulta.",
-    "lead": "Alguns trabalhos ficam em páginas privadas ou semi-públicas para preservar contexto, cliente e escopo. Aqui estão os arquivos disponíveis para navegação.",
-    "project_label": "PROJETO",
-    "project_cta": "Abrir projeto",
-    "paloma_title": "Paloma Albieri",
-    "paloma_copy": "O case da própria marca: estratégia, comunicação, design e tecnologia trabalhando como um sistema de autoridade e conversão.",
-    "miaucafe_title": "Miaucafé",
-    "miaucafe_copy": "Projeto arquivado para consulta privada. A página não aparece no menu público nem no sitemap.",
-    "connect_title": "Construtora Connect",
-    "connect_copy": "Projeto arquivado para consulta privada. A página não aparece no menu público nem no sitemap.",
+    "overline": "ENGENHARIA DE PROCESSOS",
+    "title": "Anatomia de Ecossistemas",
+    "lead": "Cases anonimizados para examinar como posicionamento, experiência web e processos se conectam. O foco está na arquitetura e na lógica de operação, sem expor nomes, marcas ou dados sensíveis de clientes.",
+    "case_label": "ECOSSISTEMA",
+    "context_label": "Cenário",
+    "architecture_label": "Arquitetura",
+    "outcome_label": "Objetivo de engenharia",
+    "diagnostic_cta": "Diagnosticar meu ecossistema",
+    "cases": [
+      {
+        "id": "conversion",
+        "title": "Presença integrada & Conversão",
+        "context": "Canais de entrada dispersos e um caminho pouco claro entre descobrir a oferta e iniciar uma conversa qualificada.",
+        "architecture": "Posicionamento, páginas de conversão, formulário de triagem e canais de contato organizados em uma jornada única.",
+        "outcome": "Dar função a cada ponto de contato, reduzir etapas desnecessárias e registrar o contexto antes de recomendar uma execução."
+      },
+      {
+        "id": "operations",
+        "title": "Operação & Inteligência de Processos",
+        "context": "Informações distribuídas entre mensagens, links e controles manuais, com retrabalho e pouca visibilidade sobre a próxima ação.",
+        "architecture": "Entradas estruturadas, regras de fluxo, responsabilidades, permissões e integrações entre atendimento, dados e operação.",
+        "outcome": "Organizar a passagem de informações e decisões, reduzir dependência de improvisos e tornar o processo rastreável."
+      }
+    ],
     "paloma_case": {
       "overline": "CASE · MARCA PRÓPRIA",
       "title": "Paloma Albieri",
       "lead": "Este site foi pensado como um produto de posicionamento: uma landing page que mostra, na própria experiência, como comunicação, estratégia e tecnologia podem operar juntas.",
-      "proof": ["Social media + tech", "Pesquisa de campo", "Estratégia de conversão"],
+      "proof": [
+        "Social media + tech",
+        "Pesquisa de campo",
+        "Estratégia de conversão"
+      ],
       "thesis_label": "TESE DO PROJETO",
       "thesis": "Somos o nosso maior cliente: se a promessa é conectar conteúdo, site e venda, a própria marca precisa provar esse método antes de vender para outras empresas.",
       "research_label": "PESQUISA",
@@ -284,19 +403,43 @@
       "tools": [
         {
           "title": "Estratégia & conteúdo",
-          "tools": ["Pesquisa de campo", "Linha editorial", "Mapa de caminho", "Canva", "Figma"]
+          "tools": [
+            "Pesquisa de campo",
+            "Linha editorial",
+            "Mapa de caminho",
+            "Canva",
+            "Figma"
+          ]
         },
         {
           "title": "Design & interface",
-          "tools": ["Design system", "Fraunces", "Inter Tight", "Tailwind", "Motion"]
+          "tools": [
+            "Design system",
+            "Fraunces",
+            "Inter Tight",
+            "Tailwind",
+            "Motion"
+          ]
         },
         {
           "title": "Tecnologia",
-          "tools": ["Next.js", "React", "TypeScript", "next-intl", "Netlify"]
+          "tools": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "next-intl",
+            "Netlify"
+          ]
         },
         {
           "title": "Conversão & análise",
-          "tools": ["Netlify Forms", "WhatsApp", "Instagram", "SEO técnico", "Sitemap"]
+          "tools": [
+            "Netlify Forms",
+            "WhatsApp",
+            "Instagram",
+            "SEO técnico",
+            "Sitemap"
+          ]
         }
       ],
       "closing_label": "RESULTADO",

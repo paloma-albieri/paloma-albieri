@@ -8,6 +8,7 @@ export function generateMetadata({ params }: { params: { lang: string } }): Meta
   return buildMetadata(lang, 'triagem');
 }
 
-export default function TriagemPage({ params }: { params: { lang: Locale } }) {
-  return <TriagePage lang={params.lang} />;
+export default function TriagemPage({ params, searchParams }: { params: { lang: Locale }; searchParams: { track?: string } }) {
+  const track = searchParams.track === 'presenca' || searchParams.track === 'estrutura' ? searchParams.track : 'home';
+  return <TriagePage lang={params.lang} track={track} />;
 }

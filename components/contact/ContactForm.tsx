@@ -1,95 +1,53 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useEffect, useId, useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
 type Status = 'idle' | 'sending' | 'ok' | 'error';
-type ContactChannel = 'email' | 'phone' | 'social';
-type ContactTrack = 'home' | 'presenca' | 'estrutura' | 'diagnostico';
+export type ContactTrack = 'home' | 'presenca' | 'estrutura' | 'diagnostico';
+type ContactMode = 'triage' | 'discovery';
+type ContactChannel = 'email' | 'phone';
 
-type Choice = {
-  value: string;
-  label: {
-    pt: string;
-    jp: string;
-  };
-};
-
-const fields = [
-  ['01', 'form_name', 'name'],
-  ['02', 'form_company', 'company'],
-  ['03', 'form_contact', 'contact'],
-  ['04', 'form_message', 'message']
-] as const;
-
-const channels: ContactChannel[] = ['email', 'phone', 'social'];
-
-const bottleneckChoices: Choice[] = [
-  { value: 'message', label: { pt: 'Minha comunicação não está clara', jp: '伝え方が整理できていない' } },
-  { value: 'site', label: { pt: 'Preciso criar ou melhorar um site', jp: 'サイトを作る、または改善したい' } },
-  { value: 'manual_process', label: { pt: 'Meus processos são manuais ou desorganizados', jp: '手作業や管理の流れが多い' } },
-  { value: 'digital_product', label: { pt: 'Preciso de um sistema ou produto digital', jp: 'システムやデジタル商品が必要' } },
-  { value: 'direction', label: { pt: 'Preciso de acompanhamento e direção', jp: '方向性と伴走が必要' } },
-  { value: 'unknown', label: { pt: 'Ainda não sei identificar o problema', jp: '何が問題かまだ分からない' } }
-];
-
-const startChoices: Choice[] = [
-  { value: 'now', label: { pt: 'Agora / nas próximas semanas', jp: '今すぐ / 数週間以内' } },
-  { value: '30_days', label: { pt: 'Em até 30 dias', jp: '30日以内' } },
-  { value: '60_days', label: { pt: 'Em 60 a 90 dias', jp: '60〜90日以内' } },
-  { value: 'exploring', label: { pt: 'Ainda estou entendendo possibilidades', jp: 'まだ可能性を確認している' } }
-];
-
-export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
+export function ContactForm({ track = 'home', mode = 'triage' }: { track?: ContactTrack; mode?: ContactMode }) {
   const t = useTranslations('contact');
   const lang = useLocale();
+  const formId = useId();
   const [status, setStatus] = useState<Status>('idle');
-  const [activeField, setActiveField] = useState<string>('name');
-  const [selectedChannels, setSelectedChannels] = useState<ContactChannel[]>(['email']);
-  const isDiagnostic = track === 'diagnostico';
-
-  function toggleChannel(channel: ContactChannel) {
-    setSelectedChannels((current) => {
-      if (current.includes(channel)) {
-        return current.filter((item) => item !== channel);
-      }
-      return [...current, channel];
-    });
-  }
+  const [channel, setChannel] = useState<ContactChannel>('email');
+  const [ready, setReady] = useState(false);
+  useEffect(() => setReady(true), []);
+  const busy = !ready || status === 'sending';
+  const isDiscovery = mode === 'discovery';
+  const fieldClass = 'field-line w-full min-w-0 border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark focus:border-shock';
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (selectedChannels.length === 0) {
-      setActiveField('contact');
-      setStatus('error');
-      return;
-    }
-
+    if (busy) return;
     setStatus('sending');
-
     const form = event.currentTarget;
-    const formData = new FormData(form);
+    const data = new FormData(form);
     const payload = {
-      name: String(formData.get('name') ?? ''),
-      company: String(formData.get('company') ?? ''),
-      email: String(formData.get('email') ?? ''),
-      phone: String(formData.get('phone') ?? ''),
-      social: String(formData.get('social') ?? ''),
-      country_timezone: String(formData.get('country_timezone') ?? ''),
-      website_url: String(formData.get('website_url') ?? ''),
-      offer_summary: String(formData.get('offer_summary') ?? ''),
-      tried_before: String(formData.get('tried_before') ?? ''),
-      looking_for: String(formData.get('looking_for') ?? ''),
-      bottlenecks: formData.getAll('bottlenecks').map(String),
-      start_timing: String(formData.get('start_timing') ?? ''),
-      decision_context: String(formData.get('decision_context') ?? ''),
-      paid_diagnostic_readiness: String(formData.get('paid_diagnostic_readiness') ?? ''),
-      message: String(formData.get('message') ?? ''),
-      preferred_contact: selectedChannels,
+      name: String(data.get('name') ?? '').trim(),
+      company: String(data.get('company') ?? '').trim(),
+      email: String(data.get('email') ?? '').trim(),
+      phone: String(data.get('phone') ?? '').trim(),
+      social: '',
+      website_url: String(data.get('website_url') ?? '').trim(),
+      country_timezone: '',
+      offer_summary: '',
+      tried_before: '',
+      decision_context: '',
+      start_timing: '',
+      looking_for: isDiscovery ? 'strategic_discovery' : 'initial_triage',
+      paid_diagnostic_readiness: String(data.get('paid_diagnostic_readiness') ?? ''),
+      bottlenecks: data.getAll('bottlenecks').map(String),
+      message: String(data.get('message') ?? '').trim(),
+      preferred_contact: [channel],
       lang,
-      track,
+      track: isDiscovery ? 'diagnostico' : track,
       source_path: window.location.pathname,
-      website: String(formData.get('website') ?? '')
+      website: String(data.get('website') ?? '')
     };
 
     try {
@@ -98,16 +56,13 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload)
       });
-
-      if (response.ok) {
-        setStatus('ok');
-        form.reset();
-        setSelectedChannels(['email']);
-        setActiveField('name');
+      if (!response.ok) {
+        setStatus('error');
         return;
       }
-
-      setStatus('error');
+      form.reset();
+      setChannel('email');
+      setStatus('ok');
     } catch {
       setStatus('error');
     }
@@ -115,290 +70,113 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
 
   if (status === 'ok') {
     return (
-      <div className="contact-success min-h-[520px] border border-line bg-paper-light p-6 text-ink-dark sm:p-8">
-        <div className="flex items-start justify-between gap-8">
-          <p className="label-mono text-accent">{t('success_marker')}</p>
-          <span className="contact-success-mark" aria-hidden="true" />
-        </div>
-        <div className="mt-20 max-w-[34rem]">
-          <h3 className="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold leading-[0.95] tracking-normal">
-            {t('success_title')}
-          </h3>
-          <p className="body-lead mt-8 text-ink-dark">{t('success_message')}</p>
-          <p className="mt-6 max-w-[42ch] text-sm leading-relaxed text-secondary">{t('success_next')}</p>
-        </div>
-        <button
-          type="button"
-          onClick={() => setStatus('idle')}
-          className="cta-pill cta-outline-ink mt-12"
-        >
-          <span>{t('success_again')}</span>
-          <span aria-hidden="true">↗</span>
+      <div role="status" className="contact-success bg-paper-light p-2 text-ink-dark">
+        <p className="label-mono text-accent">{t('success_marker')}</p>
+        <h3 className="mt-6 font-serif text-3xl font-semibold leading-tight">
+          {t(isDiscovery ? 'discovery_success_title' : 'success_title')}
+        </h3>
+        <p className="mt-5 text-base leading-relaxed">{t(isDiscovery ? 'discovery_success_message' : 'success_message')}</p>
+        <p className="mt-4 text-sm leading-relaxed text-secondary">{t(isDiscovery ? 'discovery_success_next' : 'success_next')}</p>
+        <button type="button" onClick={() => setStatus('idle')} className="cta-pill cta-outline-ink mt-8">
+          <span>{t('success_again')}</span><ArrowUpRight size={16} aria-hidden="true" />
         </button>
       </div>
     );
   }
 
   return (
-    <form
-      name="contact"
-      method="POST"
-      onSubmit={handleSubmit}
-      className="contact-editorial-form flex flex-col gap-6"
-    >
-      <div className="mb-2 border-b border-line pb-8">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="label-mono text-accent">{t('form_marker')}</p>
-          <p className="label-mono text-[10px] text-secondary">{t('form_eta')}</p>
+    <form name="contact" method="POST" onSubmit={handleSubmit} aria-busy={busy} className="contact-editorial-form flex flex-col gap-8">
+      <div className="border-b border-line pb-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="label-mono text-accent">{t(isDiscovery ? 'discovery_marker' : 'form_marker')}</p>
+          <p className="font-mono text-[10px] uppercase tracking-widest text-secondary">{t(isDiscovery ? 'discovery_eta' : 'form_eta')}</p>
         </div>
-        <p className="mt-8 max-w-[38rem] font-display text-3xl sm:text-4xl xl:text-5xl font-semibold leading-none tracking-normal text-ink-dark">
-          {isDiagnostic
-            ? lang === 'pt'
-              ? 'Vamos descobrir onde o seu digital está travando antes de falar em serviço.'
-              : 'サービスを選ぶ前に、どこで止まっているかを確認します。'
-            : t('form_prompt')}
-        </p>
-        <div className="mt-8 grid gap-2 sm:grid-cols-4">
-          {fields.map(([number, labelKey, fieldName]) => (
-            <span
-              key={fieldName}
-              className={`label-mono contact-step ${activeField === fieldName ? 'is-active' : ''}`}
-            >
-              <span>{number}</span>
-              {t(labelKey)}
-            </span>
-          ))}
-        </div>
+        <h3 className="mt-5 font-serif text-2xl font-semibold leading-tight text-ink-dark">
+          {t(isDiscovery ? 'discovery_prompt' : 'form_prompt')}
+        </h3>
       </div>
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="lang" value={lang} />
-      <input type="hidden" name="track" value={track} />
-      <input
-        type="text"
-        name="website"
-        tabIndex={-1}
-        autoComplete="off"
-        className="absolute -left-[9999px]"
-        aria-hidden="true"
-      />
-      <label className="contact-field flex flex-col gap-2">
-        <span className="label-mono text-secondary">{t('form_name')}</span>
-        <input
-          name="name"
-          required
-          minLength={2}
-          onFocus={() => setActiveField('name')}
-          className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-        />
-      </label>
-      <label className="contact-field flex flex-col gap-2">
-        <span className="label-mono text-secondary">{t('form_company')}</span>
-        <input
-          name="company"
-          onFocus={() => setActiveField('company')}
-          className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-        />
-      </label>
-      {isDiagnostic && (
-        <div className="contact-field flex flex-col gap-5 border-y border-line py-6">
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="flex flex-col gap-2">
-              <span className="label-mono text-secondary">
-                {lang === 'pt' ? 'País e fuso horário' : '国とタイムゾーン'}
-              </span>
-              <input
-                name="country_timezone"
-                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-                placeholder={lang === 'pt' ? 'Ex.: Japão, JST' : '例: 日本、JST'}
-              />
-            </label>
-            <label className="flex flex-col gap-2">
-              <span className="label-mono text-secondary">
-                {lang === 'pt' ? 'Site e redes sociais' : 'サイト・SNS'}
-              </span>
-              <input
-                name="website_url"
-                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-                placeholder="https:// / @perfil"
-              />
-            </label>
-          </div>
-          <label className="flex flex-col gap-2">
-            <span className="label-mono text-secondary">
-              {lang === 'pt' ? 'O que voce oferece?' : '何を提供していますか？'}
-            </span>
-            <input
-              name="offer_summary"
-              className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-            />
-          </label>
-          <div>
-            <span className="label-mono text-secondary">
-              {lang === 'pt' ? 'O que parece estar travando?' : 'どこで止まっている感じがありますか？'}
-            </span>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2">
-              {bottleneckChoices.map((choice) => (
-                <label key={choice.value} className="contact-choice">
-                  <input type="checkbox" name="bottlenecks" value={choice.value} />
-                  <span className="label-mono">{choice.label[lang as 'pt' | 'jp']}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-          <label className="flex flex-col gap-2">
-            <span className="label-mono text-secondary">
-              {lang === 'pt' ? 'O que ja foi tentado?' : 'これまで試したこと'}
-            </span>
-            <input
-              name="tried_before"
-              className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-            />
-          </label>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="flex flex-col gap-2">
-              <span className="label-mono text-secondary">
-                {lang === 'pt' ? 'Quem participa da decisão?' : '決定に関わる人'}
-              </span>
-              <input
-                name="decision_context"
-                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-                placeholder={lang === 'pt' ? 'Só eu, sócios, diretoria, equipe...' : '自分のみ、共同経営者、チームなど'}
-              />
-            </label>
-            <label className="flex flex-col gap-2">
-              <span className="label-mono text-secondary">
-                {lang === 'pt' ? 'Busca orientação, execução ou os dois?' : '相談、制作、または両方？'}
-              </span>
-              <input
-                name="looking_for"
-                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-              />
-            </label>
-          </div>
-          <label className="flex flex-col gap-2">
-            <span className="label-mono text-secondary">
-              {lang === 'pt' ? 'Quando você quer começar a resolver isso?' : 'いつ頃から進めたいですか？'}
-            </span>
-            <select
-              name="start_timing"
-              className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-              defaultValue=""
-            >
-              <option value="" disabled>
-                {lang === 'pt' ? 'Selecione uma opção' : '選択してください'}
-              </option>
-              {startChoices.map((choice) => (
-                <option key={choice.value} value={choice.value}>
-                  {choice.label[lang as 'pt' | 'jp']}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="contact-choice self-start">
-            <input type="checkbox" name="paid_diagnostic_readiness" value="yes" />
-            <span className="label-mono">
-              {lang === 'pt'
-                ? 'Estou aberta(o) a contratar um diagnóstico pago se fizer sentido.'
-                : '必要であれば有料診断を検討できます。'}
-            </span>
-          </label>
-        </div>
-      )}
-      <div className="contact-field flex flex-col gap-4">
-        <span className="label-mono text-secondary">{t('form_contact')}</span>
-        <div className="grid gap-2 sm:grid-cols-3">
-          {channels.map((channel) => {
-            const isSelected = selectedChannels.includes(channel);
-            return (
-              <label key={channel} className={`contact-choice ${isSelected ? 'is-selected' : ''}`}>
-                <input
-                  type="checkbox"
-                  name="preferred_contact"
-                  value={channel}
-                  checked={isSelected}
-                  onChange={() => {
-                    setActiveField('contact');
-                    toggleChannel(channel);
-                  }}
-                />
-                <span className="label-mono">{t(`form_contact_${channel}`)}</span>
-              </label>
-            );
-          })}
-        </div>
-        {selectedChannels.length === 0 && (
-          <p className="text-sm leading-relaxed text-ink-dark">{t('form_contact_required')}</p>
-        )}
-        <div className="grid gap-4">
-          {selectedChannels.includes('email') && (
-            <label className="flex flex-col gap-2">
-              <span className="label-mono text-[10px] text-secondary">{t('form_email')}</span>
-              <input
-                name="email"
-                type="email"
-                required
-                onFocus={() => setActiveField('contact')}
-                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-              />
-            </label>
-          )}
-          {selectedChannels.includes('phone') && (
-            <label className="flex flex-col gap-2">
-              <span className="label-mono text-[10px] text-secondary">{t('form_phone')}</span>
-              <input
-                name="phone"
-                type="tel"
-                required
-                onFocus={() => setActiveField('contact')}
-                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-              />
-            </label>
-          )}
-          {selectedChannels.includes('social') && (
-            <label className="flex flex-col gap-2">
-              <span className="label-mono text-[10px] text-secondary">{t('form_social')}</span>
-              <input
-                name="social"
-                type="text"
-                required
-                onFocus={() => setActiveField('contact')}
-                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-              />
-            </label>
-          )}
-        </div>
+      <input type="hidden" name="track" value={isDiscovery ? 'diagnostico' : track} />
+      <div className="hidden" aria-hidden="true">
+        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
       </div>
-      <label className="contact-field flex flex-col gap-2">
-        <span className="label-mono text-secondary">
-          {isDiagnostic
-            ? lang === 'pt'
-              ? 'Conte o cenário em poucas linhas'
-              : '現在の状況を簡単に教えてください'
-            : t('form_message')}
-        </span>
-        <textarea
-          name="message"
-          required
-          minLength={30}
-          rows={5}
-          onFocus={() => setActiveField('message')}
-          className="field-line resize-y border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
-        />
-      </label>
-      <div className="mt-2 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="max-w-[30ch] text-sm leading-relaxed text-secondary">{t('form_reassurance')}</p>
-        <button
-          type="submit"
-          disabled={status === 'sending'}
-          className="contact-submit cta-pill cta-filled-shock self-start disabled:opacity-70"
-        >
+      <fieldset disabled={busy} className="min-w-0">
+        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">01</span>{t('form_name_company')}</legend>
+        <div className="grid gap-5 sm:grid-cols-2">
+          <label className="min-w-0 text-sm text-ink-dark">
+            <span>{t('form_name')}</span>
+            <input name="name" required minLength={2} autoComplete="name" className={fieldClass} />
+          </label>
+          <label className="min-w-0 text-sm text-ink-dark">
+            <span>{t('form_company')}</span>
+            <input name="company" autoComplete="organization" className={fieldClass} />
+          </label>
+        </div>
+      </fieldset>
+      <fieldset disabled={busy} className="min-w-0">
+        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">02</span>{t('form_contact')}</legend>
+        <div className="grid grid-cols-2 gap-3">
+          {(['email', 'phone'] as const).map((option) => (
+            <label key={option} className={`contact-choice px-3 py-3 text-sm ${channel === option ? 'is-selected' : ''}`}>
+              <input type="radio" name="preferred_contact" value={option} checked={channel === option} onChange={() => setChannel(option)} />
+              <span>{t(`form_contact_${option}`)}</span>
+            </label>
+          ))}
+        </div>
+        <label className="mt-5 block min-w-0 text-sm text-ink-dark" htmlFor={`${formId}-reply`}>
+          <span>{t(channel === 'email' ? 'form_email' : 'form_phone')}</span>
+          <input key={channel} id={`${formId}-reply`} name={channel} type={channel === 'email' ? 'email' : 'tel'} required
+            autoComplete={channel === 'email' ? 'email' : 'tel'} className={fieldClass} />
+        </label>
+      </fieldset>
+      <fieldset disabled={busy} className="min-w-0">
+        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">03</span>{t('form_bottleneck')}</legend>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {[
+            ['message', 'bottleneck_presence'],
+            ['manual_process', 'bottleneck_structure'],
+            ['unknown', 'bottleneck_unknown']
+          ].map(([value, label]) => (
+            <label key={value} className="contact-choice px-5 py-3 text-sm leading-relaxed">
+              <input type="radio" name="bottlenecks" value={value} required />
+              <span>{t(label)}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      <fieldset disabled={busy} className="min-w-0">
+        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">04</span>{t('form_message')}</legend>
+        <label className="block" htmlFor={`${formId}-message`}>
+          <span className="sr-only">{t('form_message')}</span>
+          <textarea id={`${formId}-message`} name="message" required minLength={30} rows={5}
+            aria-describedby={`${formId}-message-hint`} className={`${fieldClass} resize-y`} />
+        </label>
+        <p id={`${formId}-message-hint`} className="mt-3 text-xs leading-relaxed text-secondary">{t('form_message_hint')}</p>
+        {isDiscovery && (
+          <label className="mt-5 block text-sm text-ink-dark">
+            <span>{t('form_website')}</span>
+            <input name="website_url" className={fieldClass} />
+          </label>
+        )}
+      </fieldset>
+      {isDiscovery && (
+        <label className="flex items-start gap-3 text-sm leading-relaxed text-secondary">
+          <input type="checkbox" name="paid_diagnostic_readiness" value="yes" required disabled={busy}
+            className="mt-1 h-4 w-4 shrink-0 accent-shock" />
+          <span>{t('discovery_consent')}</span>
+        </label>
+      )}
+      <div className="flex flex-col items-start gap-5 border-t border-line pt-6">
+        <p className="text-sm leading-relaxed text-secondary">{t(isDiscovery ? 'discovery_reassurance' : 'form_reassurance')}</p>
+        <button type="submit" disabled={busy} className="contact-submit cta-pill cta-filled-shock disabled:opacity-70">
           {status === 'sending' && <span className="submit-spinner" aria-hidden="true" />}
-          <span>{status === 'sending' ? t('submit_sending') : t('submit')}</span>
-          <span aria-hidden="true">↗</span>
+          <span>{t(status === 'sending' ? 'submit_sending' : isDiscovery ? 'discovery_submit' : 'submit')}</span>
+          <ArrowUpRight size={18} strokeWidth={1} className="shrink-0" aria-hidden="true" />
         </button>
       </div>
       {status === 'error' && (
-        <div className="border border-line bg-paper-rose p-4 text-sm leading-relaxed text-ink-dark">
+        <div role="alert" className="border border-line bg-paper-rose p-4 text-sm leading-relaxed text-ink-dark">
           <p className="label-mono mb-2 text-accent">{t('error_marker')}</p>
           <p>{t('error_message')}</p>
         </div>

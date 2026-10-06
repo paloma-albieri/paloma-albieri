@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { CTAPill } from '@/components/ui/CTAPill';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { isLocale, type Locale } from '@/lib/i18n/config';
 
-const projects = [
-  ['paloma-albieri', 'paloma_title', 'paloma_copy'],
-  ['miaucafe', 'miaucafe_title', 'miaucafe_copy'],
-  ['construtora-connect', 'connect_title', 'connect_copy']
-] as const;
+type EcosystemCase = {
+  id: string;
+  title: string;
+  context: string;
+  architecture: string;
+  outcome: string;
+};
 
 export function generateMetadata({ params }: { params: { lang: string } }): Metadata {
   const lang = isLocale(params.lang) ? params.lang : 'pt';
@@ -16,6 +19,7 @@ export function generateMetadata({ params }: { params: { lang: string } }): Meta
 
 export default function PortfolioPage({ params }: { params: { lang: Locale } }) {
   const t = useTranslations('portfolio');
+  const cases = t.raw('cases') as EcosystemCase[];
 
   return (
     <main className="bg-paper-light pt-24">
@@ -30,20 +34,30 @@ export default function PortfolioPage({ params }: { params: { lang: Locale } }) 
           </div>
         </div>
         <div className="mt-16 grid gap-4 md:grid-cols-2">
-          {projects.map(([slug, titleKey, copyKey]) => (
-            <a
-              key={slug}
-              href={`/${params.lang}/portfolio/${slug}`}
-              className="interactive-card group border border-line bg-paper-light p-6 text-ink-dark sm:p-8"
+          {cases.map((ecosystem, index) => (
+            <article
+              key={ecosystem.id}
+              className="interactive-card border border-line bg-paper-light p-6 text-ink-dark sm:p-8"
             >
-              <p className="label-mono mb-8 text-accent">{t('project_label')}</p>
-              <h2 className="display-h3">{t(titleKey)}</h2>
-              <p className="mt-6 text-sm leading-relaxed text-secondary">{t(copyKey)}</p>
-              <span className="label-mono mt-10 inline-flex text-[10px] transition-colors group-hover:text-accent">
-                {t('project_cta')} ↗
-              </span>
-            </a>
+              <p className="label-mono mb-8 text-accent">
+                {t('case_label')} {String(index + 1).padStart(2, '0')}
+              </p>
+              <h2 className="display-h3">{ecosystem.title}</h2>
+              <dl className="mt-6 flex flex-col gap-6">
+                {(['context', 'architecture', 'outcome'] as const).map((key) => (
+                  <div key={key} className="border-t border-line-soft pt-4">
+                    <dt className="label-mono text-[10px] text-ink-dark">{t(`${key}_label`)}</dt>
+                    <dd className="mt-2 text-sm leading-relaxed text-secondary">{ecosystem[key]}</dd>
+                  </div>
+                ))}
+              </dl>
+            </article>
           ))}
+        </div>
+        <div className="mt-12 border-t border-line-soft pt-8">
+          <CTAPill href={`/${params.lang}/diagnostico`} variant="filled-ink">
+            {t('diagnostic_cta')}
+          </CTAPill>
         </div>
       </section>
     </main>

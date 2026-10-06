@@ -19,12 +19,8 @@ export default function HomePage({ params }: { params: { lang: Locale } }) {
     <main>
       <Hero lang={params.lang} />
       <HomeTracks lang={params.lang} />
-      {params.lang === 'pt' && (
-        <>
-          <OfficialArchitecture />
-          <ScopeFilter />
-        </>
-      )}
+      {params.lang === 'pt' && <OfficialArchitecture />}
+      <ScopeFilter />
       <AboutCard />
       <InstagramFeed />
       <ContactSection track="home" />

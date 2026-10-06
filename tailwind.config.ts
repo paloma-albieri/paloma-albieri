@@ -17,7 +17,7 @@ const config: Config = {
         accent: 'var(--text-accent)',
         line: 'var(--line)',
         'line-soft': 'var(--line-soft)',
-        shock: 'var(--shock)',
+        shock: 'rgb(var(--shock-rgb) / <alpha-value>)',
         'shock-glow': 'var(--shock-glow)'
       },
       fontFamily: {

@@ -38,21 +38,21 @@ const pageSeo = {
       ogLocale: baseSeo.pt.ogLocale
     },
     diagnostico: {
-      title: 'Diagnóstico Estratégico Digital | Paloma Albieri',
+      title: 'Strategic Discovery & Diagnóstico | Paloma Albieri',
       description:
-        'Diagnóstico pago para mapear gargalo, prioridade, risco, escopo e próximos passos antes de executar presença, processo, site ou sistema.',
+        'Imersão paga para mapear riscos, arquitetura web, automações, escopo, responsabilidades e critérios antes da execução.',
       ogLocale: baseSeo.pt.ogLocale
     },
     triagem: {
-      title: 'Triagem digital | Descobrir meu gargalo | Paloma Albieri',
+      title: 'Triagem Inicial de Infraestrutura Digital | Paloma Albieri',
       description:
-        'Formulário público para identificar onde o digital está travando antes de escolher serviço, agenda ou diagnóstico pago.',
+        'Triagem gratuita de contexto, com quatro perguntas e análise manual individual para indicar o próximo passo em até 2 dias úteis.',
       ogLocale: baseSeo.pt.ogLocale
     },
     portfolio: {
-      title: 'Portfólio | Presença digital, sites e conteúdo | Paloma Albieri',
+      title: 'Anatomia de Ecossistemas | Paloma Albieri',
       description:
-        'Projetos de presença digital, sites, conteúdo e comunicação criados por Paloma Albieri para marcas e empresas.',
+        'Cases anonimizados de arquitetura web, automação e engenharia de processos, sem nomes, marcas ou dados sensíveis de clientes.',
       ogLocale: baseSeo.pt.ogLocale
     }
   },
@@ -77,21 +77,21 @@ const pageSeo = {
       ogLocale: baseSeo.jp.ogLocale
     },
     diagnostico: {
-      title: 'デジタル戦略診断 | パロマ・アルビエリ',
+      title: 'Strategic Discovery & 戦略診断 | パロマ・アルビエリ',
       description:
-        '制作前に課題、優先順位、リスク、必要な範囲を整理する有料のデジタル戦略診断です。',
+        '実行前に、リスク、Web設計、自動化、対応範囲、責任分担、判断基準を整理する有料の個別診断です。',
       ogLocale: baseSeo.jp.ogLocale
     },
     triagem: {
-      title: '初回チェック | 課題を見つける | パロマ・アルビエリ',
+      title: 'デジタル基盤の初回チェック | パロマ・アルビエリ',
       description:
-        'サービスを選ぶ前に、オンライン導線のどこで止まっているかを確認する公開フォームです。',
+        '4つの質問で現状を把握する無料の初回チェック。手動で一件ずつ確認し、2営業日以内に次のステップを案内します。',
       ogLocale: baseSeo.jp.ogLocale
     },
     portfolio: {
-      title: 'ポートフォリオ | SNS・サイト・デジタル設計 | パロマ・アルビエリ',
+      title: 'デジタル基盤の構造 | パロマ・アルビエリ',
       description:
-        'パロマ・アルビエリによるデジタルプレゼンス、サイト、コンテンツ、コミュニケーション設計の制作事例です。',
+        '顧客名、ブランド名、機密情報を公開せず、Web設計、自動化、業務プロセスの構造を紹介する匿名のケースです。',
       ogLocale: baseSeo.jp.ogLocale
     }
   }

@@ -320,28 +320,117 @@
     "form_website": "Site ou rede social da empresa (opcional)"
   },
   "portfolio": {
-    "overline": "ENGENHARIA DE PROCESSOS",
-    "title": "Anatomia de Ecossistemas",
-    "lead": "Cases anonimizados para examinar como posicionamento, experiência web e processos se conectam. O foco está na arquitetura e na lógica de operação, sem expor nomes, marcas ou dados sensíveis de clientes.",
-    "case_label": "ECOSSISTEMA",
-    "context_label": "Cenário",
-    "architecture_label": "Arquitetura",
-    "outcome_label": "Objetivo de engenharia",
-    "diagnostic_cta": "Diagnosticar meu ecossistema",
-    "cases": [
+    "overline": "[ DOCUMENTARY SERIES · ANATOMIA DE ECOSSISTEMAS ]",
+    "title": "A engenharia por trás das marcas sem improviso.",
+    "lead": "Estudos de caso anonimizados sob sigilo de diretoria. Analise a arquitetura, os gargalos diagnosticados e as soluções integradas de posicionamento, web e automação.",
+    "privacy": "CONFORMIDADE & PROTEÇÃO DE DADOS DE CLIENTES",
+    "filter_label": "Filtrar episódios por tipo de solução",
+    "filters": {
+      "all": "TODOS OS EPISÓDIOS",
+      "presence": "EP. PRESENÇA & POSICIONAMENTO",
+      "structure": "EP. ESTRUTURA & AUTOMAÇÃO",
+      "global": "EP. MARCA GLOBAL (BR ⇄ JP)"
+    },
+    "episodes_title": "Episódios de engenharia de ecossistemas",
+    "episode_count": "{count, plural, one {# episódio} other {# episódios}}",
+    "confidential_label": "Identidades preservadas",
+    "doc_badge": "[ DOC {number} · CASE ANÔNIMO ]",
+    "reading_time": "[ LEITURA: {minutes} MIN ]",
+    "diagram_label": "Arquitetura de referência",
+    "facts": {
+      "bottleneck": "GARGALO",
+      "architecture": "ARQUITETURA",
+      "market": "MERCADO",
+      "outcome": "RESULTADO"
+    },
+    "acts": {
+      "conflict": "O Conflito",
+      "investigation": "A Investigação",
+      "engineering": "A Engenharia",
+      "impact": "O Impacto"
+    },
+    "act_badge": "[ ATO {number} ]",
+    "read_backstage": "Ler Bastidores",
+    "empty": "Nenhum episódio nesta categoria.",
+    "reference_note": "Os episódios apresentam arquiteturas de referência anonimizadas. Os impactos descritos são objetivos de engenharia, não métricas verificadas de clientes.",
+    "closing_title": "Sua marca precisa de um novo episódio de reestruturação?",
+    "closing_primary": "Solicitar triagem gratuita",
+    "closing_secondary": "Ver diagnóstico pago",
+    "episodes": [
       {
-        "id": "conversion",
-        "title": "Presença integrada & Conversão",
-        "context": "Canais de entrada dispersos e um caminho pouco claro entre descobrir a oferta e iniciar uma conversa qualificada.",
-        "architecture": "Posicionamento, páginas de conversão, formulário de triagem e canais de contato organizados em uma jornada única.",
-        "outcome": "Dar função a cada ponto de contato, reduzir etapas desnecessárias e registrar o contexto antes de recomendar uma execução."
+        "id": "presence",
+        "number": "01",
+        "category": "presence",
+        "title": "Episódio 01: A Ilusão da Presença",
+        "tagline": "Da descoberta no Instagram a uma jornada de contato com critérios.",
+        "minutes": 3,
+        "diagram": [
+          "Marca",
+          "Web",
+          "Contato"
+        ],
+        "facts": {
+          "bottleneck": "Atendimento manual & Leads desalinhados",
+          "architecture": "Posicionamento + Landing Page + Esteira",
+          "market": "Brasil / Internacional",
+          "outcome": "Qualificação & Tempo salvo (objetivo)"
+        },
+        "acts": {
+          "conflict": "O cenário de referência parte de canais ativos, indicações e atenção nas redes sociais, mas de um caminho confuso entre descobrir a oferta e entrar em contato. A presença existe; a continuidade da jornada ainda precisa ser desenhada.",
+          "investigation": "A leitura percorre mensagem, oferta, página e atendimento. O gargalo está na passagem entre os canais: faltam contexto, critérios de qualificação e um próximo passo comercial claro.",
+          "engineering": "A arquitetura conecta posicionamento, página de conversão e formulário de entrada. A mensagem apresenta a oferta, a página organiza a decisão e a esteira registra o contexto para orientar o atendimento.",
+          "impact": "A rotina projetada recebe contatos com contexto e permite priorizar conversas alinhadas à oferta. Qualificação e redução de tarefas repetidas são objetivos desta arquitetura, a verificar na operação."
+        }
       },
       {
-        "id": "operations",
-        "title": "Operação & Inteligência de Processos",
-        "context": "Informações distribuídas entre mensagens, links e controles manuais, com retrabalho e pouca visibilidade sobre a próxima ação.",
-        "architecture": "Entradas estruturadas, regras de fluxo, responsabilidades, permissões e integrações entre atendimento, dados e operação.",
-        "outcome": "Organizar a passagem de informações e decisões, reduzir dependência de improvisos e tornar o processo rastreável."
+        "id": "structure",
+        "number": "02",
+        "category": "structure",
+        "title": "Episódio 02: O Preço do Improviso",
+        "tagline": "Informação, atendimento e responsabilidade no mesmo fluxo.",
+        "minutes": 3,
+        "diagram": [
+          "Entrada",
+          "Triagem",
+          "CRM"
+        ],
+        "facts": {
+          "bottleneck": "Links manuais & Informação fragmentada",
+          "architecture": "Formulário + Regras + CRM",
+          "market": "Operação remota / Internacional",
+          "outcome": "Rastreabilidade & Menos retrabalho (objetivo)"
+        },
+        "acts": {
+          "conflict": "O cenário apresenta informações distribuídas entre mensagens, links e controles manuais. Sem uma passagem clara entre etapas, o acompanhamento depende da memória de quem atende.",
+          "investigation": "A investigação observa entradas, responsáveis, decisões e exceções. O vazamento de energia aparece onde a mesma informação precisa ser digitada de novo ou onde ninguém sabe qual é a próxima ação.",
+          "engineering": "O desenho organiza formulários, regras de triagem, responsáveis e integrações com CRM e notificações. A automação tem uma função delimitada; decisões sensíveis continuam sob supervisão.",
+          "impact": "A rotina projetada registra etapas e responsabilidades, tornando o fluxo rastreável. Menos duplicação de dados e respostas mais consistentes são os objetivos de operação, sem divulgar informações de clientes."
+        }
+      },
+      {
+        "id": "global",
+        "number": "03",
+        "category": "global",
+        "title": "Episódio 03: Uma Marca, Dois Mercados",
+        "tagline": "Brasil e Japão conectados por uma arquitetura de mensagem e experiência.",
+        "minutes": 3,
+        "diagram": [
+          "BR",
+          "PT/JP",
+          "JP"
+        ],
+        "facts": {
+          "bottleneck": "Mensagem & Canais em dois idiomas",
+          "architecture": "Posicionamento + Web PT/JP + Entrada",
+          "market": "Brasil ⇄ Japão",
+          "outcome": "Clareza entre mercados (objetivo)"
+        },
+        "acts": {
+          "conflict": "O cenário de referência reúne públicos no Brasil e no Japão. A expansão pede uma presença que traduza a proposta da marca e organize a entrada de contatos em diferentes idiomas.",
+          "investigation": "A leitura verifica promessa, contexto cultural, navegação e caminhos de contato. Traduzir palavras não basta: cada ponto de entrada precisa oferecer a mesma clareza de decisão.",
+          "engineering": "A arquitetura combina direção de marca, páginas em português e japonês, navegação por idioma e formulários com registro da origem do contato. A governança mantém mensagem e infraestrutura alinhadas.",
+          "impact": "A rotina projetada permite compreender o contexto de cada mercado e coordenar o atendimento remoto. Consistência de posicionamento e clareza da jornada são objetivos, sem expor marcas, nomes ou dados identificáveis."
+        }
       }
     ],
     "paloma_case": {

@@ -50,9 +50,9 @@ const pageSeo = {
       ogLocale: baseSeo.pt.ogLocale
     },
     portfolio: {
-      title: 'Anatomia de Ecossistemas | Paloma Albieri',
+      title: 'Documentário & Engenharia de Ecossistemas | Paloma Albieri',
       description:
-        'Cases anonimizados de arquitetura web, automação e engenharia de processos, sem nomes, marcas ou dados sensíveis de clientes.',
+        'Episódios anonimizados sobre posicionamento, web e automação. Explore a investigação e a arquitetura em quatro atos, com identidades de clientes preservadas.',
       ogLocale: baseSeo.pt.ogLocale
     }
   },
@@ -89,9 +89,9 @@ const pageSeo = {
       ogLocale: baseSeo.jp.ogLocale
     },
     portfolio: {
-      title: 'デジタル基盤の構造 | パロマ・アルビエリ',
+      title: 'ドキュメンタリー & デジタル基盤設計 | パロマ・アルビエリ',
       description:
-        '顧客名、ブランド名、機密情報を公開せず、Web設計、自動化、業務プロセスの構造を紹介する匿名のケースです。',
+        '顧客の識別情報を守りながら、ポジショニング、Web、自動化の調査と設計を4幕の匿名エピソードで紹介します。',
       ogLocale: baseSeo.jp.ogLocale
     }
   }

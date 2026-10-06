@@ -48,6 +48,12 @@
     padding-inline: var(--gutter);
   }
   .section-pad { padding-block: 72px; }
+  .episode-poster-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
   .blueprint-section::before {
     content: "";
     position: absolute;
@@ -253,5 +259,6 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
   .reveal-on-scroll { opacity: 1; transform: none; }
+  .portfolio-reveal { opacity: 1 !important; transform: none !important; }
   .runway-ticker-track { animation: none; transform: none; }
 }

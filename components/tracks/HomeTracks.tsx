@@ -14,7 +14,7 @@ export function HomeTracks({ lang }: { lang: Locale }) {
           <ScrollReveal>
             <p className="editorial-kicker label-mono mb-8 text-ink-dark">{lang === 'pt' ? 'DUAS TRILHAS' : '2つの導線'}</p>
             <h2 className="display-h2 text-ink-dark">
-              {lang === 'pt' ? 'Escolha pelo sintoma, nao pelo nome do servico.' : 'サービス名ではなく、今の課題から選びます。'}
+              {lang === 'pt' ? 'Escolha pelo sintoma, não pelo nome do serviço.' : 'サービス名ではなく、今の課題から選びます。'}
             </h2>
           </ScrollReveal>
           <ScrollReveal delay="short" className="lg:pt-20">
@@ -27,14 +27,14 @@ export function HomeTracks({ lang }: { lang: Locale }) {
         </div>
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
           {items.map((track, index) => (
-            <ScrollReveal key={track.key} delay={index === 0 ? 'short' : 'medium'}>
+            <ScrollReveal key={track.key} delay={index === 0 ? 'short' : 'medium'} className="min-w-0">
               <article
-                className="magazine-card collage-panel interactive-card flex h-full flex-col border border-ink-dark bg-paper-light p-6 text-ink-dark sm:p-8"
+                className="magazine-card collage-panel interactive-card flex h-full flex-col border border-line bg-paper-light p-6 text-ink-dark sm:p-8"
                 data-issue={track.key === 'presenca' ? 'campo 01' : 'campo 02'}
               >
                 <div
-                  className="magazine-card-tape mb-8 flex h-11 w-fit items-center gap-2 border border-ink-dark px-3"
-                  style={{ background: track.key === 'presenca' ? 'var(--shock)' : 'var(--plum)', color: 'var(--paper-light)' }}
+                  className="magazine-card-tape mb-8 flex h-11 w-fit items-center gap-2 border border-line px-3"
+                  style={{ background: track.key === 'presenca' ? 'var(--paper-rose)' : 'var(--paper)', color: track.key === 'presenca' ? 'var(--paper)' : 'var(--ink)' }}
                 >
                   {track.key === 'presenca' ? (
                     <BadgeCheck size={18} strokeWidth={1.6} aria-hidden="true" />
@@ -43,12 +43,12 @@ export function HomeTracks({ lang }: { lang: Locale }) {
                   )}
                   <span className="label-mono text-[10px]">{String(index + 1).padStart(2, '0')}</span>
                 </div>
-                <p className="label-mono text-ink-3">{track.label}</p>
-                <h3 className="mt-6 font-display text-[clamp(36px,5vw,68px)] font-light leading-none">
+                <p className="label-mono text-secondary">{track.label}</p>
+                <h3 className="mt-6 font-display text-4xl sm:text-5xl xl:text-6xl font-semibold leading-none max-[360px]:text-[30px]">
                   {track.homeTitle}
                 </h3>
                 <p className="mt-6 text-base leading-relaxed text-ink-dark">{track.symptom}</p>
-                <p className="mt-5 border-t border-[oklch(.13_.055_315_/_0.18)] pt-5 text-sm leading-relaxed text-ink-3">
+                <p className="mt-5 border-t border-line-soft pt-5 text-sm leading-relaxed text-secondary">
                   {track.summary}
                 </p>
                 <div className="mt-8">

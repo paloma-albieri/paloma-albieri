@@ -42,7 +42,7 @@ export function StackSection() {
           ))}
         </div>
         <ScrollReveal delay="short">
-          <p className="label-mono mt-10 text-ink-3">{t('footer_note')}</p>
+          <p className="label-mono mt-10 text-secondary">{t('footer_note')}</p>
         </ScrollReveal>
       </div>
     </section>

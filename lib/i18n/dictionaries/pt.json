@@ -1,7 +1,7 @@
 {
   "marker": {
-    "top_left": "PALOMA ALBIERI · BRASIL ⇄ JAPAN",
-    "top_right_availability": "TRIAGEM · RESPOSTA EM ATE 2 DIAS UTEIS",
+    "top_left": "PALOMA ALBIERI · BRASIL ⇄ JAPÃO",
+    "top_right_availability": "DISPONÍVEL PARA TRIAGEM · AGENDA BRASIL & JAPÃO",
     "bottom": "Take 01 · 04:23:26 · Pressione · Sobre mim"
   },
   "nav": {
@@ -13,25 +13,49 @@
     "contato": "Contato"
   },
   "hero": {
-    "top_marker": "PALOMA ALBIERI · BRASIL ⇄ JAPAN",
-    "headline": "Seu digital funciona em pedaços.",
-    "subheadline": "Uma parte aparece, outra vende, outra organiza. Eu ajudo a transformar presença e estrutura em um caminho mais claro para quem chega e para quem precisa operar.",
+    "top_marker": "PALOMA ALBIERI · BRASIL ⇄ JAPÃO",
+    "headline": "Digital desconectado custa clientes e tempo.",
+    "subheadline": "Integro posicionamento, experiência web e automação para transformar a presença da sua marca em um ecossistema claro, sofisticado e pronto para converter.",
     "meta_base": "BASE · JAPÃO",
     "meta_foco": "ATENDIMENTO · PRESENCIAL E REMOTO",
     "meta_idiomas": "IDIOMAS · PT / JP",
-    "cta_primary": "Solicitar triagem",
-    "cta_secondary": "Ver diagnóstico pago"
+    "cta_primary": "Solicitar triagem gratuita",
+    "cta_secondary": "Ver diagnóstico pago",
+    "executive_tag": "[ DIREÇÃO & ARQUITETURA DIGITAL ]",
+    "executive_title": "Estratégia + Tecnologia + Marketing",
+    "executive_specs": [
+      { "label": "MERCADOS", "value": "Brasil & Japão" },
+      { "label": "ESCOPO", "value": "Ecossistema & Conversão" },
+      { "label": "FORMATO", "value": "Atendimento Remoto Internacional" },
+      { "label": "SISTEMAS", "value": "Sites, I.A. & Automação" }
+    ],
+    "executive_symptom": "Sintoma atual: Presença fragmentada ou processos manuais."
   },
   "about": {
-    "overline": "// SOBRE",
-    "h2": "Presença digital com direção, conteúdo e estrutura.",
-    "pillars": ["ESTRATÉGIA", "CONTEÚDO", "SITE", "DADOS", "AUTOMAÇÃO"],
-    "p1": "Meu trabalho começa antes do post e antes do site. Eu olho para o negócio, para o cliente, para a mensagem e para o caminho que a pessoa faz até confiar, perguntar e comprar.",
-    "p2": "Trago marketing, conteúdo e tecnologia para a mesma mesa: posicionamento, linha editorial, presença no Instagram, páginas de venda, sites, formulários, automações simples e leitura de dados. A ideia não é fazer tudo ao mesmo tempo, é entender o que resolve primeiro.",
+    "overline": "ESTRATÉGIA + TECNOLOGIA + MARKETING",
+    "h2": "Estratégia, Tecnologia e Marketing na mesma mesa.",
+    "pillars": ["ESTRATÉGIA + TECNOLOGIA + MARKETING"],
+    "p1": "Com atuação remota internacional (atendendo mercados no Brasil e no Japão), uno direção de marca, páginas de alta conversão e inteligência de processos.",
+    "p2": "Atuo como sua Diretora Digital: compreendo o problema antes de recomendar uma solução, protejo as informações do seu negócio e aciono parceiros de extrema confiança quando o escopo exige braços operacionais específicos.",
     "p3": "A parte técnica entra como diferencial. No Japão, passei da linha de produção para responsável de TI e construí sozinha um sistema interno em React, TypeScript, Postgres e Docker usado por 14 setores. Isso me ensinou a pensar processo, clareza e execução de verdade.",
     "p4": "Meu foco é apoiar marcas e empresas que precisam deixar a presença digital mais clara, profissional e fácil de entender. Não vendo post solto, site bonito ou anúncio sem base. Eu organizo presença digital para que as pessoas entendam o que você vende, confiem mais rápido e saibam qual próximo passo dar."
   },
+  "architecture": {
+    "title": "A Arquitetura Oficial por trás das soluções.",
+    "pillars": [
+      "Estratégia Digital & Diagnóstico",
+      "Sites & Experiências Web",
+      "Automação, IA & Processos",
+      "Sistemas & Produtos Digitais",
+      "Direção Digital"
+    ]
+  },
+  "scope": {
+    "title": "Para garantir excelência, o que NÃO fazemos:",
+    "description": "Não oferecemos serviços isolados de tráfego pago operacional, gestão rotineira de social media ou produção recorrente de conteúdo desconectados de uma infraestrutura maior. Meu foco é construir a engenharia e a arquitetura do seu digital."
+  },
   "services_marquee": {
+    "ticker": "POSICIONAMENTO DE ALTO VALOR · ARQUITETURA WEB · AUTOMAÇÃO DE PROCESSOS · DIREÇÃO DIGITAL · BRASIL ⇄ JAPÃO ·",
     "items": [
       "PLANEJAR",
       "MOSTRAR",
@@ -160,12 +184,14 @@
   },
   "contact": {
     "overline": "CONTATO",
-    "headline": "Vamos encontrar o próximo ajuste certo para sua presença digital.",
-    "sub": "Me conte o momento da sua marca. Eu leio o contexto antes de indicar estratégia, conteúdo, site, automação ou acompanhamento.",
+    "headline": "Vamos diagnosticar a infraestrutura digital da sua empresa.",
+    "sub": "Escolha a porta de entrada adequada para o seu momento:",
     "channels_email": "contato@palomaalbieri.com",
     "channels_whatsapp": "WhatsApp",
     "channels_instagram": "@paloma.albieri",
     "channels_calendar": "Agendar reunião de 15 minutos",
+    "triage_free": "1. Triagem Gratuita: Responda ao formulário abaixo (4 minutos). Faço uma análise manual e indico o melhor caminho em até 2 dias úteis.",
+    "diagnostic_paid": "2. Diagnóstico Pago / Discovery: Uma imersão profunda para mapear gargalos, desenhar a arquitetura e definir resultados, escopo e responsabilidades antes de qualquer execução.",
     "form_marker": "LEITURA INICIAL",
     "form_eta": "4 minutos · análise manual",
     "form_prompt": "O que precisa ficar mais claro, profissional ou eficiente no seu digital hoje?",
@@ -179,9 +205,9 @@
     "form_email": "E-mail",
     "form_phone": "Telefone ou WhatsApp",
     "form_social": "Instagram, LinkedIn ou outra rede",
-    "form_message": "Me conte o cenário",
-    "form_reassurance": "Você não precisa saber qual serviço pedir. Não envie senhas, acessos ou dados confidenciais.",
-    "submit": "Solicitar triagem",
+    "form_message": "Me conte o cenário e os gargalos da sua operação digital:",
+    "form_reassurance": "Análise individual realizada em até 48 horas. Você receberá o retorno direto com a orientação mais eficiente para o seu cenário.",
+    "submit": "Enviar dados para triagem gratuita",
     "submit_sending": "Enviando seu cenário",
     "success_marker": "CENÁRIO RECEBIDO",
     "success_title": "Agora eu leio o contexto antes de sugerir o próximo passo.",

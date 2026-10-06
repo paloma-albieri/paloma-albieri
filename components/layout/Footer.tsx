@@ -15,8 +15,8 @@ export function Footer({ lang }: { lang: Locale }) {
   ] as const;
 
   return (
-    <footer className="border-t border-ink-dark bg-paper-light py-12">
-      <div className="container-shell flex flex-col gap-6 text-sm text-ink-dark md:flex-row md:items-center md:justify-between">
+    <footer className="border-t border-line bg-paper py-12">
+      <div className="container-shell flex flex-col gap-6 text-sm text-ink md:flex-row md:items-center md:justify-between">
         <p className="label-mono text-[11px]">{t('copyright')}</p>
         <nav className="flex flex-wrap gap-x-5 gap-y-3" aria-label={t('links_label')}>
           {links.map(([key, label, href, external]) => (
@@ -25,7 +25,7 @@ export function Footer({ lang }: { lang: Locale }) {
               href={href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
-              className="label-mono relative text-[11px] transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-shock after:transition-transform after:duration-200 hover:text-shock hover:after:scale-x-100"
+              className="label-mono relative text-[11px] transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-shock after:transition-transform after:duration-200 hover:text-accent hover:after:scale-x-100"
             >
               {label}
             </a>

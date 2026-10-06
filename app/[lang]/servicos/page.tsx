@@ -76,16 +76,16 @@ export default function ServicesPage({ params }: { params: { lang: Locale } }) {
       <section className="bg-paper-light">
         <div className="container-shell section-pad">
           <ScrollReveal>
-            <p className="label-mono mb-8 text-shock">{copy.eyebrow}</p>
+            <p className="label-mono mb-8 text-accent">{copy.eyebrow}</p>
             <h1 className="display-h1 max-w-[13ch] text-ink-dark">{copy.title}</h1>
             <p className="body-lead mt-8 text-ink-dark">{copy.lead}</p>
           </ScrollReveal>
           <div className="mt-14 grid gap-5 lg:grid-cols-2">
             {copy.fronts.map((front) => (
               <ScrollReveal key={front.title} delay="short">
-                <article className="interactive-card flex h-full flex-col border border-ink-dark bg-paper-light p-6 text-ink-dark sm:p-8">
-                  <p className="label-mono text-shock">{copy.eyebrow}</p>
-                  <h2 className="mt-6 font-display text-[clamp(36px,5vw,68px)] font-light leading-none">
+                <article className="interactive-card flex h-full flex-col border border-line bg-paper-light p-6 text-ink-dark sm:p-8">
+                  <p className="label-mono text-accent">{copy.eyebrow}</p>
+                  <h2 className="mt-6 font-display text-4xl sm:text-5xl xl:text-6xl font-semibold leading-none">
                     {front.title}
                   </h2>
                   <p className="mt-6 text-base leading-relaxed">{front.text}</p>

@@ -1,72 +1,31 @@
-'use client';
+import { useTranslations } from 'next-intl';
 
-import { ArrowUpRight, Layers3, ScanLine, Sparkles } from 'lucide-react';
-import { useRef } from 'react';
+type Specification = { label: string; value: string };
 
-type HeroVisualProps = {
-  meta: string;
-};
-
-export function HeroVisual({ meta }: HeroVisualProps) {
-  const frameRef = useRef<HTMLDivElement>(null);
-
-  function handlePointerMove(event: React.PointerEvent<HTMLDivElement>) {
-    const frame = frameRef.current;
-    if (!frame) return;
-
-    const bounds = frame.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
-    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
-    frame.style.setProperty('--tilt-x', `${(-y * 3).toFixed(2)}deg`);
-    frame.style.setProperty('--tilt-y', `${(x * 4).toFixed(2)}deg`);
-    frame.style.setProperty('--glow-x', `${event.clientX - bounds.left}px`);
-    frame.style.setProperty('--glow-y', `${event.clientY - bounds.top}px`);
-  }
-
-  function resetTilt() {
-    const frame = frameRef.current;
-    if (!frame) return;
-    frame.style.setProperty('--tilt-x', '0deg');
-    frame.style.setProperty('--tilt-y', '0deg');
-  }
+export function HeroVisual() {
+  const t = useTranslations('hero');
+  const specifications = t.raw('executive_specs') as Specification[];
 
   return (
-    <div
-      ref={frameRef}
-      onPointerMove={handlePointerMove}
-      onPointerLeave={resetTilt}
-      className="hero-visual-frame magazine-collage relative aspect-[4/5] min-h-[420px] overflow-hidden border border-ink-dark bg-paper-light sm:aspect-[16/10] lg:aspect-[9/12] lg:min-h-0"
+    <aside
+      className="hero-executive-card relative overflow-hidden rounded-sm border border-line border-t-2 border-t-shock bg-paper-2 p-8 shadow-2xl"
+      aria-labelledby="executive-title"
     >
-      <div className="paper-grain" aria-hidden="true" />
-      <div className="cutout cutout-hero-title">
-        <span className="label-mono">01 / FIELD NOTES</span>
-        <strong>Digital em partes.</strong>
-      </div>
-      <div className="cutout cutout-shock">
-        <Sparkles size={22} strokeWidth={1.7} />
-        <span>clareza</span>
-      </div>
-      <div className="cutout cutout-structure">
-        <Layers3 size={26} strokeWidth={1.6} />
-        <span>estrutura</span>
-      </div>
-      <div className="cutout cutout-outline">
-        <ScanLine size={28} strokeWidth={1.4} />
-        <span>triagem</span>
-      </div>
-      <div className="magazine-strip" aria-hidden="true">
-        <span>presenca</span>
-        <span>processo</span>
-        <span>site</span>
-        <span>sistema</span>
-      </div>
-      <div className="magazine-arrow" aria-hidden="true">
-        <ArrowUpRight size={54} strokeWidth={1.1} />
-      </div>
-      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4 bg-ink-dark px-3 py-2 text-paper-light">
-        <span className="label-mono text-[10px]">{meta}</span>
-        <span className="pulse-dot h-2 w-2 rounded-full bg-shock" aria-hidden="true" />
-      </div>
-    </div>
+      <p className="font-mono text-[10px] uppercase tracking-widest text-ink-3">{t('executive_tag')}</p>
+      <h2 id="executive-title" className="my-3 font-serif text-2xl font-semibold leading-tight text-ink">
+        {t('executive_title')}
+      </h2>
+      <dl className="mt-8">
+        {specifications.map(({ label, value }) => (
+          <div key={label} className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] gap-4 border-b border-line py-4">
+            <dt className="font-mono text-[10px] uppercase leading-relaxed tracking-widest text-ink-3">{label}</dt>
+            <dd className="font-sans text-sm leading-relaxed text-ink">{value}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="mt-6 border-t border-line pt-4 font-sans text-xs italic leading-relaxed text-ink-3">
+        {t('executive_symptom')}
+      </p>
+    </aside>
   );
 }

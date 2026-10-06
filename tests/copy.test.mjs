@@ -18,16 +18,13 @@ const forbiddenWords = [
   'vitrine',
   'elevar',
   'embarcar',
-  'jornada',
   'paixão',
   'empoderar',
   'desencadear',
   'revolucionar',
-  'soluções',
   'entrega de valor',
   'mindset',
   'propósito',
-  'ecossistema',
   'holistico',
   'centrado no usuário'
 ];

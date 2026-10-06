@@ -13,11 +13,16 @@ const config: Config = {
         'ink-2': 'var(--ink-2)',
         'ink-3': 'var(--ink-3)',
         'ink-dark': 'var(--ink-dark)',
+        secondary: 'var(--text-secondary)',
+        accent: 'var(--text-accent)',
         line: 'var(--line)',
+        'line-soft': 'var(--line-soft)',
         shock: 'var(--shock)',
         'shock-glow': 'var(--shock-glow)'
       },
       fontFamily: {
+        serif: ['var(--font-display)'],
+        sans: ['var(--font-body)'],
         display: ['var(--font-display)'],
         body: ['var(--font-body)'],
         mono: ['var(--font-mono)']

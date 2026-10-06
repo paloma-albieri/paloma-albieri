@@ -62,7 +62,7 @@ export function TriagePage({ lang }: { lang: Locale }) {
       <section className="bg-paper-light">
         <div className="container-shell section-pad">
           <ScrollReveal>
-            <p className="label-mono mb-8 text-shock">{t.eyebrow}</p>
+            <p className="label-mono mb-8 text-accent">{t.eyebrow}</p>
             <h1 className="display-h1 max-w-[12ch] text-ink-dark">{t.title}</h1>
             <p className="body-lead mt-8 max-w-[58rem] text-ink-dark">{t.lead}</p>
             <div className="mt-10 flex flex-wrap gap-3">
@@ -83,7 +83,7 @@ export function TriagePage({ lang }: { lang: Locale }) {
             {t.steps.map((step) => (
               <ScrollReveal key={step.title} delay="short">
                 <article className="h-full border border-line bg-paper-2 p-6">
-                  <h2 className="font-display text-4xl font-light leading-none">{step.title}</h2>
+                  <h2 className="font-display text-4xl font-semibold leading-none">{step.title}</h2>
                   <p className="mt-6 text-base leading-relaxed text-ink-2">{step.text}</p>
                 </article>
               </ScrollReveal>

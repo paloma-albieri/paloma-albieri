@@ -20,7 +20,7 @@ export default function PortfolioPage({ params }: { params: { lang: Locale } }) 
   return (
     <main className="bg-paper-light pt-24">
       <section className="container-shell section-pad">
-        <p className="label-mono mb-8 text-ink-3">{t('overline')}</p>
+        <p className="label-mono mb-8 text-secondary">{t('overline')}</p>
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>
             <h1 className="display-h2 text-ink-dark">{t('title')}</h1>
@@ -34,12 +34,12 @@ export default function PortfolioPage({ params }: { params: { lang: Locale } }) 
             <a
               key={slug}
               href={`/${params.lang}/portfolio/${slug}`}
-              className="interactive-card group border border-ink-dark bg-paper-light p-6 text-ink-dark sm:p-8"
+              className="interactive-card group border border-line bg-paper-light p-6 text-ink-dark sm:p-8"
             >
-              <p className="label-mono mb-8 text-shock">{t('project_label')}</p>
+              <p className="label-mono mb-8 text-accent">{t('project_label')}</p>
               <h2 className="display-h3">{t(titleKey)}</h2>
-              <p className="mt-6 text-sm leading-relaxed text-ink-3">{t(copyKey)}</p>
-              <span className="label-mono mt-10 inline-flex text-[10px] transition-colors group-hover:text-shock">
+              <p className="mt-6 text-sm leading-relaxed text-secondary">{t(copyKey)}</p>
+              <span className="label-mono mt-10 inline-flex text-[10px] transition-colors group-hover:text-accent">
                 {t('project_cta')} ↗
               </span>
             </a>

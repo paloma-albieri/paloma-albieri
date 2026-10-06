@@ -115,17 +115,17 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
 
   if (status === 'ok') {
     return (
-      <div className="contact-success min-h-[520px] border border-ink-dark bg-paper-light p-6 text-ink-dark sm:p-8">
+      <div className="contact-success min-h-[520px] border border-line bg-paper-light p-6 text-ink-dark sm:p-8">
         <div className="flex items-start justify-between gap-8">
-          <p className="label-mono text-shock">{t('success_marker')}</p>
+          <p className="label-mono text-accent">{t('success_marker')}</p>
           <span className="contact-success-mark" aria-hidden="true" />
         </div>
         <div className="mt-20 max-w-[34rem]">
-          <h3 className="font-display text-[clamp(36px,5vw,72px)] font-light leading-[0.95] tracking-[-0.03em]">
+          <h3 className="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold leading-[0.95] tracking-normal">
             {t('success_title')}
           </h3>
           <p className="body-lead mt-8 text-ink-dark">{t('success_message')}</p>
-          <p className="mt-6 max-w-[42ch] text-sm leading-relaxed text-ink-3">{t('success_next')}</p>
+          <p className="mt-6 max-w-[42ch] text-sm leading-relaxed text-secondary">{t('success_next')}</p>
         </div>
         <button
           type="button"
@@ -146,12 +146,12 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
       onSubmit={handleSubmit}
       className="contact-editorial-form flex flex-col gap-6"
     >
-      <div className="mb-2 border-b border-ink-dark pb-8">
+      <div className="mb-2 border-b border-line pb-8">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="label-mono text-shock">{t('form_marker')}</p>
-          <p className="label-mono text-[10px] text-ink-3">{t('form_eta')}</p>
+          <p className="label-mono text-accent">{t('form_marker')}</p>
+          <p className="label-mono text-[10px] text-secondary">{t('form_eta')}</p>
         </div>
-        <p className="mt-8 max-w-[38rem] font-display text-[clamp(30px,4vw,56px)] font-light leading-none tracking-[-0.03em] text-ink-dark">
+        <p className="mt-8 max-w-[38rem] font-display text-3xl sm:text-4xl xl:text-5xl font-semibold leading-none tracking-normal text-ink-dark">
           {isDiagnostic
             ? lang === 'pt'
               ? 'Vamos descobrir onde o seu digital está travando antes de falar em serviço.'
@@ -182,58 +182,58 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
         aria-hidden="true"
       />
       <label className="contact-field flex flex-col gap-2">
-        <span className="label-mono text-ink-3">{t('form_name')}</span>
+        <span className="label-mono text-secondary">{t('form_name')}</span>
         <input
           name="name"
           required
           minLength={2}
           onFocus={() => setActiveField('name')}
-          className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+          className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
         />
       </label>
       <label className="contact-field flex flex-col gap-2">
-        <span className="label-mono text-ink-3">{t('form_company')}</span>
+        <span className="label-mono text-secondary">{t('form_company')}</span>
         <input
           name="company"
           onFocus={() => setActiveField('company')}
-          className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+          className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
         />
       </label>
       {isDiagnostic && (
-        <div className="contact-field flex flex-col gap-5 border-y border-ink-dark py-6">
+        <div className="contact-field flex flex-col gap-5 border-y border-line py-6">
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="flex flex-col gap-2">
-              <span className="label-mono text-ink-3">
+              <span className="label-mono text-secondary">
                 {lang === 'pt' ? 'País e fuso horário' : '国とタイムゾーン'}
               </span>
               <input
                 name="country_timezone"
-                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
                 placeholder={lang === 'pt' ? 'Ex.: Japão, JST' : '例: 日本、JST'}
               />
             </label>
             <label className="flex flex-col gap-2">
-              <span className="label-mono text-ink-3">
+              <span className="label-mono text-secondary">
                 {lang === 'pt' ? 'Site e redes sociais' : 'サイト・SNS'}
               </span>
               <input
                 name="website_url"
-                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
                 placeholder="https:// / @perfil"
               />
             </label>
           </div>
           <label className="flex flex-col gap-2">
-            <span className="label-mono text-ink-3">
+            <span className="label-mono text-secondary">
               {lang === 'pt' ? 'O que voce oferece?' : '何を提供していますか？'}
             </span>
             <input
               name="offer_summary"
-              className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+              className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
             />
           </label>
           <div>
-            <span className="label-mono text-ink-3">
+            <span className="label-mono text-secondary">
               {lang === 'pt' ? 'O que parece estar travando?' : 'どこで止まっている感じがありますか？'}
             </span>
             <div className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -246,42 +246,42 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
             </div>
           </div>
           <label className="flex flex-col gap-2">
-            <span className="label-mono text-ink-3">
+            <span className="label-mono text-secondary">
               {lang === 'pt' ? 'O que ja foi tentado?' : 'これまで試したこと'}
             </span>
             <input
               name="tried_before"
-              className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+              className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
             />
           </label>
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="flex flex-col gap-2">
-              <span className="label-mono text-ink-3">
+              <span className="label-mono text-secondary">
                 {lang === 'pt' ? 'Quem participa da decisão?' : '決定に関わる人'}
               </span>
               <input
                 name="decision_context"
-                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
                 placeholder={lang === 'pt' ? 'Só eu, sócios, diretoria, equipe...' : '自分のみ、共同経営者、チームなど'}
               />
             </label>
             <label className="flex flex-col gap-2">
-              <span className="label-mono text-ink-3">
+              <span className="label-mono text-secondary">
                 {lang === 'pt' ? 'Busca orientação, execução ou os dois?' : '相談、制作、または両方？'}
               </span>
               <input
                 name="looking_for"
-                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
               />
             </label>
           </div>
           <label className="flex flex-col gap-2">
-            <span className="label-mono text-ink-3">
+            <span className="label-mono text-secondary">
               {lang === 'pt' ? 'Quando você quer começar a resolver isso?' : 'いつ頃から進めたいですか？'}
             </span>
             <select
               name="start_timing"
-              className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+              className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
               defaultValue=""
             >
               <option value="" disabled>
@@ -305,7 +305,7 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
         </div>
       )}
       <div className="contact-field flex flex-col gap-4">
-        <span className="label-mono text-ink-3">{t('form_contact')}</span>
+        <span className="label-mono text-secondary">{t('form_contact')}</span>
         <div className="grid gap-2 sm:grid-cols-3">
           {channels.map((channel) => {
             const isSelected = selectedChannels.includes(channel);
@@ -332,44 +332,44 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
         <div className="grid gap-4">
           {selectedChannels.includes('email') && (
             <label className="flex flex-col gap-2">
-              <span className="label-mono text-[10px] text-ink-3">{t('form_email')}</span>
+              <span className="label-mono text-[10px] text-secondary">{t('form_email')}</span>
               <input
                 name="email"
                 type="email"
                 required
                 onFocus={() => setActiveField('contact')}
-                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
               />
             </label>
           )}
           {selectedChannels.includes('phone') && (
             <label className="flex flex-col gap-2">
-              <span className="label-mono text-[10px] text-ink-3">{t('form_phone')}</span>
+              <span className="label-mono text-[10px] text-secondary">{t('form_phone')}</span>
               <input
                 name="phone"
                 type="tel"
                 required
                 onFocus={() => setActiveField('contact')}
-                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
               />
             </label>
           )}
           {selectedChannels.includes('social') && (
             <label className="flex flex-col gap-2">
-              <span className="label-mono text-[10px] text-ink-3">{t('form_social')}</span>
+              <span className="label-mono text-[10px] text-secondary">{t('form_social')}</span>
               <input
                 name="social"
                 type="text"
                 required
                 onFocus={() => setActiveField('contact')}
-                className="field-line border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+                className="field-line border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
               />
             </label>
           )}
         </div>
       </div>
       <label className="contact-field flex flex-col gap-2">
-        <span className="label-mono text-ink-3">
+        <span className="label-mono text-secondary">
           {isDiagnostic
             ? lang === 'pt'
               ? 'Conte o cenário em poucas linhas'
@@ -382,11 +382,11 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
           minLength={30}
           rows={5}
           onFocus={() => setActiveField('message')}
-          className="field-line resize-y border-0 border-b border-ink-dark bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
+          className="field-line resize-y border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark outline-none focus:border-shock focus:ring-0"
         />
       </label>
-      <div className="mt-2 flex flex-col gap-4 border-t border-ink-dark pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="max-w-[30ch] text-sm leading-relaxed text-ink-3">{t('form_reassurance')}</p>
+      <div className="mt-2 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p className="max-w-[30ch] text-sm leading-relaxed text-secondary">{t('form_reassurance')}</p>
         <button
           type="submit"
           disabled={status === 'sending'}
@@ -398,8 +398,8 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
         </button>
       </div>
       {status === 'error' && (
-        <div className="border border-ink-dark bg-paper-rose p-4 text-sm leading-relaxed text-ink-dark">
-          <p className="label-mono mb-2 text-shock">{t('error_marker')}</p>
+        <div className="border border-line bg-paper-rose p-4 text-sm leading-relaxed text-ink-dark">
+          <p className="label-mono mb-2 text-accent">{t('error_marker')}</p>
           <p>{t('error_message')}</p>
         </div>
       )}

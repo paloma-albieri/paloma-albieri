@@ -23,28 +23,28 @@ function ServiceCard({ service, compact }: { service: Service; compact: boolean 
   const t = useTranslations('packages');
 
   return (
-    <article className="service-card interactive-card group flex h-full flex-col border border-ink-dark bg-paper-light p-6 text-ink-dark transition-colors hover:border-shock sm:p-7">
-      <h4 className="font-display text-3xl font-light leading-none">{service.name}</h4>
+    <article className="service-card interactive-card group flex h-full flex-col border border-line bg-paper-light p-6 text-ink-dark transition-colors hover:border-shock sm:p-7">
+      <h4 className="font-display text-3xl font-semibold leading-none">{service.name}</h4>
       <p className="mt-5 text-base leading-relaxed">{service.promise}</p>
       {!compact && (
         <>
-          <p className="mt-5 border-t border-[oklch(.13_.055_315_/_0.18)] pt-5 text-sm leading-relaxed">
+          <p className="mt-5 border-t border-line-soft pt-5 text-sm leading-relaxed">
             {service.description}
           </p>
           <div className="mt-6">
-            <p className="label-mono mb-3 text-ink-3">{t('includes_label')}</p>
+            <p className="label-mono mb-3 text-secondary">{t('includes_label')}</p>
             <ul className="flex flex-col gap-2 text-sm leading-relaxed">
               {service.items.map((item) => (
-                <li key={item} className="border-t border-[oklch(.13_.055_315_/_0.14)] pt-2">
+                <li key={item} className="border-t border-line-soft pt-2">
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <p className="mt-6 text-sm leading-relaxed text-ink-3">
+          <p className="mt-6 text-sm leading-relaxed text-secondary">
             <span className="label-mono text-ink-dark">{t('example_label')}</span> {service.example}
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-ink-3">
+          <p className="mt-4 text-sm leading-relaxed text-secondary">
             <span className="label-mono text-ink-dark">{t('fit_label')}</span> {service.fit}
           </p>
         </>
@@ -88,11 +88,11 @@ export function PackagesGrid({
 
         <div className="flex flex-col gap-14">
           {layers.map((layer, layerIndex) => (
-            <div key={layer.label} className="service-layer-collage border-t border-ink-dark pt-8">
+            <div key={layer.label} className="service-layer-collage border-t border-line pt-8">
               <div className="grid gap-8 lg:grid-cols-[0.32fr_0.68fr] lg:gap-10">
                 <ScrollReveal delay={layerIndex === 0 ? 'short' : 'medium'}>
-                  <p className="label-mono text-shock">{layer.label}</p>
-                  <h3 className="mt-4 font-display text-[clamp(42px,7vw,84px)] font-light leading-none text-ink-dark">
+                  <p className="label-mono text-accent">{layer.label}</p>
+                  <h3 className="mt-4 font-display text-4xl sm:text-5xl xl:text-6xl font-semibold leading-none text-ink-dark">
                     {layer.title}
                   </h3>
                   <p className="mt-5 text-base leading-relaxed text-ink-dark">{layer.summary}</p>
@@ -110,7 +110,7 @@ export function PackagesGrid({
           ))}
         </div>
 
-        <ScrollReveal className="mt-14 border-t border-ink-dark pt-8">
+        <ScrollReveal className="mt-14 border-t border-line pt-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <p className="body-lead max-w-3xl text-ink-dark">{t('closing')}</p>
             <CTAPill href="https://wa.me/817020122563" variant="filled-shock" external>

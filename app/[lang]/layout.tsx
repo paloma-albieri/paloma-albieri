@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { isLocale } from '@/lib/i18n/config';
+import { bodyFont as latinBodyFont, editorialFont, monoFont } from '@/lib/fonts';
 import { buildJsonLd } from '@/lib/seo/jsonld';
 import '@/app/styles/globals.css';
 
@@ -27,6 +28,7 @@ export default function LocaleLayout({
   return (
     <html
       lang={params.lang === 'jp' ? 'ja' : 'pt-BR'}
+      className={`${editorialFont.variable} ${latinBodyFont.variable} ${monoFont.variable}`}
     >
       <body className={bodyFont}>
         <NextIntlClientProvider locale={params.lang} messages={messages}>

@@ -1,190 +1,196 @@
 {
   "meta": {
     "brand": "Paloma Albieri",
-    "version": "1.0.0",
-    "generated_at": "2026-05-14T00:00:00Z",
+    "version": "1.1.0",
+    "generated_at": "2026-10-07T00:00:00+09:00",
     "language": "pt-BR",
     "creative_concept": {
       "positioning": "Estrategista digital que conecta post e site — precisão técnica com calor humano, do Brasil ao Japão",
-      "tension_axis": "Brutalidade editorial × Calor orgânico",
-      "personality": ["precisa", "confiável", "calorosa"],
+      "tension_axis": "Alta moda editorial × Precisão técnica",
+      "personality": [
+        "assertiva",
+        "sofisticada",
+        "precisa"
+      ],
       "differentiation": "Brasileira no Japão com mão na execução — marketing + dev web integrados, sem terceirizar, sem fórmula pronta"
     }
   },
   "design_tokens": {
     "colors": {
-      "naming_rationale": "Nomes derivados do universo editorial e gráfico: 'paper' para superfícies, 'ink' para texto, 'shock' para o acento que quebra a sobriedade. A paleta equilibra a frieza editorial (paper escuro, bordas afiadas) com o calor humano (rose, shock magenta, serif suave).",
+      "naming_rationale": "Grafite e off-white estruturam a composição editorial; marfim para leitura no escuro, rosa pastel para destaques e shock para conversão e interação.",
       "palette": {
         "paper": {
           "name": "paper",
-          "hex": "#08090D",
-          "oklch": "oklch(.14 .01 270)",
-          "rgb": "8, 9, 13",
+          "hex": "#1A1817",
+          "rgb": "26, 24, 23",
           "usage": "Background escuro principal — seções invertidas (stacks, hero overlay)"
         },
         "paper_2": {
           "name": "paper-2",
-          "hex": "#101116",
-          "oklch": "oklch(.18 .01 270)",
-          "rgb": "16, 17, 22",
+          "hex": "#141312",
+          "rgb": "20, 19, 18",
           "usage": "Background de cards em contexto escuro"
         },
         "paper_light": {
           "name": "paper-light",
-          "hex": "#FCFAF8",
-          "oklch": "oklch(.985 .003 60)",
-          "rgb": "252, 250, 248",
+          "hex": "#F8F9FA",
+          "rgb": "248, 249, 250",
           "usage": "Background claro principal — superfície padrão do site"
         },
         "paper_rose": {
           "name": "paper-rose",
-          "hex": "#FFD9DF",
-          "oklch": "oklch(.93 .055 10)",
-          "rgb": "255, 217, 223",
+          "hex": "#F4DADA",
+          "rgb": "244, 218, 218",
           "usage": "Background de destaque quente — about card, contato, card recomendado"
         },
         "ink": {
           "name": "ink",
-          "hex": "#F7F5F3",
-          "oklch": "oklch(.97 .003 60)",
-          "rgb": "247, 245, 243",
+          "hex": "#F5F2EB",
+          "rgb": "245, 242, 235",
           "usage": "Texto principal em fundo escuro"
         },
         "ink_2": {
           "name": "ink-2",
-          "hex": "#C7C3C1",
-          "oklch": "oklch(.82 .005 60)",
-          "rgb": "199, 195, 193",
+          "hex": "#C8C3BC",
+          "rgb": "200, 195, 188",
           "usage": "Texto secundário em fundo escuro — labels, marcadores"
         },
         "ink_3": {
           "name": "ink-3",
-          "hex": "#888583",
-          "oklch": "oklch(.62 .005 60)",
-          "rgb": "136, 133, 131",
+          "hex": "#8E8A85",
+          "rgb": "142, 138, 133",
           "usage": "Texto terciário — overlines, metadata, texto desabilitado"
         },
         "ink_dark": {
           "name": "ink-dark",
-          "hex": "#08090D",
-          "oklch": "oklch(.14 .01 270)",
-          "rgb": "8, 9, 13",
+          "hex": "#1A1817",
+          "rgb": "26, 24, 23",
           "usage": "Texto principal em fundo claro — heading, body, bordas"
         },
         "line": {
           "name": "line",
-          "hex": "#27292E",
-          "oklch": "oklch(.28 .01 270)",
-          "rgb": "39, 41, 46",
+          "hex": "#2E2C2A",
+          "rgb": "46, 44, 42",
           "usage": "Bordas e divisores em contexto escuro"
         },
         "shock": {
           "name": "shock",
-          "hex": "#FF397C",
-          "oklch": "oklch(.68 .24 8)",
-          "rgb": "255, 57, 124",
+          "hex": "#FF2A85",
+          "rgb": "255, 42, 133",
           "usage": "Acento primário — CTAs de destaque, hover, seleção, badge, separadores marquee"
         },
         "shock_glow": {
           "name": "shock-glow",
-          "hex": "#FF3985",
-          "oklch": "oklch(.72 .26 8)",
-          "rgb": "255, 57, 133",
+          "hex": "#FF2A85",
+          "rgb": "255, 42, 133",
           "usage": "Hover do acento — versão luminosa do shock"
         },
         "pastel": {
           "name": "pastel",
-          "hex": "#541E29",
-          "oklch": "oklch(.32 .08 10)",
-          "rgb": "84, 30, 41",
+          "hex": "#F4DADA",
+          "rgb": "244, 218, 218",
           "usage": "Tom de profundidade — uso reservado em overlays escuros"
         },
         "pastel_2": {
           "name": "pastel-2",
-          "hex": "#39131B",
-          "oklch": "oklch(.25 .06 10)",
-          "rgb": "57, 19, 27",
+          "hex": "#141312",
+          "rgb": "20, 19, 18",
           "usage": "Tom de profundidade máxima"
         }
       },
       "semantic_tokens": {
-        "background_primary": "paper-light (#FCFAF8)",
-        "background_inverse": "paper (#08090D)",
-        "background_card_dark": "paper-2 (#101116)",
-        "background_highlight": "paper-rose (#FFD9DF)",
-        "background_topbar": "paper-light / 72% opacity + backdrop-blur",
-        "text_primary_light": "ink-dark (#08090D)",
-        "text_primary_dark": "ink (#F7F5F3)",
-        "text_secondary_light": "ink-3 (#888583)",
-        "text_secondary_dark": "ink-2 (#C7C3C1)",
-        "text_accent": "shock (#FF397C)",
-        "border_default_light": "ink-dark (#08090D)",
-        "border_default_dark": "line (#27292E)",
-        "border_focus": "shock (#FF397C)",
-        "selection_bg": "shock (#FF397C)",
-        "selection_text": "ink-dark (#08090D)"
+        "background_primary": "paper-light (#F8F9FA)",
+        "background_inverse": "paper (#1A1817)",
+        "background_card_dark": "paper-2 (#141312)",
+        "background_highlight": "paper-rose (#F4DADA)",
+        "background_topbar": "paper (#1A1817)",
+        "text_primary_light": "ink-dark (#1A1817)",
+        "text_primary_dark": "ink (#F5F2EB)",
+        "text_secondary_light": "color-mix(in srgb, ink-3 72%, paper), contraste de leitura em fundos claros",
+        "text_secondary_dark": "ink-2 (#C8C3BC)",
+        "text_accent": "shock em fundos escuros; color-mix(in srgb, shock 70%, paper) em fundos claros",
+        "border_default_light": "ink-dark (#1A1817)",
+        "border_default_dark": "line (#2E2C2A)",
+        "border_focus": "shock (#FF2A85)",
+        "selection_bg": "shock (#FF2A85)",
+        "selection_text": "ink-dark (#1A1817)"
       },
       "tension_application": "A paleta opera em dois modos: claro (paper-light + ink-dark) com frieza editorial e escuro (paper + ink) com profundidade cinematográfica. O shock magenta é o ponto de tensão — quebra a sobriedade com calor visceral. O paper-rose (fundo rosa suave) é o polo oposto: acolhimento, aproximação."
     },
     "typography": {
-      "rationale": "Fraunces (display serif, light) traz elegância orgânica e humanidade — contrasta com o rigor geométrico de Inter Tight (body) e JetBrains Mono (labels técnicos). O eixo de tensão se manifesta aqui: serif suave nos títulos (calor) × mono uppercase nos labels (brutalidade). Noto Sans JP garante legibilidade no contexto japonês.",
+      "rationale": "Cormorant Garamond 600/700 combina autoridade e estética de revista de moda. Inter mantém o corpo legível e JetBrains Mono organiza os dados técnicos. Fontes WOFF2 locais, com swap e fallback ajustado.",
       "families": {
         "display": {
-          "family": "Fraunces",
-          "source": "Google Fonts",
-          "url": "https://fonts.google.com/specimen/Fraunces",
-          "weights": [300],
-          "role": "Headings principais, hero, display — sempre light (300)"
+          "family": "Cormorant Garamond",
+          "source": "Google Fonts / WOFF2 local",
+          "url": "https://fonts.google.com/specimen/Cormorant+Garamond",
+          "weights": [
+            600,
+            700
+          ],
+          "role": "H1 em 700; H2 e H3 em 600"
         },
         "body": {
-          "family": "Inter Tight",
-          "source": "Google Fonts",
-          "url": "https://fonts.google.com/specimen/Inter+Tight",
-          "weights": [400, 500],
+          "family": "Inter",
+          "source": "Google Fonts / WOFF2 local",
+          "url": "https://fonts.google.com/specimen/Inter",
+          "weights": [
+            400,
+            500,
+            600,
+            700
+          ],
           "role": "Texto corrido, parágrafos, navegação"
         },
         "mono": {
           "family": "JetBrains Mono",
-          "source": "Google Fonts",
+          "source": "Google Fonts / WOFF2 local",
           "url": "https://fonts.google.com/specimen/JetBrains+Mono",
-          "weights": [400],
+          "weights": [
+            400,
+            500
+          ],
           "role": "Labels técnicos (uppercase), CTAs, overlines, markers, metadata"
         },
         "jp": {
           "family": "Noto Sans JP",
           "source": "Google Fonts",
           "url": "https://fonts.google.com/specimen/Noto+Sans+JP",
-          "weights": [400, 500, 700],
+          "weights": [
+            400,
+            500,
+            700
+          ],
           "role": "Fallback para conteúdo em japonês"
         }
       },
       "scale": {
-        "method": "Custom editorial scale — clamp responsivo",
+        "method": "Escala por breakpoints, sem tamanho tipográfico proporcional à largura da viewport",
         "base": "16px",
         "tokens": {
-          "marker": "12px — mono uppercase, letter-spacing 0.04em",
-          "mono": "14px — CTAs e labels mono",
+          "marker": "12px, mono uppercase com tracking 0.05em",
+          "mono": "12px, CTAs mono; 14px para CTAs sans da hero",
           "small": "14px — texto auxiliar",
           "body": "16px — texto corrido padrão",
-          "lead": "clamp(18px, 2vw, 20px) — subtítulos e leads",
-          "h3": "clamp(32px, 4vw, 48px) — títulos de seção terciários",
-          "h2": "clamp(36px, 6vw, 88px) — títulos de seção principais",
-          "h1": "clamp(40px, 8vw, 104px) — hero display"
+          "lead": "18px / 20px a partir de 640px",
+          "h3": "32px / 40px / 48px",
+          "h2": "36px / 56px / 80px",
+          "h1": "44px / 72px / 96px; hero 36px / 48px / 60px"
         }
       },
       "line_heights": {
-        "display": "0.92 — títulos hero (comprimido, editorial)",
-        "h2": "0.95 — títulos de seção",
+        "display": "1; hero 1.1",
+        "h2": "1.05",
         "mono": "1.4 — labels mono",
         "body": "1.55 — texto corrido (generoso, legível)"
       },
       "letter_spacing": {
-        "display": "-0.035em — tracking negativo editorial",
-        "h2": "-0.03em",
-        "body": "0 — neutro",
-        "mono": "0.04em — labels mono expandidos (uppercase)"
+        "display": "0",
+        "h2": "0",
+        "body": "0",
+        "mono": "0.05em; 0.1em em tags da hero e status"
       },
-      "font_feature_settings": "ss01, cv11 — stylistic set e character variant para Inter Tight"
+      "font_feature_settings": "Configuração padrão das fontes locais"
     },
     "spacing": {
       "base_unit": "4px",
@@ -205,8 +211,8 @@
       },
       "semantic_tokens": {
         "gutter": "clamp(20px, 4vw, 56px)",
-        "section_pad": "clamp(72px, 10vw, 128px)",
-        "hero_pad": "120px gutter 80px",
+        "section_pad": "72px / 112px a partir de 1280px",
+        "hero_pad": "64px / 96px a partir de 768px",
         "topbar_pad": "18px gutter",
         "max_content_width": "1440px"
       }
@@ -237,23 +243,24 @@
       ]
     },
     "border_radius": {
-      "rationale": "Bordas afiadas (0px) em cards e containers reforçam o polo editorial/brutalista do eixo de tensão. A única exceção é o CTA pill (999px) — o contraste borda reta × pílula arredondada é intencional e signature.",
+      "rationale": "Cantos discretos e secos: botões 2px e cards 4px.",
       "scale": {
-        "none": "0px — padrão para cards, containers, inputs",
-        "pill": "999px — exclusivo para CTAs"
+        "button": "2px",
+        "card": "4px"
       },
       "defaults": {
-        "button": "pill (999px)",
-        "card": "none (0px)",
-        "input": "none (0px)",
-        "badge": "none (0px)",
-        "container": "none (0px)"
+        "button": "2px",
+        "card": "4px",
+        "input": "2px",
+        "badge": "2px",
+        "container": "0px"
       }
     },
     "shadows": {
-      "rationale": "O site não usa sombras — a hierarquia é construída por contraste de cor (paper vs paper-rose vs paper-2) e bordas. Isso reforça a estética editorial flat. Zero elevação, máxima clareza.",
+      "rationale": "Superfícies planas; sombra reservada ao quadro executivo da hero.",
       "scale": {
-        "none": "nenhuma — padrão global"
+        "none": "padrão",
+        "executive": "shadow-2xl"
       }
     },
     "motion": {
@@ -276,117 +283,152 @@
     "buttons": {
       "variants": {
         "outline_ink": {
-          "description": "CTA pill com borda escura em fundo claro",
+          "description": "CTA secundário de borda fina",
           "background": "transparent",
-          "text": "ink-dark (#08090D)",
-          "border": "0.833px solid ink-dark",
-          "border_radius": "999px (pill)",
-          "padding": "8px 12px",
-          "font": "JetBrains Mono, 14px, 400",
-          "min_height": "40px",
+          "text": "ink-dark (#1A1817)",
+          "border": "1px solid paper",
+          "border_radius": "2px",
+          "padding": "12px 24px",
+          "font": "JetBrains Mono, 12px, 500",
+          "min_height": "48px",
           "icon": "↗ (seta diagonal)",
           "states": {
-            "hover": { "background": "ink-dark (#08090D)", "text": "paper-light (#FCFAF8)" },
+            "hover": {
+              "background": "transparent",
+              "text": "text-accent-light",
+              "border": "shock"
+            },
             "active": {},
-            "disabled": { "opacity": "0.4", "cursor": "not-allowed" }
+            "disabled": {
+              "opacity": "0.4",
+              "cursor": "not-allowed"
+            }
           }
         },
         "outline_inverse": {
-          "description": "CTA pill com borda clara em fundo escuro",
+          "description": "CTA secundário de borda fina",
           "background": "transparent",
-          "text": "ink (#F7F5F3)",
-          "border": "0.833px solid ink",
-          "border_radius": "999px (pill)",
-          "padding": "8px 12px",
-          "font": "JetBrains Mono, 14px, 400",
+          "text": "ink (#F5F2EB)",
+          "border": "1px solid ink-3",
+          "border_radius": "2px",
+          "padding": "12px 24px",
+          "font": "JetBrains Mono, 12px, 500",
           "states": {
-            "hover": { "background": "ink (#F7F5F3)", "text": "paper (#08090D)" }
-          }
+            "hover": {
+              "background": "transparent",
+              "text": "shock",
+              "border": "shock"
+            }
+          },
+          "min_height": "48px"
         },
         "filled_shock": {
-          "description": "CTA pill preenchido com acento magenta",
-          "background": "shock (#FF397C)",
-          "text": "ink-dark (#08090D)",
-          "border": "0.833px solid transparent",
-          "border_radius": "999px (pill)",
+          "description": "CTA primário grafite com hover shock",
+          "background": "paper (#1A1817)",
+          "text": "ink (#F5F2EB)",
+          "border": "1px solid paper",
+          "border_radius": "2px",
           "states": {
-            "hover": { "background": "shock-glow (#FF3985)" }
-          }
+            "hover": {
+              "background": "shock (#FF2A85)",
+              "text": "paper (#1A1817)",
+              "border": "shock"
+            }
+          },
+          "padding": "12px 24px",
+          "min_height": "48px",
+          "font": "JetBrains Mono, 12px, 500"
         },
         "filled_ink": {
-          "description": "CTA pill preenchido escuro — usado no card recomendado",
-          "background": "ink-dark (#08090D)",
-          "text": "paper-light (#FCFAF8)",
-          "border": "0.833px solid transparent",
-          "border_radius": "999px (pill)",
+          "description": "CTA primário grafite com hover shock",
+          "background": "paper (#1A1817)",
+          "text": "ink (#F5F2EB)",
+          "border": "1px solid paper",
+          "border_radius": "2px",
           "states": {
-            "hover": { "background": "shock (#FF397C)", "text": "ink-dark (#08090D)" }
-          }
+            "hover": {
+              "background": "shock (#FF2A85)",
+              "text": "paper (#1A1817)",
+              "border": "shock"
+            }
+          },
+          "padding": "12px 24px",
+          "min_height": "48px",
+          "font": "JetBrains Mono, 12px, 500"
         }
       },
       "sizes": {
-        "default": { "height": "40px", "font_size": "14px", "padding": "8px 12px" }
+        "default": {
+          "height": "48px mínimo",
+          "font_size": "12px mono / 14px sans",
+          "padding": "12px 24px / 16px 24px na hero"
+        }
       }
     },
     "cards": {
       "variants": {
         "default": {
-          "background": "paper-light (#FCFAF8)",
-          "border": "1px solid ink-dark (#08090D)",
-          "border_radius": "0px",
+          "background": "paper-light (#F8F9FA)",
+          "border": "1px solid ink-dark (#1A1817)",
+          "border_radius": "4px",
           "padding": "24px (mobile) / 32px (desktop)",
           "shadow": "none"
         },
         "recommended": {
-          "background": "paper-rose (#FFD9DF)",
-          "border": "2px solid shock (#FF397C)",
-          "border_radius": "0px",
+          "background": "paper-rose (#F4DADA)",
+          "border": "2px solid shock (#FF2A85)",
+          "border_radius": "4px",
           "padding": "24px (mobile) / 32px (desktop)",
           "badge": "label-mono shock color, uppercase"
         },
         "dark": {
-          "background": "paper-2 (#101116)",
-          "border": "1px solid line (#27292E)",
-          "border_radius": "0px",
+          "background": "paper-2 (#141312)",
+          "border": "1px solid line (#2E2C2A)",
+          "border_radius": "4px",
           "padding": "24px"
         }
       }
     },
     "inputs": {
       "default": {
-        "background": "paper-light (#FCFAF8)",
-        "border": "1px solid ink-dark (#08090D)",
-        "border_radius": "0px",
+        "background": "paper-light (#F8F9FA)",
+        "border": "1px solid ink-dark (#1A1817)",
+        "border_radius": "2px",
         "padding": "12px 16px",
-        "font": "Inter Tight, 16px, 400",
-        "color": "ink-dark (#08090D)",
+        "font": "Inter, 16px, 400",
+        "color": "ink-dark (#1A1817)",
         "states": {
-          "focus": { "border": "2px solid shock (#FF397C)" },
-          "error": { "border": "1px solid shock (#FF397C)" }
+          "focus": {
+            "border": "2px solid shock (#FF2A85)"
+          },
+          "error": {
+            "border": "1px solid shock (#FF2A85)"
+          }
         }
       }
     },
     "badges": {
       "default": {
         "font": "JetBrains Mono, 12px, 400, uppercase",
-        "letter_spacing": "0.04em",
-        "color": "shock (#FF397C)"
+        "letter_spacing": "0.05em",
+        "color": "shock (#FF2A85)"
       }
     },
     "language_switch": {
       "description": "Toggle PT/JP com borda e preenchimento no idioma ativo",
       "font": "JetBrains Mono, 10px, uppercase",
-      "border": "1px solid ink-dark",
-      "active_state": "bg ink-dark, text paper-light",
-      "inactive_state": "bg transparent, text ink-dark"
+      "border": "1px solid line",
+      "active_state": "bg ink, text paper",
+      "inactive_state": "bg transparent, text ink"
     },
     "marquee": {
-      "description": "Faixa de serviços em scroll infinito horizontal",
-      "font": "Fraunces, clamp(44px,8vw,88px), 300",
-      "tracking": "-0.03em",
-      "separator": "· em shock (#FF397C)",
-      "animation": "marquee-left 40s linear infinite, pausa no hover",
-      "border": "border-y 1px solid ink-dark"
+      "description": "Ticker abaixo da hero com dois grupos idênticos, ocultos de leitores de tela",
+      "font": "JetBrains Mono, 12px, 400, uppercase",
+      "tracking": "0.1em",
+      "separator": "·",
+      "animation": "marquee-left 36s linear infinite, pausa no hover, sem animação em reduced-motion",
+      "border": "border-y 1px solid line",
+      "background": "paper (#1A1817)"
     }
   },
   "layout_blueprints": {
@@ -397,63 +439,106 @@
           "grid_usage": "flex justify-between, container-shell",
           "spacing": "py-18px px-gutter",
           "background": "paper-light 72% + backdrop-blur",
-          "elements": ["logo_text (PALOMA ALBIERI · BRASIL ⇄ JAPAN)", "nav_mono_links", "availability_label", "lang_switch"]
+          "elements": [
+            "logo_text (PALOMA ALBIERI · BRASIL ⇄ JAPAN)",
+            "nav_mono_links",
+            "availability_label",
+            "lang_switch"
+          ]
         },
         {
           "name": "Hero",
           "grid_usage": "container-shell, text stacking",
           "spacing": "pad-hero: 120px gutter 80px",
           "background": "paper-light",
-          "elements": ["top_marker_mono", "display_h1 (headline)", "body_lead (subheadline)", "meta_labels (base/foco/idiomas)", "cta_pill_primary", "cta_pill_secondary"]
+          "elements": [
+            "top_marker_mono",
+            "display_h1 (headline)",
+            "body_lead (subheadline)",
+            "meta_labels (base/foco/idiomas)",
+            "cta_pill_primary",
+            "cta_pill_secondary"
+          ]
         },
         {
           "name": "About Card",
           "grid_usage": "lg:grid-cols-[0.9fr_1.1fr]",
           "spacing": "section-pad, card px-16 py-16",
-          "background": "paper-rose (#FFD9DF)",
-          "elements": ["overline_mono", "display_h2", "body_paragraphs (4)"]
+          "background": "paper-rose (#F4DADA)",
+          "elements": [
+            "overline_mono",
+            "display_h2",
+            "body_paragraphs (4)"
+          ]
         },
         {
           "name": "Services Marquee",
           "grid_usage": "full-bleed, overflow-hidden",
           "spacing": "py-5",
           "background": "paper-light com border-y ink-dark",
-          "elements": ["marquee_track (Fraunces display + separadores shock)"]
+          "elements": [
+            "marquee_track (Cormorant Garamond display + separadores shock)"
+          ]
         },
         {
           "name": "Stacks",
           "grid_usage": "lg:grid-cols-[1fr_0.72fr] + xl:grid-cols-4 (cards)",
           "spacing": "section-pad",
-          "background": "paper (#08090D) — modo escuro",
-          "elements": ["marker_mono", "display_h2", "body_lead", "stack_cards (4)"]
+          "background": "paper (#1A1817) — modo escuro",
+          "elements": [
+            "marker_mono",
+            "display_h2",
+            "body_lead",
+            "stack_cards (4)"
+          ]
         },
         {
           "name": "Instagram Feed",
           "grid_usage": "container-shell + horizontal scroll",
           "spacing": "section-pad",
           "background": "paper-light",
-          "elements": ["overline_mono", "display_h2", "body_lead", "feed_cards", "cta_pills"]
+          "elements": [
+            "overline_mono",
+            "display_h2",
+            "body_lead",
+            "feed_cards",
+            "cta_pills"
+          ]
         },
         {
           "name": "Packages",
           "grid_usage": "lg:grid-cols-[0.8fr_1.2fr] + xl:grid-cols-4 (cards)",
           "spacing": "section-pad",
           "background": "paper-light",
-          "elements": ["overline_mono", "display_h2", "body_lead", "package_cards (4)"]
+          "elements": [
+            "overline_mono",
+            "display_h2",
+            "body_lead",
+            "package_cards (4)"
+          ]
         },
         {
           "name": "Contact",
           "grid_usage": "lg:grid-cols-[0.85fr_1.15fr]",
           "spacing": "section-pad",
-          "background": "paper-rose (#FFD9DF)",
-          "elements": ["overline_mono", "display_h2", "body_lead", "channel_links", "contact_form"]
+          "background": "paper-rose (#F4DADA)",
+          "elements": [
+            "overline_mono",
+            "display_h2",
+            "body_lead",
+            "channel_links",
+            "contact_form"
+          ]
         },
         {
           "name": "Footer",
           "grid_usage": "flex justify-between, container-shell",
           "spacing": "py-12",
           "background": "paper-light com border-t ink-dark",
-          "elements": ["copyright_mono", "links_text"]
+          "elements": [
+            "copyright_mono",
+            "links_text"
+          ]
         }
       ]
     },
@@ -462,9 +547,14 @@
         "canvas": "1080x1080px",
         "safe_area": "960x960px (60px margin)",
         "grid": "Assimétrico — headline em 2/3 superior, CTA ou dados em 1/3 inferior",
-        "typography": "Fraunces para headline, JetBrains Mono para labels, Inter Tight para body",
+        "typography": "Cormorant Garamond para headline, JetBrains Mono para labels, Inter para body",
         "colors": "paper-light bg + ink-dark text OU paper bg + ink text. Shock para acentos.",
-        "elements": ["headline_zone", "body_zone", "accent_element (shock)", "identifier (PALOMA ALBIERI mono)"]
+        "elements": [
+          "headline_zone",
+          "body_zone",
+          "accent_element (shock)",
+          "identifier (PALOMA ALBIERI mono)"
+        ]
       },
       "instagram_story": {
         "canvas": "1080x1920px",
@@ -475,8 +565,8 @@
   },
   "visual_elements": {
     "icons": {
-      "style": "Nenhuma biblioteca de ícones — o site usa caracteres tipográficos como ícones (↗ para links, · para separadores, ⇄ para bidirecionalidade)",
-      "custom_rules": "Preferir sinais tipográficos a ícones SVG. Manter estética editorial."
+      "style": "Lucide, traço fino, com símbolos tipográficos em divisores",
+      "custom_rules": "Ícones decorativos aria-hidden; botões somente com ícone precisam de nome acessível."
     },
     "imagery": {
       "photography_style": "Não aplicável atualmente — o site é puramente tipográfico e textual",
@@ -488,23 +578,23 @@
       "rationale": "A ausência de ilustração é parte da identidade: a tipografia É o design"
     },
     "signature_pattern": {
-      "name": "The Editorial Edge",
-      "description": "Combinação de: (1) cards com borda afiada 0px radius + borda 1px ink-dark, (2) labels mono uppercase com letter-spacing expandido, (3) headlines serif light com tracking negativo comprimido. O contraste entre esses três elementos — sharp box, technical label, soft serif — é o DNA visual da marca.",
-      "construction_rule": "Toda composição deve conter pelo menos 2 dos 3 elementos: borda afiada, label mono uppercase, headline Fraunces light",
-      "usage_contexts": "Cards, seções do site, posts Instagram, propostas, slides",
-      "do_not_use": "Nunca usar bordas arredondadas em containers. Nunca usar o mono sem uppercase.",
-      "rationale": "Se remover as bordas afiadas ou trocar Fraunces por uma sans-serif, a identidade visual colapsa. Este padrão é o que torna Paloma Albieri reconhecível."
+      "name": "Runway Editorial",
+      "description": "Headlines Cormorant Garamond 600/700, superfícies grafite e off-white, metadados mono uppercase, bordas finas e detalhes shock.",
+      "construction_rule": "Usar contraste entre serif de alta moda, corpo Inter e rótulos técnicos mono.",
+      "usage_contexts": "Site, cards, hero e material de marca",
+      "do_not_use": "Recortes inclinados, sombras decorativas, gradientes coloridos e CTAs em pílula.",
+      "rationale": "A hierarquia tipográfica e o contraste de superfícies sustentam a identidade editorial."
     }
   },
   "tool_prompts": {
     "figma_ai": {
-      "component_generation": "Create a card component with 0px border radius, 1px solid #08090D border, #FCFAF8 background, 32px padding. Use Fraunces 300 for the heading with -0.03em tracking, JetBrains Mono 400 12px uppercase for the overline label with 0.04em tracking, and Inter Tight 400 16px for body text. The card should feel precise, editorial, and warm. No shadows, no rounded corners.",
-      "layout_generation": "Create a landing page section with asymmetric 2-column grid (0.85fr left, 1.15fr right). Left column: JetBrains Mono 12px uppercase overline + Fraunces 300 88px heading with -0.03em tracking and 0.95 line-height. Right column: Inter Tight 400 20px lead text max-width 56ch. Background #FCFAF8, text #08090D. Section padding 128px top/bottom.",
-      "style_guide": "Create a brand style guide page showing: color swatches for #08090D (paper), #FCFAF8 (paper-light), #FFD9DF (paper-rose), #FF397C (shock); type specimens for Fraunces 300, Inter Tight 400/500, JetBrains Mono 400; button variants (outline pill, filled pill); card with sharp edges."
+      "component_generation": "Create refined editorial components with 2px buttons, 4px cards, 1px #2E2C2A borders, Cormorant Garamond 600/700, Inter body and JetBrains Mono uppercase labels. Use #FF2A85 for interaction and #F4DADA for subtle highlights.",
+      "layout_generation": "Create a dark editorial hero with 7-column text and 5-column executive portrait card. Palette #1A1817, #141312, #F5F2EB, #8E8A85 and #FF2A85. Keep generous spacing and thin dividers.",
+      "style_guide": "Show the official palette and locally hosted Cormorant Garamond, Inter and JetBrains Mono; rectangular CTAs, quiet cards and the existing PA monogram."
     },
     "midjourney": {
-      "brand_mood": "Editorial minimalist design, warm off-white paper texture background, sharp geometric edges contrasting with soft serif typography, magenta pink accent #FF397C, Japanese-Brazilian cultural fusion, clean precise layout, professional but approachable, no illustrations, typography-focused design --ar 16:9 --v 6 --style raw",
-      "social_content": "Minimalist Instagram post design, off-white background #FCFAF8, bold serif headline in dark navy #08090D, small monospace uppercase label, sharp-edged card border, single magenta accent #FF397C, editorial layout, no icons, typography only --ar 1:1 --v 6 --style raw"
+      "brand_mood": "Editorial minimalist design, warm off-white paper texture background, sharp geometric edges contrasting with soft serif typography, magenta pink accent #FF2A85, Japanese-Brazilian cultural fusion, clean precise layout, professional but approachable, no illustrations, typography-focused design --ar 16:9 --v 6 --style raw",
+      "social_content": "Minimalist Instagram post design, off-white background #F8F9FA, bold serif headline in dark navy #1A1817, small monospace uppercase label, sharp-edged card border, single magenta accent #FF2A85, editorial layout, no icons, typography only --ar 1:1 --v 6 --style raw"
     },
     "dalle": {
       "brand_mood": "An editorial minimalist mood board with warm off-white paper backgrounds, sharp geometric card borders, soft serif typography contrasting with technical monospace labels, a single vibrant magenta-pink accent color, Japanese-Brazilian design fusion aesthetic, clean and precise but warm and approachable, no illustrations",
@@ -513,19 +603,40 @@
   },
   "exportable_assets": {
     "logo": {
-      "type": "Typographic wordmark — PALOMA ALBIERI em Inter Tight 500 + descriptor",
-      "formats": ["SVG", "PNG@1x", "PNG@2x"],
-      "variants": ["primary (ink-dark on paper-light)", "reversed (ink on paper)", "monochrome"]
+      "type": "Monograma PA do favicon existente, autorizado para o header",
+      "path": "public/favicon.svg",
+      "formats": [
+        "SVG"
+      ],
+      "variants": [
+        "asset original sobre fundo paper"
+      ]
     },
     "social_media": {
       "templates": [
-        { "name": "Instagram Post", "size": "1080x1080px", "format": "PNG" },
-        { "name": "Instagram Story", "size": "1080x1920px", "format": "PNG" },
-        { "name": "OG Image", "size": "1200x630px", "format": "PNG" }
+        {
+          "name": "Instagram Post",
+          "size": "1080x1080px",
+          "format": "PNG"
+        },
+        {
+          "name": "Instagram Story",
+          "size": "1080x1920px",
+          "format": "PNG"
+        },
+        {
+          "name": "OG Image",
+          "size": "1200x630px",
+          "format": "PNG"
+        }
       ]
     },
     "design_tokens_export": {
-      "formats": ["JSON (este arquivo)", "CSS Custom Properties (tokens.css)", "Tailwind Config (tailwind.config.ts)"],
+      "formats": [
+        "JSON (este arquivo)",
+        "CSS Custom Properties (tokens.css)",
+        "Tailwind Config (tailwind.config.ts)"
+      ],
       "source_of_truth": "tokens.css — todos os outros derivam dele"
     }
   }

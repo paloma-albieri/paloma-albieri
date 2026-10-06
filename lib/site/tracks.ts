@@ -27,12 +27,12 @@ export const tracks: Record<Locale, Record<TrackKey, TrackContent>> = {
   pt: {
     presenca: {
       key: 'presenca',
-      label: 'Trilha Presenca',
-      homeTitle: 'Aparecer e ser entendida',
+      label: '01 · TRILHA PRESENÇA',
+      homeTitle: 'Posicionamento & Percepção de Alto Valor',
       title: 'Presenca digital para quem chega e nao sabe o que fazer depois.',
-      symptom: 'As pessoas chegam pelo Instagram, indicacao ou busca, mas o caminho ate o contato ainda esta confuso.',
+      symptom: 'Seus clientes chegam por indicação ou redes sociais, mas o fluxo até o contato ainda é confuso.',
       summary:
-        'Organizo mensagem, experiencia web e proximos passos para a marca aparecer com clareza e transformar atencao em conversa qualificada.',
+        'Estruturo sua mensagem de marca, páginas de conversão e esteira de entrada para transformar atenção em conversas qualificadas e contratações rápidas.',
       services: [
         'Diagnostico Estrategico Digital',
         'Sites & Experiencias Web',
@@ -47,16 +47,16 @@ export const tracks: Record<Locale, Record<TrackKey, TrackContent>> = {
       ],
       proof:
         'A propria marca Paloma Albieri funciona como case vivo: conteudo, site, estrategia e formulario trabalham juntos para gerar conversa qualificada.',
-      cta: 'Quero organizar minha presenca'
+      cta: 'Quero estruturar meu posicionamento'
     },
     estrutura: {
       key: 'estrutura',
-      label: 'Trilha Estrutura',
-      homeTitle: 'Funcionar sem improviso',
+      label: '02 · TRILHA ESTRUTURA',
+      homeTitle: 'Arquitetura Web & Eficiência Operacional',
       title: 'Estrutura digital para processo que nao pode depender de memoria.',
-      symptom: 'Seu atendimento, cadastro, venda ou organizacao interna ainda depende de alguem lembrar o proximo passo.',
+      symptom: 'Sua venda, atendimento ou organização interna ainda dependem do envio manual de links e de processos improvisados.',
       summary:
-        'Construo bases digitais simples e evolutivas: experiencias web, processos, automacoes, IA delimitada e sistemas por fases.',
+        'Desenvolvo ecossistemas digitais sustentáveis: sites institucionais, automações com IA e fluxos estruturados para sua empresa rodar com previsibilidade.',
       services: ['Sites & Experiencias Web', 'Automacao, IA & Processos', 'Sistemas & Produtos Digitais', 'Direcao Digital'],
       tools: [
         { title: 'Construir a base', text: 'Next.js, React, TypeScript, Tailwind, Supabase, PostgreSQL e GitHub.' },
@@ -66,7 +66,7 @@ export const tracks: Record<Locale, Record<TrackKey, TrackContent>> = {
       ],
       proof:
         'No Japao, sai da linha de producao para TI e construi sozinha um sistema interno em React, TypeScript, Postgres e Docker usado por 14 setores. Miaucafe e Construtora Connect ficam como arquivos privados de estrutura e presenca.',
-      cta: 'Quero estruturar meu processo'
+      cta: 'Quero automatizar minha operação'
     }
   },
   jp: {

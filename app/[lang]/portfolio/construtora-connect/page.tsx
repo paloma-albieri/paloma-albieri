@@ -14,7 +14,7 @@ export default function ConstrutoraConnectArchivePage() {
   return (
     <main className="bg-paper-light pt-24">
       <section className="container-shell section-pad">
-        <p className="label-mono mb-8 text-ink-3">{t('overline')}</p>
+        <p className="label-mono mb-8 text-secondary">{t('overline')}</p>
         <h1 className="display-h2 text-ink-dark">{t('connect_title')}</h1>
         <p className="body-lead mt-8 text-ink-dark">{t('connect_copy')}</p>
       </section>

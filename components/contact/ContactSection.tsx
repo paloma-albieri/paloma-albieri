@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ContactForm } from './ContactForm';
 
@@ -13,6 +13,7 @@ const links = [
 
 export function ContactSection({ track = 'home' }: { track?: ContactTrack }) {
   const t = useTranslations('contact');
+  const locale = useLocale();
 
   return (
     <section className="contact-collage bg-paper-rose" id="contato">
@@ -22,14 +23,14 @@ export function ContactSection({ track = 'home' }: { track?: ContactTrack }) {
           <ScrollReveal>
             <h2 className="display-h2 text-ink-dark">{t('headline')}</h2>
             <p className="body-lead mt-8 text-ink-dark">{t('sub')}</p>
-            <div className="mt-10 flex flex-col border-t border-ink-dark">
+            <div className="mt-10 flex flex-col border-t border-line">
               {links.map(([key, href]) => (
                 <a
                   key={key}
                   href={href}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="link-row flex items-center justify-between gap-4 border-b border-ink-dark py-4 text-sm"
+                  className="link-row flex items-center justify-between gap-4 border-b border-line py-4 text-sm"
                 >
                   <span className="label-mono text-[10px] text-ink-dark">{key.replace('channels_', '')}</span>
                   <strong className="font-normal">{t(key)}</strong>
@@ -37,8 +38,20 @@ export function ContactSection({ track = 'home' }: { track?: ContactTrack }) {
               ))}
             </div>
           </ScrollReveal>
-          <ScrollReveal delay="short" className="interactive-card border border-ink-dark bg-paper-light p-5 sm:p-8">
-            <ContactForm track={track} />
+          <ScrollReveal delay="short">
+            {locale === 'pt' && (
+              <div className="mb-8 grid gap-4 text-sm leading-relaxed text-ink-dark">
+                <article className="border border-line bg-paper-light p-5 sm:p-6">
+                  <p>{t('triage_free')}</p>
+                </article>
+                <article className="border border-line bg-paper-rose p-5 sm:p-6">
+                  <p>{t('diagnostic_paid')}</p>
+                </article>
+              </div>
+            )}
+            <div className="interactive-card border border-line bg-paper-light p-5 sm:p-8">
+              <ContactForm track={track} />
+            </div>
           </ScrollReveal>
         </div>
       </div>

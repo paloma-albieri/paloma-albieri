@@ -54,7 +54,7 @@ export async function InstagramFeed() {
                   href={post.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="collage-post interactive-card flex min-h-[220px] flex-col justify-between border border-ink-dark bg-paper-light p-6 text-ink-dark"
+                  className="collage-post interactive-card flex min-h-[220px] flex-col justify-between border border-line bg-paper-light p-6 text-ink-dark"
                   style={{
                     background:
                       index === 1
@@ -64,9 +64,9 @@ export async function InstagramFeed() {
                           : 'var(--paper-light)'
                   }}
                 >
-                  <span className="label-mono text-shock">POST</span>
-                  <span className="mt-8 block font-display text-4xl font-light leading-none">{post.title}</span>
-                  <span className="mt-5 block text-sm leading-relaxed text-ink-3">{post.text}</span>
+                  <span className="label-mono text-accent">POST</span>
+                  <span className="mt-8 block font-display text-4xl font-semibold leading-none">{post.title}</span>
+                  <span className="mt-5 block text-sm leading-relaxed text-secondary">{post.text}</span>
                   <span className="label-mono mt-8 text-ink-dark">{t('post_cta')}</span>
                 </a>
               ))}

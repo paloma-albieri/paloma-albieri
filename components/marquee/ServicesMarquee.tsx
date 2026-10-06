@@ -2,24 +2,15 @@ import { useTranslations } from 'next-intl';
 
 export function ServicesMarquee() {
   const t = useTranslations('services_marquee');
-  const items = t.raw('items') as string[];
-  const track = [...items, ...items];
+  const ticker = t('ticker');
 
   return (
-    <section className="overflow-hidden border-y border-ink-dark bg-paper-light py-5" aria-label={items.join(', ')}>
-      <ul className="sr-only">
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-      <div
-        className="flex w-max animate-[marquee-left_40s_linear_infinite] gap-10 whitespace-nowrap font-display text-[clamp(44px,8vw,88px)] font-light leading-none tracking-[-0.03em] hover:[animation-play-state:paused]"
-        aria-hidden="true"
-      >
-        {track.map((item, index) => (
-          <span key={`${item}-${index}`} className="flex items-center gap-10">
-            {item}
-            <span className="text-shock">·</span>
+    <section className="runway-ticker overflow-hidden border-y border-line bg-paper py-3" aria-label={ticker}>
+      <div className="runway-ticker-track whitespace-nowrap font-mono text-xs uppercase tracking-widest text-ink-3" aria-hidden="true">
+        {[0, 1].map((group) => (
+          <span key={group} className="inline-flex min-w-[100vw] gap-12">
+            <span>{ticker}</span>
+            <span>{ticker}</span>
           </span>
         ))}
       </div>

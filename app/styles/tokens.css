@@ -1,30 +1,31 @@
 :root {
-  --paper: oklch(.13 .055 315);
-  --paper-2: oklch(.19 .065 315);
-  --paper-light: oklch(.976 .014 82);
-  --paper-rose: oklch(.935 .038 12);
-  --paper-warm: oklch(.955 .045 68);
+  --paper: #1A1817;
+  --paper-2: #141312;
+  --paper-light: #F8F9FA;
+  --paper-rose: #F4DADA;
+  --paper-warm: var(--ink);
 
-  --ink: oklch(.982 .012 82);
-  --ink-2: oklch(.83 .018 65);
-  --ink-3: oklch(.43 .035 320);
-  --ink-dark: oklch(.13 .055 315);
+  --ink: #F5F2EB;
+  --ink-2: #C8C3BC;
+  --ink-3: #8E8A85;
+  --ink-dark: var(--paper);
 
-  --line: oklch(.29 .045 315);
-  --shock: oklch(.56 .22 350);
-  --shock-glow: oklch(.66 .24 355);
-  --wine: oklch(.25 .1 325);
-  --burnt-red: oklch(.4 .15 345);
-  --plum: oklch(.32 .105 310);
-  --champagne: oklch(.86 .07 72);
-  --straw: oklch(.91 .05 65);
-  --structure-accent: var(--plum);
-  --pastel: oklch(.82 .06 8);
-  --pastel-2: oklch(.5 .08 330);
+  --line: #2E2C2A;
+  --line-soft: color-mix(in srgb, var(--line) 20%, transparent);
+  --shock: #FF2A85;
+  --shock-glow: var(--shock);
+  --wine: var(--paper);
+  --burnt-red: var(--shock);
+  --plum: var(--paper-2);
+  --champagne: var(--ink);
+  --straw: var(--paper-rose);
+  --structure-accent: var(--paper);
+  --pastel: var(--paper-rose);
+  --pastel-2: var(--paper-2);
 
-  --font-display: "Fraunces", "Instrument Serif", Georgia, serif;
-  --font-body: "Inter Tight", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: var(--font-cormorant, "Cormorant Garamond"), Georgia, serif;
+  --font-body: var(--font-inter, "Inter"), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains, "JetBrains Mono"), ui-monospace, "SF Mono", Menlo, monospace;
   --font-jp: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
 
   --text-h1: 104px;
@@ -36,18 +37,19 @@
   --text-mono: 14px;
   --text-marker: 12px;
 
-  --weight-display: 300;
+  --weight-display: 600;
+  --weight-display-hero: 700;
   --weight-body: 400;
-  --weight-body-bold: 500;
+  --weight-body-bold: 600;
   --weight-mono: 400;
 
-  --tracking-display: -0.035em;
-  --tracking-h2: -0.03em;
+  --tracking-display: 0;
+  --tracking-h2: 0;
   --tracking-body: 0;
-  --tracking-mono: 0;
+  --tracking-mono: 0.05em;
 
-  --leading-display: 0.92;
-  --leading-h2: 0.95;
+  --leading-display: 1;
+  --leading-h2: 1.05;
   --leading-body: 1.55;
   --leading-mono: 1.4;
 
@@ -71,11 +73,11 @@
   --pad-topbar: 18px var(--gutter);
 
   --border-thin: 1px;
-  --border-cta: 0.833px;
-  --border-color: var(--ink-dark);
+  --border-cta: 1px;
+  --border-color: var(--line);
 
   --radius-pill: 2px;
-  --radius-card: 0px;
+  --radius-card: 4px;
 
   --motion-fast: 180ms;
   --motion-base: 280ms;
@@ -85,10 +87,12 @@
   --bg-primary: var(--paper-light);
   --bg-inverse: var(--paper);
   --bg-card-about: var(--paper-rose);
-  --bg-topbar: oklch(.976 .014 82 / 0.84);
+  --bg-topbar: var(--paper);
 
   --text-primary: var(--ink-dark);
-  --text-secondary: var(--ink-3);
+  --text-secondary-light: color-mix(in srgb, var(--ink-3) 72%, var(--paper));
+  --text-secondary: var(--text-secondary-light);
   --text-inverse: var(--ink);
-  --text-accent: var(--shock);
+  --text-accent-light: color-mix(in srgb, var(--shock) 70%, var(--paper));
+  --text-accent: var(--text-accent-light);
 }

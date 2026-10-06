@@ -20,10 +20,10 @@ type ColorToken = {
 };
 
 const colorTokens: ColorToken[] = [
-  { name: 'Aubergine', value: 'oklch(.13 .055 315)', className: 'bg-ink-dark' },
-  { name: 'Ivory', value: 'oklch(.976 .014 82)', className: 'bg-paper-light' },
-  { name: 'Blush', value: 'oklch(.935 .038 12)', className: 'bg-paper-rose' },
-  { name: 'Raspberry', value: 'oklch(.56 .22 350)', className: 'bg-shock' }
+  { name: 'Graphite', value: '#1A1817', className: 'bg-paper' },
+  { name: 'Off-white', value: '#F8F9FA', className: 'bg-paper-light' },
+  { name: 'Rose', value: '#F4DADA', className: 'bg-paper-rose' },
+  { name: 'Shock', value: '#FF2A85', className: 'bg-shock' }
 ];
 
 export function generateMetadata({ params }: { params: { lang: string } }): Metadata {
@@ -44,14 +44,14 @@ export default function PalomaAlbieriCasePage({ params }: { params: { lang: Loca
       <section className="container-shell section-pad">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
-            <p className="label-mono mb-8 text-shock">{t('overline')}</p>
+            <p className="label-mono mb-8 text-accent">{t('overline')}</p>
             <h1 className="display-h1 max-w-[11ch]">{t('title')}</h1>
           </div>
           <div className="flex flex-col justify-end lg:pb-3">
             <p className="body-lead text-ink-dark">{t('lead')}</p>
             <div className="mt-10 grid gap-3 sm:grid-cols-3">
               {proof.map((item) => (
-                <span key={item} className="label-mono border border-ink-dark px-3 py-3 text-[10px]">
+                <span key={item} className="label-mono border border-line px-3 py-3 text-[10px]">
                   {item}
                 </span>
               ))}
@@ -60,10 +60,10 @@ export default function PalomaAlbieriCasePage({ params }: { params: { lang: Loca
         </div>
       </section>
 
-      <section className="border-y border-ink-dark bg-paper-rose">
+      <section className="border-y border-line bg-paper-rose">
         <div className="container-shell grid gap-10 py-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <p className="label-mono text-ink-dark">{t('thesis_label')}</p>
-          <p className="font-display text-[clamp(34px,5vw,72px)] font-light leading-[0.96] tracking-[-0.03em]">
+          <p className="font-display text-4xl sm:text-5xl xl:text-6xl font-semibold leading-[0.96] tracking-normal">
             {t('thesis')}
           </p>
         </div>
@@ -72,13 +72,13 @@ export default function PalomaAlbieriCasePage({ params }: { params: { lang: Loca
       <section className="container-shell section-pad">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
-            <p className="label-mono mb-8 text-ink-3">{t('research_label')}</p>
+            <p className="label-mono mb-8 text-secondary">{t('research_label')}</p>
             <h2 className="display-h2 max-w-[9ch]">{t('research_title')}</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {research.map((item) => (
-              <article key={item.title} className="interactive-card border border-ink-dark bg-paper-light p-6">
-                <h3 className="label-mono mb-6 text-shock">{item.title}</h3>
+              <article key={item.title} className="interactive-card border border-line bg-paper-light p-6">
+                <h3 className="label-mono mb-6 text-accent">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-ink-dark">{item.text}</p>
               </article>
             ))}
@@ -90,7 +90,7 @@ export default function PalomaAlbieriCasePage({ params }: { params: { lang: Loca
         <div className="container-shell section-pad">
           <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
             <div>
-              <p className="label-mono mb-8 text-ink-3">{t('design_label')}</p>
+              <p className="label-mono mb-8 text-secondary">{t('design_label')}</p>
               <h2 className="display-h2 max-w-[10ch]">{t('design_title')}</h2>
               <p className="body-lead mt-8 text-ink-2">{t('design_text')}</p>
             </div>
@@ -99,7 +99,7 @@ export default function PalomaAlbieriCasePage({ params }: { params: { lang: Loca
                 <article key={color.name} className="border border-line bg-paper-2 p-5">
                   <div className={`mb-6 h-28 border border-line ${color.className}`} />
                   <p className="label-mono text-ink">{color.name}</p>
-                  <p className="mt-2 font-mono text-[10px] text-ink-3">{color.value}</p>
+                  <p className="mt-2 font-mono text-[10px] text-secondary">{color.value}</p>
                 </article>
               ))}
             </div>
@@ -110,18 +110,18 @@ export default function PalomaAlbieriCasePage({ params }: { params: { lang: Loca
       <section className="container-shell section-pad">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)] lg:gap-16">
           <div className="min-w-0">
-            <p className="label-mono mb-8 text-ink-3">{t('process_label')}</p>
-            <h2 className="max-w-[11ch] font-display text-[clamp(42px,5vw,76px)] font-light leading-[0.96] tracking-[-0.03em]">
+            <p className="label-mono mb-8 text-secondary">{t('process_label')}</p>
+            <h2 className="max-w-[11ch] font-display text-4xl sm:text-5xl xl:text-6xl font-semibold leading-[0.96] tracking-normal">
               {t('process_title')}
             </h2>
           </div>
-          <div className="min-w-0 flex flex-col border-t border-ink-dark">
+          <div className="min-w-0 flex flex-col border-t border-line">
             {process.map((item, index) => (
-              <article key={item.title} className="grid gap-6 border-b border-ink-dark py-8 md:grid-cols-[120px_1fr]">
-                <p className="label-mono text-shock">{String(index + 1).padStart(2, '0')}</p>
+              <article key={item.title} className="grid gap-6 border-b border-line py-8 md:grid-cols-[120px_1fr]">
+                <p className="label-mono text-accent">{String(index + 1).padStart(2, '0')}</p>
                 <div>
                   <h3 className="display-h3">{item.title}</h3>
-                  <p className="mt-5 max-w-[62ch] text-sm leading-relaxed text-ink-3">{item.text}</p>
+                  <p className="mt-5 max-w-[62ch] text-sm leading-relaxed text-secondary">{item.text}</p>
                 </div>
               </article>
             ))}
@@ -138,11 +138,11 @@ export default function PalomaAlbieriCasePage({ params }: { params: { lang: Loca
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {tools.map((group) => (
-                <article key={group.title} className="interactive-card border border-ink-dark bg-paper-light p-6">
-                  <h3 className="label-mono mb-5 text-shock">{group.title}</h3>
+                <article key={group.title} className="interactive-card border border-line bg-paper-light p-6">
+                  <h3 className="label-mono mb-5 text-accent">{group.title}</h3>
                   <div className="flex flex-wrap gap-2">
                     {group.tools.map((tool) => (
-                      <span key={tool} className="label-mono border border-ink-dark px-3 py-2 text-[10px]">
+                      <span key={tool} className="label-mono border border-line px-3 py-2 text-[10px]">
                         {tool}
                       </span>
                     ))}
@@ -155,12 +155,12 @@ export default function PalomaAlbieriCasePage({ params }: { params: { lang: Loca
       </section>
 
       <section className="container-shell section-pad">
-        <div className="overflow-hidden border border-ink-dark bg-paper-light">
+        <div className="overflow-hidden border border-line bg-paper-light">
           <div className="grid gap-0 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)]">
             <div className="min-w-0 p-6 sm:p-10 lg:pr-14">
-              <p className="label-mono mb-10 text-shock">{t('closing_label')}</p>
-              <p className="max-w-[13ch] font-display text-[clamp(40px,4.7vw,68px)] font-light leading-[0.98] tracking-[-0.03em]">
-                <span className="block text-shock">{t('closing_name')}</span>
+              <p className="label-mono mb-10 text-accent">{t('closing_label')}</p>
+              <p className="max-w-[13ch] font-display text-4xl sm:text-5xl xl:text-6xl font-semibold leading-[0.98] tracking-normal">
+                <span className="block text-accent">{t('closing_name')}</span>
                 <span>{t('closing_line_1')}</span>
                 <span className="mx-1 inline-block bg-ink-dark px-2 text-paper-light">{t('closing_method')}</span>
                 <span>{t('closing_line_2')}</span>
@@ -175,15 +175,15 @@ export default function PalomaAlbieriCasePage({ params }: { params: { lang: Loca
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
-            <aside className="min-w-0 border-t border-ink-dark bg-paper-rose p-6 sm:p-10 lg:border-l lg:border-t-0">
+            <aside className="min-w-0 border-t border-line bg-paper-rose p-6 sm:p-10 lg:border-l lg:border-t-0">
               <p className="label-mono mb-8 text-ink-dark">{t('result_stack_label')}</p>
               <div className="grid gap-3">
               {resultHighlights.map((item, index) => (
                 <div
                   key={item}
-                  className="interactive-card border border-ink-dark bg-paper-light p-4 sm:p-5"
+                  className="interactive-card border border-line bg-paper-light p-4 sm:p-5"
                 >
-                  <p className="label-mono mb-4 text-shock">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="label-mono mb-4 text-accent">{String(index + 1).padStart(2, '0')}</p>
                   <p className="text-sm leading-relaxed text-ink-dark">{item}</p>
                 </div>
               ))}

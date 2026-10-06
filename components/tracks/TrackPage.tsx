@@ -11,7 +11,7 @@ export function TrackPage({ lang, trackKey }: { lang: Locale; trackKey: TrackKey
   return (
     <main className="pt-20">
       <section
-        className={isPresence ? 'bg-shock text-ink-dark' : 'text-ink'}
+        className={isPresence ? 'bg-paper-rose text-ink-dark' : 'bg-paper-2 text-ink'}
         style={isPresence ? undefined : { background: 'var(--plum)' }}
       >
         <div className="container-shell section-pad">
@@ -20,7 +20,7 @@ export function TrackPage({ lang, trackKey }: { lang: Locale; trackKey: TrackKey
             <h1 className="display-h1 max-w-[13ch]">{track.title}</h1>
             <p className="body-lead mt-8">{track.symptom}</p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <CTAPill href={`/${lang}/triagem?track=${track.key}`} variant={isPresence ? 'filled-ink' : 'outline-inverse'}>
+              <CTAPill href={`/${lang}/triagem?track=${track.key}`} variant="filled-ink">
                 {track.cta}
               </CTAPill>
               <CTAPill href={`/${lang}/portfolio`} variant={isPresence ? 'outline-ink' : 'outline-inverse'}>
@@ -42,7 +42,7 @@ export function TrackPage({ lang, trackKey }: { lang: Locale; trackKey: TrackKey
               {track.services.map((service) => (
                 <ScrollReveal key={service} delay="short">
                   <div className="border border-line bg-paper-2 p-5">
-                    <p className="font-display text-3xl font-light leading-none">{service}</p>
+                    <p className="font-display text-3xl font-semibold leading-none">{service}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -56,14 +56,14 @@ export function TrackPage({ lang, trackKey }: { lang: Locale; trackKey: TrackKey
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {track.tools.map((tool) => (
               <ScrollReveal key={tool.title} delay="short">
-                <article className="interactive-card h-full border border-ink-dark bg-paper-light p-6 text-ink-dark">
-                  <p className="label-mono text-shock">{tool.title}</p>
+                <article className="interactive-card h-full border border-line bg-paper-light p-6 text-ink-dark">
+                  <p className="label-mono text-accent">{tool.title}</p>
                   <p className="mt-6 text-base leading-relaxed">{tool.text}</p>
                 </article>
               </ScrollReveal>
             ))}
           </div>
-          <ScrollReveal className="mt-14 border-t border-ink-dark pt-8">
+          <ScrollReveal className="mt-14 border-t border-line pt-8">
             <p className="body-lead text-ink-dark">{track.proof}</p>
           </ScrollReveal>
         </div>

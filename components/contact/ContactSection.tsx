@@ -3,12 +3,13 @@ import type { Locale } from '@/lib/i18n/config';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ContactForm, type ContactTrack } from './ContactForm';
 import { EntryComparison } from './EntryComparison';
+import { appointmentUrl } from '@/lib/site/appointments';
 
 const links = [
   ['channels_email', 'mailto:contato@palomaalbieri.com'],
   ['channels_whatsapp', 'https://wa.me/817020122563'],
   ['channels_instagram', 'https://instagram.com/paloma.albieri'],
-  ['channels_calendar', 'https://calendar.app.google/rRpgFSAxLS5xpL1v9']
+  ['channels_calendar', appointmentUrl]
 ] as const;
 
 export function ContactSection({ track = 'home' }: { track?: ContactTrack }) {

@@ -31,25 +31,34 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
   useEffect(() => setReady(true), []);
   const busy = !ready || status === 'sending';
   const fieldClass = 'field-line w-full min-w-0 border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark focus:border-shock';
-  const visibleQuestions = triageDepth === 'quick' ? questions.slice(0, 4) : questions;
+  const complete = triageDepth === 'complete';
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (busy) return;
     const form = event.currentTarget;
     const data = new FormData(form);
+    if (!complete) {
+      const quickFields = new Set(['form-name', 'lang', 'track', 'triage_type', 'triage_depth', 'source_path', 'website', 'name', 'email', 'message', 'information_consent']);
+      for (const key of Array.from(data.keys())) {
+        if (!quickFields.has(key)) data.delete(key);
+      }
+    }
     data.set('source_path', window.location.pathname);
     const body = new URLSearchParams();
     data.forEach((value, key) => {
       if (typeof value === 'string') body.append(key, value);
     });
     setStatus('sending');
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
 
     try {
       const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        body: body.toString()
+        body: body.toString(),
+        signal: controller.signal
       });
       if (!response.ok) {
         setStatus('error');
@@ -59,6 +68,8 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
       setStatus('ok');
     } catch {
       setStatus('error');
+    } finally {
+      window.clearTimeout(timeout);
     }
   }
 
@@ -77,7 +88,7 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
   }
 
   return (
-    <form name="contact" method="POST" onSubmit={handleSubmit} aria-busy={busy}
+    <form name="contact" method="POST" action="/__forms.html" onSubmit={handleSubmit} aria-busy={busy}
       className="contact-editorial-form flex flex-col gap-8">
       <div className="border-b border-line pb-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -85,6 +96,15 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
           <p className="font-mono text-[10px] uppercase tracking-widest text-secondary">{t('form_eta')}</p>
         </div>
         <h3 className="mt-5 font-serif text-2xl font-semibold leading-tight text-ink-dark">{t('form_prompt')}</h3>
+        <div className="mt-6 grid grid-cols-2 gap-2" role="group" aria-label={t('form_depth_label')}>
+          {(['quick', 'complete'] as const).map((depth) => (
+            <button key={depth} type="button" disabled={busy} aria-pressed={triageDepth === depth}
+              onClick={() => { setTriageDepth(depth); setStatus('idle'); }}
+              className={`min-h-12 rounded-sm border px-3 py-3 text-sm ${triageDepth === depth ? 'border-shock bg-paper-rose text-ink-dark' : 'border-line text-ink-dark hover:border-shock'}`}>
+              {t(`form_depth_${depth}_label`)}
+            </button>
+          ))}
+        </div>
       </div>
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="lang" value={lang} />
@@ -102,27 +122,27 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
             <span>{t('form_name')}</span>
             <input name="name" required minLength={2} autoComplete="name" className={fieldClass} />
           </label>
-          <label className="min-w-0 text-sm text-ink-dark">
+          <label hidden={!complete} className="min-w-0 text-sm text-ink-dark">
             <span>{t('form_company')}</span>
-            <input name="company" required autoComplete="organization" className={fieldClass} />
+            <input name="company" required={complete} autoComplete="organization" className={fieldClass} />
           </label>
           <label className="min-w-0 text-sm text-ink-dark">
             <span>{t('form_email')}</span>
             <input name="email" type="email" required autoComplete="email" className={fieldClass} />
           </label>
-          <label className="min-w-0 text-sm text-ink-dark">
+          <label hidden={!complete} className="min-w-0 text-sm text-ink-dark">
             <span>{t('form_other_contact')}</span>
             <input name="other_contact" className={fieldClass} />
           </label>
-          <label className="min-w-0 text-sm text-ink-dark">
+          <label hidden={!complete} className="min-w-0 text-sm text-ink-dark">
             <span>{t('form_country_timezone')}</span>
-            <input name="country_timezone" required className={fieldClass} />
+            <input name="country_timezone" required={complete} className={fieldClass} />
           </label>
-          <label className="min-w-0 text-sm text-ink-dark">
+          <label hidden={!complete} className="min-w-0 text-sm text-ink-dark">
             <span>{t('form_preferred_language')}</span>
-            <input name="preferred_language" required defaultValue={lang === 'jp' ? '日本語' : 'Português'} className={fieldClass} />
+            <input name="preferred_language" required={complete} defaultValue={lang === 'jp' ? '日本語' : 'Português'} className={fieldClass} />
           </label>
-          <label className="min-w-0 text-sm text-ink-dark sm:col-span-2">
+          <label hidden={!complete} className="min-w-0 text-sm text-ink-dark sm:col-span-2">
             <span>{t('form_website')}</span>
             <input name="website_url" className={fieldClass} />
           </label>
@@ -130,52 +150,29 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
       </fieldset>
       <fieldset disabled={busy} className="min-w-0">
         <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">02</span>{t('form_context')}</legend>
-        <div className="mb-6 grid gap-3 sm:grid-cols-2" role="group" aria-label={t('form_depth_label')}>
-          {(['quick', 'complete'] as const).map((depth) => (
-            <button
-              key={depth}
-              type="button"
-              onClick={() => setTriageDepth(depth)}
-              className={`min-h-20 rounded-sm border p-4 text-left transition-colors ${
-                triageDepth === depth
-                  ? 'border-shock bg-paper-rose text-paper'
-                  : 'border-line bg-transparent text-ink-dark hover:border-shock'
-              }`}
-            >
-              <span className="label-mono block text-[10px]">{t(`form_depth_${depth}_label`)}</span>
-              <span className="mt-2 block text-sm leading-relaxed">{t(`form_depth_${depth}_description`)}</span>
-            </button>
-          ))}
-        </div>
         <div className="flex flex-col gap-6">
-          {visibleQuestions.map(([name, label], index) => (
-            <label key={name} className="block min-w-0 text-sm leading-relaxed text-ink-dark">
-              <span>{index + 1}. {t(label)}</span>
-              <textarea name={name} required rows={2} className={`${fieldClass} resize-y`} />
+          {questions.map(([name, label], index) => (
+            <label key={name} hidden={!complete && name !== 'message'} className="min-w-0 text-sm leading-relaxed text-ink-dark">
+              <span>{complete ? `${index + 1}. ${t(label)}` : t('quick_question')}</span>
+              <textarea name={name} required={complete || name === 'message'} rows={name === 'message' ? 3 : 2} className={`${fieldClass} resize-y`} />
             </label>
           ))}
-          <label className="block min-w-0 text-sm leading-relaxed text-ink-dark">
-            <span>{visibleQuestions.length + 1}. {t('question_looking_for')}</span>
-            <select name="looking_for" required defaultValue="" className={fieldClass}>
+          <label hidden={!complete} className="min-w-0 text-sm leading-relaxed text-ink-dark">
+            <span>{questions.length + 1}. {t('question_looking_for')}</span>
+            <select name="looking_for" required={complete} defaultValue="" className={fieldClass}>
               <option value="" disabled>{t('form_select')}</option>
               <option value="diagnosis">{t('looking_for_diagnosis')}</option>
               <option value="execution">{t('looking_for_execution')}</option>
               <option value="unsure">{t('looking_for_unsure')}</option>
             </select>
           </label>
-          {triageDepth === 'quick' && (
-            <label className="block min-w-0 text-sm leading-relaxed text-ink-dark">
-              <span>{visibleQuestions.length + 2}. {t('question_urgency')}</span>
-              <input name="start_timing" required className={fieldClass} />
-            </label>
-          )}
-          <label className="block min-w-0 text-sm leading-relaxed text-ink-dark">
-            <span>{visibleQuestions.length + (triageDepth === 'quick' ? 3 : 2)}. {t('question_investment')}</span>
+          <label hidden={!complete} className="min-w-0 text-sm leading-relaxed text-ink-dark">
+            <span>{questions.length + 2}. {t('question_investment')}</span>
             <input name="investment_range" className={fieldClass} />
           </label>
         </div>
       </fieldset>
-      <fieldset disabled={busy} className="min-w-0">
+      <fieldset disabled={busy} hidden={!complete} className="min-w-0">
         <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">03</span>{t('form_materials')}</legend>
         <label className="block min-w-0 text-sm leading-relaxed text-ink-dark" htmlFor={`${formId}-materials`}>
           <span>{t('form_materials_links')}</span>
@@ -183,15 +180,16 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
         </label>
       </fieldset>
       <fieldset disabled={busy} className="min-w-0">
-        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">04</span>{t('form_confirmations')}</legend>
+        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">{complete ? '04' : '03'}</span>{t('form_confirmations')}</legend>
+        <p className="mb-4 text-sm leading-relaxed text-secondary">{t('triage_notice')}</p>
         <div className="flex flex-col gap-4">
           {[
             ['free_triage_consent', 'consent_free_triage'],
             ['paid_diagnostic_readiness', 'consent_paid_work'],
             ['information_consent', 'consent_information']
           ].map(([name, label]) => (
-            <label key={name} className="flex items-start gap-3 text-sm leading-relaxed text-secondary">
-              <input type="checkbox" name={name} value="yes" required className="mt-1 h-4 w-4 shrink-0 accent-shock" />
+            <label key={name} className={`${!complete && name !== 'information_consent' ? 'hidden' : 'flex'} items-start gap-3 text-sm leading-relaxed text-secondary`}>
+              <input type="checkbox" name={name} value="yes" required={complete || name === 'information_consent'} className="mt-1 h-4 w-4 shrink-0 accent-shock" />
               <span>{t(label)}</span>
             </label>
           ))}
@@ -209,6 +207,9 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
         <div role="alert" className="border border-line bg-paper-rose p-4 text-sm leading-relaxed text-ink-dark">
           <p className="label-mono mb-2 text-accent">{t('error_marker')}</p>
           <p>{t('error_message')}</p>
+          <a href="mailto:contato@palomaalbieri.com" className="mt-3 inline-flex items-center gap-2 underline underline-offset-4">
+            {t('error_email')}<ArrowUpRight size={16} aria-hidden="true" />
+          </a>
         </div>
       )}
     </form>

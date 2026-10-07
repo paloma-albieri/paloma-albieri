@@ -230,7 +230,7 @@
     "free": {
       "badge": "[ PASSO 01 · GRATUITO ]",
       "title": "Triagem gratuita",
-      "format": "Formulário inicial + conversa gratuita de até 15 minutos.",
+      "format": "Formulário curto ou agendamento de uma conversa gratuita de até 15 minutos.",
       "objective": "Avaliar contexto, urgência e compatibilidade para definir o próximo passo.",
       "deadline": "Análise individual realizada em até 2 dias úteis.",
       "security": "Você não precisa saber qual serviço pedir. Não envie senhas ou dados confidenciais."
@@ -239,7 +239,7 @@
       "badge": "[ PASSO 02 · IMERSÃO PAGA ]",
       "title": "Strategic Discovery & Diagnóstico",
       "format": "Reunião estratégica individual + Análise de Infraestrutura.",
-      "objective": "Mapear gargalos de conversão, definir escopo, exclusões, responsabilidades, critérios e desenho da arquitetura digital antes de qualquer execução.",
+      "objective": "Investigar o cenário e definir prioridades, escopo, riscos e plano de execução quando houver incerteza identificada na triagem.",
       "deliverables": "Documento Executivo de Arquitetura + Plano de Execução Técnica.",
       "cta": "Conhecer o Diagnóstico Pago"
     }
@@ -250,6 +250,7 @@
     "description": "Comece com pouco atrito: responda o essencial ou escolha um horário para uma conversa gratuita de até 15 minutos. A triagem avalia contexto, prioridade e compatibilidade; diagnóstico, plano e recomendações aprofundadas são serviços pagos.",
     "cta": "Preencher Triagem Gratuita",
     "form_title": "Leitura inicial do seu cenário",
+    "calendar_cta": "Prefiro agendar uma conversa",
     "flow_badge": "[ COMO A ENTRADA FUNCIONA ]",
     "flow_title": "Tudo começa pela triagem, mas ela não precisa ser pesada.",
     "steps": [
@@ -277,7 +278,7 @@
     "error": "Não foi possível carregar os horários agora. Use o link da agenda completa ou envie o formulário.",
     "timezone": "Horários em {timezone}",
     "fallback_note": "Estes horários são uma prévia operacional. Ao conectar o Google Calendar público, a lista passa a respeitar automaticamente os eventos ocupados.",
-    "note": "Depois de escolher um horário, envie pelo menos os dados básicos para que a conversa já comece com contexto."
+    "note": "A agenda é uma alternativa ao formulário. Ao concluir a reserva no Google Agenda, você não precisa enviar também a triagem pelo site."
   },
   "diagnostic": {
     "badge": "[ DISCOVERY PAGO · ARQUITETURA PRÉVIA ]",
@@ -323,7 +324,10 @@
     "channels_whatsapp": "WhatsApp",
     "channels_instagram": "@paloma.albieri",
     "channels_calendar": "Agendar reunião de 15 minutos",
-    "form_marker": "[ TRIAGEM GRATUITA · 12 PERGUNTAS ]",
+    "form_marker": "[ TRIAGEM GRATUITA ]",
+    "quick_question": "O que você precisa resolver no seu negócio ou projeto?",
+    "triage_notice": "A triagem é gratuita e avalia contexto e compatibilidade. Se for necessário investigar o problema ou definir o escopo, o diagnóstico pago será apresentado por proposta antes de começar.",
+    "error_email": "Entrar em contato por e-mail",
     "form_eta": "Contexto · urgência · compatibilidade",
     "form_prompt": "Conte o cenário antes de escolher o serviço.",
     "form_name": "Seu nome",
@@ -340,8 +344,8 @@
     "form_reassurance": "Paloma Albieri analisa as informações em até 2 dias úteis e retorna para alinhar o próximo passo. Não envie senhas ou dados confidenciais.",
     "submit": "Enviar triagem gratuita",
     "submit_sending": "Enviando seu cenário",
-    "success_marker": "CENÁRIO RECEBIDO",
-    "success_title": "Triagem recebida.",
+    "success_marker": "TRIAGEM ENVIADA",
+    "success_title": "Triagem enviada.",
     "success_message": "Vou analisar o contexto, a urgência e a compatibilidade do seu projeto.",
     "success_next": "Retorno em até 2 dias úteis para alinhar o próximo passo. A conversa gratuita dura até 15 minutos; diagnóstico e recomendações aprofundadas são entregas pagas.",
     "success_again": "Enviar outra mensagem",

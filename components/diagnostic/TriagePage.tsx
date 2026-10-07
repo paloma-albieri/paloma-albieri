@@ -17,7 +17,10 @@ export function TriagePage({ lang, track = 'home' }: { lang: Locale; track?: Con
           <p className="label-mono mb-5 text-accent">{t('badge')}</p>
           <h1 className="font-serif text-4xl font-bold leading-tight sm:text-5xl">{t('title')}</h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary">{t('description')}</p>
-          <CTAPill href="#formulario" variant="filled-ink" className="mt-8">{t('cta')}</CTAPill>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <CTAPill href="#formulario" variant="filled-ink">{t('cta')}</CTAPill>
+            <CTAPill href="#agenda" variant="outline-ink">{t('calendar_cta')}</CTAPill>
+          </div>
         </ScrollReveal>
         <div className="mt-12"><EntryComparison lang={lang} /></div>
         <section aria-labelledby="triage-flow-title" className="mt-12 border-y border-line py-10">

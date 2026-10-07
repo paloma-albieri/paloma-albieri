@@ -53,7 +53,7 @@ export function DiagnosticPage({ lang }: { lang: Locale }) {
           <h2 className="mt-4 font-serif text-3xl font-semibold md:text-4xl">{t('application_title')}</h2>
           <p className="mt-5 text-base leading-relaxed text-secondary">{t('application_description')}</p>
           <div className="mt-8 rounded-sm border border-line p-6 sm:p-8">
-            <ContactForm track="diagnostico" mode="discovery" />
+            <ContactForm track="diagnostico" />
           </div>
         </div>
       </section>

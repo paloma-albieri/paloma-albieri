@@ -44,9 +44,9 @@ const pageSeo = {
       ogLocale: baseSeo.pt.ogLocale
     },
     triagem: {
-      title: 'Triagem Inicial de Infraestrutura Digital | Paloma Albieri',
+      title: 'Triagem gratuita do seu projeto | Paloma Albieri',
       description:
-        'Triagem gratuita de contexto, com quatro perguntas e análise manual individual para indicar o próximo passo em até 2 dias úteis.',
+        'Triagem gratuita para avaliar contexto, urgência e compatibilidade. Formulário inicial e conversa de até 15 minutos, com retorno em até 2 dias úteis.',
       ogLocale: baseSeo.pt.ogLocale
     },
     portfolio: {
@@ -83,9 +83,9 @@ const pageSeo = {
       ogLocale: baseSeo.jp.ogLocale
     },
     triagem: {
-      title: 'デジタル基盤の初回チェック | パロマ・アルビエリ',
+      title: 'プロジェクトの無料初回相談 | パロマ・アルビエリ',
       description:
-        '4つの質問で現状を把握する無料の初回チェック。手動で一件ずつ確認し、2営業日以内に次のステップを案内します。',
+        '状況、緊急度、対応の適合性を確認する無料の初回相談。事前フォームと最大15分の相談で、2営業日以内に返信します。',
       ogLocale: baseSeo.jp.ogLocale
     },
     portfolio: {

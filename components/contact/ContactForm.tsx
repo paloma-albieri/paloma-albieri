@@ -6,38 +6,44 @@ import { ArrowUpRight } from 'lucide-react';
 
 type Status = 'idle' | 'sending' | 'ok' | 'error';
 export type ContactTrack = 'home' | 'presenca' | 'estrutura' | 'diagnostico';
-type ContactMode = 'triage' | 'discovery';
-type ContactChannel = 'email' | 'phone';
 
-export function ContactForm({ track = 'home', mode = 'triage' }: { track?: ContactTrack; mode?: ContactMode }) {
+const questions = [
+  ['offer_summary', 'question_offer'],
+  ['main_customer', 'question_customer'],
+  ['motivation', 'question_motivation'],
+  ['message', 'question_problem'],
+  ['business_impact', 'question_impact'],
+  ['tried_before', 'question_tried'],
+  ['desired_outcome', 'question_outcome'],
+  ['current_tools', 'question_tools'],
+  ['start_timing', 'question_urgency'],
+  ['decision_context', 'question_decision']
+] as const;
+
+export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
   const t = useTranslations('contact');
   const lang = useLocale();
   const formId = useId();
   const [status, setStatus] = useState<Status>('idle');
-  const [channel, setChannel] = useState<ContactChannel>('email');
   const [ready, setReady] = useState(false);
   useEffect(() => setReady(true), []);
   const busy = !ready || status === 'sending';
-  const isDiscovery = mode === 'discovery';
   const fieldClass = 'field-line w-full min-w-0 border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark focus:border-shock';
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (busy) return;
-    setStatus('sending');
     const form = event.currentTarget;
     const data = new FormData(form);
-    data.set('looking_for', isDiscovery ? 'strategic_discovery' : 'initial_triage');
     data.set('source_path', window.location.pathname);
     const body = new URLSearchParams();
     data.forEach((value, key) => {
-      if (typeof value === 'string') {
-        body.append(key, value);
-      }
+      if (typeof value === 'string') body.append(key, value);
     });
+    setStatus('sending');
 
     try {
-      const response = await fetch('/forms/contact.html', {
+      const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
         body: body.toString()
@@ -47,7 +53,6 @@ export function ContactForm({ track = 'home', mode = 'triage' }: { track?: Conta
         return;
       }
       form.reset();
-      setChannel('email');
       setStatus('ok');
     } catch {
       setStatus('error');
@@ -58,11 +63,9 @@ export function ContactForm({ track = 'home', mode = 'triage' }: { track?: Conta
     return (
       <div role="status" className="contact-success bg-paper-light p-2 text-ink-dark">
         <p className="label-mono text-accent">{t('success_marker')}</p>
-        <h3 className="mt-6 font-serif text-3xl font-semibold leading-tight">
-          {t(isDiscovery ? 'discovery_success_title' : 'success_title')}
-        </h3>
-        <p className="mt-5 text-base leading-relaxed">{t(isDiscovery ? 'discovery_success_message' : 'success_message')}</p>
-        <p className="mt-4 text-sm leading-relaxed text-secondary">{t(isDiscovery ? 'discovery_success_next' : 'success_next')}</p>
+        <h3 className="mt-6 font-serif text-3xl font-semibold leading-tight">{t('success_title')}</h3>
+        <p className="mt-5 text-base leading-relaxed">{t('success_message')}</p>
+        <p className="mt-4 text-sm leading-relaxed text-secondary">{t('success_next')}</p>
         <button type="button" onClick={() => setStatus('idle')} className="cta-pill cta-outline-ink mt-8">
           <span>{t('success_again')}</span><ArrowUpRight size={16} aria-hidden="true" />
         </button>
@@ -71,34 +74,25 @@ export function ContactForm({ track = 'home', mode = 'triage' }: { track?: Conta
   }
 
   return (
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="website"
-      onSubmit={handleSubmit}
-      aria-busy={busy}
-      className="contact-editorial-form flex flex-col gap-8"
-    >
+    <form name="contact" method="POST" onSubmit={handleSubmit} aria-busy={busy}
+      className="contact-editorial-form flex flex-col gap-8">
       <div className="border-b border-line pb-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="label-mono text-accent">{t(isDiscovery ? 'discovery_marker' : 'form_marker')}</p>
-          <p className="font-mono text-[10px] uppercase tracking-widest text-secondary">{t(isDiscovery ? 'discovery_eta' : 'form_eta')}</p>
+          <p className="label-mono text-accent">{t('form_marker')}</p>
+          <p className="font-mono text-[10px] uppercase tracking-widest text-secondary">{t('form_eta')}</p>
         </div>
-        <h3 className="mt-5 font-serif text-2xl font-semibold leading-tight text-ink-dark">
-          {t(isDiscovery ? 'discovery_prompt' : 'form_prompt')}
-        </h3>
+        <h3 className="mt-5 font-serif text-2xl font-semibold leading-tight text-ink-dark">{t('form_prompt')}</h3>
       </div>
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="lang" value={lang} />
-      <input type="hidden" name="track" value={isDiscovery ? 'diagnostico' : track} />
-      <input type="hidden" name="looking_for" value={isDiscovery ? 'strategic_discovery' : 'initial_triage'} />
+      <input type="hidden" name="track" value={track} />
+      <input type="hidden" name="triage_type" value="initial_triage" />
       <input type="hidden" name="source_path" value="" />
       <div className="hidden" aria-hidden="true">
         <input type="text" name="website" tabIndex={-1} autoComplete="off" />
       </div>
       <fieldset disabled={busy} className="min-w-0">
-        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">01</span>{t('form_name_company')}</legend>
+        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">01</span>{t('form_contact')}</legend>
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="min-w-0 text-sm text-ink-dark">
             <span>{t('form_name')}</span>
@@ -106,68 +100,81 @@ export function ContactForm({ track = 'home', mode = 'triage' }: { track?: Conta
           </label>
           <label className="min-w-0 text-sm text-ink-dark">
             <span>{t('form_company')}</span>
-            <input name="company" autoComplete="organization" className={fieldClass} />
+            <input name="company" required autoComplete="organization" className={fieldClass} />
+          </label>
+          <label className="min-w-0 text-sm text-ink-dark">
+            <span>{t('form_email')}</span>
+            <input name="email" type="email" required autoComplete="email" className={fieldClass} />
+          </label>
+          <label className="min-w-0 text-sm text-ink-dark">
+            <span>{t('form_other_contact')}</span>
+            <input name="other_contact" className={fieldClass} />
+          </label>
+          <label className="min-w-0 text-sm text-ink-dark">
+            <span>{t('form_country_timezone')}</span>
+            <input name="country_timezone" required className={fieldClass} />
+          </label>
+          <label className="min-w-0 text-sm text-ink-dark">
+            <span>{t('form_preferred_language')}</span>
+            <input name="preferred_language" required defaultValue={lang === 'jp' ? '日本語' : 'Português'} className={fieldClass} />
+          </label>
+          <label className="min-w-0 text-sm text-ink-dark sm:col-span-2">
+            <span>{t('form_website')}</span>
+            <input name="website_url" className={fieldClass} />
           </label>
         </div>
       </fieldset>
       <fieldset disabled={busy} className="min-w-0">
-        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">02</span>{t('form_contact')}</legend>
-        <div className="grid grid-cols-2 gap-3">
-          {(['email', 'phone'] as const).map((option) => (
-            <label key={option} className={`contact-choice px-3 py-3 text-sm ${channel === option ? 'is-selected' : ''}`}>
-              <input type="radio" name="preferred_contact" value={option} checked={channel === option} onChange={() => setChannel(option)} />
-              <span>{t(`form_contact_${option}`)}</span>
+        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">02</span>{t('form_context')}</legend>
+        <div className="flex flex-col gap-6">
+          {questions.map(([name, label], index) => (
+            <label key={name} className="block min-w-0 text-sm leading-relaxed text-ink-dark">
+              <span>{index + 1}. {t(label)}</span>
+              <textarea name={name} required rows={2} className={`${fieldClass} resize-y`} />
             </label>
           ))}
+          <label className="block min-w-0 text-sm leading-relaxed text-ink-dark">
+            <span>11. {t('question_looking_for')}</span>
+            <select name="looking_for" required defaultValue="" className={fieldClass}>
+              <option value="" disabled>{t('form_select')}</option>
+              <option value="diagnosis">{t('looking_for_diagnosis')}</option>
+              <option value="execution">{t('looking_for_execution')}</option>
+              <option value="unsure">{t('looking_for_unsure')}</option>
+            </select>
+          </label>
+          <label className="block min-w-0 text-sm leading-relaxed text-ink-dark">
+            <span>12. {t('question_investment')}</span>
+            <input name="investment_range" className={fieldClass} />
+          </label>
         </div>
-        <label className="mt-5 block min-w-0 text-sm text-ink-dark" htmlFor={`${formId}-reply`}>
-          <span>{t(channel === 'email' ? 'form_email' : 'form_phone')}</span>
-          <input key={channel} id={`${formId}-reply`} name={channel} type={channel === 'email' ? 'email' : 'tel'} required
-            autoComplete={channel === 'email' ? 'email' : 'tel'} className={fieldClass} />
+      </fieldset>
+      <fieldset disabled={busy} className="min-w-0">
+        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">03</span>{t('form_materials')}</legend>
+        <label className="block min-w-0 text-sm leading-relaxed text-ink-dark" htmlFor={`${formId}-materials`}>
+          <span>{t('form_materials_links')}</span>
+          <textarea id={`${formId}-materials`} name="materials" rows={3} className={`${fieldClass} resize-y`} />
         </label>
       </fieldset>
       <fieldset disabled={busy} className="min-w-0">
-        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">03</span>{t('form_bottleneck')}</legend>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">04</span>{t('form_confirmations')}</legend>
+        <div className="flex flex-col gap-4">
           {[
-            ['message', 'bottleneck_presence'],
-            ['manual_process', 'bottleneck_structure'],
-            ['unknown', 'bottleneck_unknown']
-          ].map(([value, label]) => (
-            <label key={value} className="contact-choice px-5 py-3 text-sm leading-relaxed">
-              <input type="radio" name="bottlenecks" value={value} required />
+            ['free_triage_consent', 'consent_free_triage'],
+            ['paid_diagnostic_readiness', 'consent_paid_work'],
+            ['information_consent', 'consent_information']
+          ].map(([name, label]) => (
+            <label key={name} className="flex items-start gap-3 text-sm leading-relaxed text-secondary">
+              <input type="checkbox" name={name} value="yes" required className="mt-1 h-4 w-4 shrink-0 accent-shock" />
               <span>{t(label)}</span>
             </label>
           ))}
         </div>
       </fieldset>
-      <fieldset disabled={busy} className="min-w-0">
-        <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">04</span>{t('form_message')}</legend>
-        <label className="block" htmlFor={`${formId}-message`}>
-          <span className="sr-only">{t('form_message')}</span>
-          <textarea id={`${formId}-message`} name="message" required minLength={30} rows={5}
-            aria-describedby={`${formId}-message-hint`} className={`${fieldClass} resize-y`} />
-        </label>
-        <p id={`${formId}-message-hint`} className="mt-3 text-xs leading-relaxed text-secondary">{t('form_message_hint')}</p>
-        {isDiscovery && (
-          <label className="mt-5 block text-sm text-ink-dark">
-            <span>{t('form_website')}</span>
-            <input name="website_url" className={fieldClass} />
-          </label>
-        )}
-      </fieldset>
-      {isDiscovery && (
-        <label className="flex items-start gap-3 text-sm leading-relaxed text-secondary">
-          <input type="checkbox" name="paid_diagnostic_readiness" value="yes" required disabled={busy}
-            className="mt-1 h-4 w-4 shrink-0 accent-shock" />
-          <span>{t('discovery_consent')}</span>
-        </label>
-      )}
       <div className="flex flex-col items-start gap-5 border-t border-line pt-6">
-        <p className="text-sm leading-relaxed text-secondary">{t(isDiscovery ? 'discovery_reassurance' : 'form_reassurance')}</p>
+        <p className="text-sm leading-relaxed text-secondary">{t('form_reassurance')}</p>
         <button type="submit" disabled={busy} className="contact-submit cta-pill cta-filled-shock disabled:opacity-70">
           {status === 'sending' && <span className="submit-spinner" aria-hidden="true" />}
-          <span>{t(status === 'sending' ? 'submit_sending' : isDiscovery ? 'discovery_submit' : 'submit')}</span>
+          <span>{t(status === 'sending' ? 'submit_sending' : 'submit')}</span>
           <ArrowUpRight size={18} strokeWidth={1} className="shrink-0" aria-hidden="true" />
         </button>
       </div>

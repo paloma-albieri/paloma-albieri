@@ -27,34 +27,20 @@ export function ContactForm({ track = 'home', mode = 'triage' }: { track?: Conta
     setStatus('sending');
     const form = event.currentTarget;
     const data = new FormData(form);
-    const payload = {
-      name: String(data.get('name') ?? '').trim(),
-      company: String(data.get('company') ?? '').trim(),
-      email: String(data.get('email') ?? '').trim(),
-      phone: String(data.get('phone') ?? '').trim(),
-      social: '',
-      website_url: String(data.get('website_url') ?? '').trim(),
-      country_timezone: '',
-      offer_summary: '',
-      tried_before: '',
-      decision_context: '',
-      start_timing: '',
-      looking_for: isDiscovery ? 'strategic_discovery' : 'initial_triage',
-      paid_diagnostic_readiness: String(data.get('paid_diagnostic_readiness') ?? ''),
-      bottlenecks: data.getAll('bottlenecks').map(String),
-      message: String(data.get('message') ?? '').trim(),
-      preferred_contact: [channel],
-      lang,
-      track: isDiscovery ? 'diagnostico' : track,
-      source_path: window.location.pathname,
-      website: String(data.get('website') ?? '')
-    };
+    data.set('looking_for', isDiscovery ? 'strategic_discovery' : 'initial_triage');
+    data.set('source_path', window.location.pathname);
+    const body = new URLSearchParams();
+    data.forEach((value, key) => {
+      if (typeof value === 'string') {
+        body.append(key, value);
+      }
+    });
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/forms/contact.html', {
         method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(payload)
+        headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        body: body.toString()
       });
       if (!response.ok) {
         setStatus('error');
@@ -85,7 +71,15 @@ export function ContactForm({ track = 'home', mode = 'triage' }: { track?: Conta
   }
 
   return (
-    <form name="contact" method="POST" onSubmit={handleSubmit} aria-busy={busy} className="contact-editorial-form flex flex-col gap-8">
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="website"
+      onSubmit={handleSubmit}
+      aria-busy={busy}
+      className="contact-editorial-form flex flex-col gap-8"
+    >
       <div className="border-b border-line pb-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="label-mono text-accent">{t(isDiscovery ? 'discovery_marker' : 'form_marker')}</p>
@@ -98,6 +92,8 @@ export function ContactForm({ track = 'home', mode = 'triage' }: { track?: Conta
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="lang" value={lang} />
       <input type="hidden" name="track" value={isDiscovery ? 'diagnostico' : track} />
+      <input type="hidden" name="looking_for" value={isDiscovery ? 'strategic_discovery' : 'initial_triage'} />
+      <input type="hidden" name="source_path" value="" />
       <div className="hidden" aria-hidden="true">
         <input type="text" name="website" tabIndex={-1} autoComplete="off" />
       </div>

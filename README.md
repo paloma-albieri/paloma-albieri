@@ -1,6 +1,6 @@
 # Paloma Albieri Site v2
 
-Next.js 14 site with PT/JP routes, editorial design tokens, a Taggbox Instagram embed, and a contact form for diagnostic calls.
+Next.js 14 site with PT/JP routes, editorial design tokens, a Taggbox Instagram embed, and a Netlify Forms contact flow for diagnostic calls.
 
 ## Commands
 
@@ -15,9 +15,6 @@ npm run build
 ## Environment
 
 ```bash
-GMAIL_USER=contato@palomaalbieri.com
-GMAIL_APP_PASSWORD=
-CONTACT_TO_EMAIL=contato@palomaalbieri.com
 SITE_URL=https://palomaalbieri.com
 ```
 

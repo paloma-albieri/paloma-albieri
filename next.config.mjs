@@ -1,10 +1,20 @@
 import createNextIntlPlugin from 'next-intl/plugin';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const withNextIntl = createNextIntlPlugin('./lib/i18n/request.ts');
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  webpack(config) {
+    config.resolve.alias = {
+      ...(config.resolve.alias ?? {}),
+      '@': projectRoot
+    };
+    return config;
+  },
   async redirects() {
     return [
       {

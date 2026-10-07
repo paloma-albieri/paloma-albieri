@@ -10,8 +10,7 @@ import type { Locale } from '@/lib/i18n/config';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 
 const navTargets = [
-  ['presenca', 'presenca'],
-  ['estrutura', 'estrutura'],
+  ['servicos', 'servicos'],
   ['triagem', 'triagem'],
   ['portfolio', 'portfolio'],
   ['contato', 'contato']

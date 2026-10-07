@@ -16,6 +16,9 @@ export function TrackPage({ lang, trackKey }: { lang: Locale; trackKey: TrackKey
       >
         <div className="container-shell section-pad">
           <ScrollReveal>
+            <a href={`/${lang}/servicos`} className="mb-6 inline-block text-sm underline underline-offset-4">
+              {lang === 'pt' ? 'Todos os serviços' : 'すべてのサービス'}
+            </a>
             <p className="label-mono mb-8">{track.label}</p>
             <h1 className="display-h1 max-w-[13ch]">{track.title}</h1>
             <p className="body-lead mt-8">{track.symptom}</p>

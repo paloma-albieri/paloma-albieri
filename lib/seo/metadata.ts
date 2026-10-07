@@ -59,7 +59,7 @@ const pageSeo = {
   jp: {
     home: baseSeo.jp,
     servicos: {
-      title: 'デジタルサービス | 戦略・コンテンツ・サイト・広告 | パロマ・アルビエリ',
+      title: 'デジタルサービス | Web・自動化・システム | パロマ・アルビエリ',
       description:
         'デジタル戦略診断、Web体験、自動化、AI、システム、デジタルディレクションを整理します。',
       ogLocale: baseSeo.jp.ogLocale

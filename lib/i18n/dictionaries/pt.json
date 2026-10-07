@@ -246,9 +246,37 @@
   "triage": {
     "badge": "[ TRIAGEM GRATUITA · ANÁLISE MANUAL ]",
     "title": "Triagem gratuita do seu projeto",
-    "description": "Conte o contexto, a prioridade e o que precisa mudar. A conversa gratuita de até 15 minutos avalia compatibilidade; diagnóstico, plano e recomendações aprofundadas são serviços pagos.",
+    "description": "Comece com pouco atrito: responda o essencial ou escolha um horário para uma conversa gratuita de até 15 minutos. A triagem avalia contexto, prioridade e compatibilidade; diagnóstico, plano e recomendações aprofundadas são serviços pagos.",
     "cta": "Preencher Triagem Gratuita",
-    "form_title": "Leitura inicial do seu cenário"
+    "form_title": "Leitura inicial do seu cenário",
+    "flow_badge": "[ COMO A ENTRADA FUNCIONA ]",
+    "flow_title": "Tudo começa pela triagem, mas ela não precisa ser pesada.",
+    "steps": [
+      {
+        "title": "Entrada curta",
+        "text": "Se a pessoa ainda não sabe explicar tudo, ela envia o mínimo ou agenda 15 minutos para contextualizar."
+      },
+      {
+        "title": "Leitura de compatibilidade",
+        "text": "A triagem identifica urgência, tipo de problema e se faz sentido avançar para diagnóstico, execução ou outro caminho."
+      },
+      {
+        "title": "Próximo passo pago",
+        "text": "Quando há incerteza de escopo, riscos ou decisões importantes, o caminho correto é o Diagnóstico Estratégico Digital."
+      }
+    ]
+  },
+  "availability": {
+    "badge": "[ AGENDA · TRIAGEM DE 15 MINUTOS ]",
+    "title": "Prefere falar primeiro?",
+    "description": "Escolha um horário disponível para a triagem gratuita. A conversa organiza o contexto inicial; ela não substitui o diagnóstico pago nem confirma contratação.",
+    "open_calendar": "Abrir agenda completa",
+    "iframe_title": "Agenda de triagem gratuita Paloma Albieri",
+    "loading": "Carregando horários disponíveis.",
+    "error": "Não foi possível carregar os horários agora. Use o link da agenda completa ou envie o formulário.",
+    "timezone": "Horários em {timezone}",
+    "fallback_note": "Estes horários são uma prévia operacional. Ao conectar o Google Calendar público, a lista passa a respeitar automaticamente os eventos ocupados.",
+    "note": "Depois de escolher um horário, envie pelo menos os dados básicos para que a conversa já comece com contexto."
   },
   "diagnostic": {
     "badge": "[ DISCOVERY PAGO · ARQUITETURA PRÉVIA ]",
@@ -263,6 +291,23 @@
     ],
     "deliverables_title": "A arquitetura antes da execução",
     "deliverables": "Documento Executivo de Arquitetura + Plano de Execução Técnica.",
+    "process": [
+      {
+        "title": "Diagnóstico",
+        "text": "Mapeamos o problema dominante, gargalos e decisões necessárias antes de qualquer execução."
+      },
+      {
+        "title": "Arquitetura",
+        "text": "Definimos escopo, exclusões, responsabilidades, prioridades, ferramentas e fases do projeto."
+      },
+      {
+        "title": "Plano de ação",
+        "text": "Você recebe uma direção executiva para decidir o investimento, a proposta e a implementação."
+      }
+    ],
+    "price_badge": "[ INVESTIMENTO PERSONALIZADO ]",
+    "price": "O Diagnóstico Estratégico Digital é uma etapa paga, formalizada por proposta antes do início.",
+    "price_note": "A proposta considera complexidade, idioma, integrações, dados, segurança, fornecedores e responsabilidades. Softwares, APIs, domínio, hospedagem, mídia, impostos e tarifas são separados quando não estiverem expressamente incluídos.",
     "cta": "Começar pela triagem gratuita",
     "secondary": "Ver página de triagem",
     "application_badge": "[ PRIMEIRO PASSO · TRIAGEM GRATUITA ]",
@@ -313,6 +358,11 @@
     "form_country_timezone": "País e fuso horário",
     "form_preferred_language": "Idioma preferido",
     "form_context": "Contexto do projeto",
+    "form_depth_label": "Profundidade da triagem",
+    "form_depth_quick_label": "Rápida",
+    "form_depth_quick_description": "Responda só o essencial para abrir a conversa.",
+    "form_depth_complete_label": "Completa",
+    "form_depth_complete_description": "Inclua mais contexto para acelerar a análise.",
     "question_offer": "O que sua empresa ou projeto oferece?",
     "question_customer": "Quem é o cliente ou usuário principal?",
     "question_motivation": "O que motivou você a procurar ajuda agora?",

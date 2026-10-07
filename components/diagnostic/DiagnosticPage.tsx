@@ -8,6 +8,7 @@ import type { Locale } from '@/lib/i18n/config';
 export function DiagnosticPage({ lang }: { lang: Locale }) {
   const t = useTranslations('diagnostic');
   const included = t.raw('included') as string[];
+  const process = t.raw('process') as { title: string; text: string }[];
 
   return (
     <main className="pt-32 lg:pt-28 xl:pt-20">
@@ -44,6 +45,20 @@ export function DiagnosticPage({ lang }: { lang: Locale }) {
           <div className="mt-10 border-t border-line pt-6">
             <p className="label-mono text-ink-3">{t('deliverables_title')}</p>
             <p className="mt-4 font-serif text-2xl font-semibold">{t('deliverables')}</p>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {process.map((step, index) => (
+              <article key={step.title} className="rounded-sm border border-line p-5">
+                <p className="label-mono text-shock">0{index + 1}</p>
+                <h3 className="mt-4 font-serif text-2xl font-semibold leading-tight">{step.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-3">{step.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-10 rounded-sm border border-line bg-paper p-6">
+            <p className="label-mono text-shock">{t('price_badge')}</p>
+            <p className="mt-4 font-serif text-2xl font-semibold leading-tight">{t('price')}</p>
+            <p className="mt-3 text-sm leading-relaxed text-ink-3">{t('price_note')}</p>
           </div>
         </div>
       </section>

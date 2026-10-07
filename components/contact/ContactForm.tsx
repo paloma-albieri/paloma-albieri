@@ -5,6 +5,7 @@ import { useEffect, useId, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 type Status = 'idle' | 'sending' | 'ok' | 'error';
+type TriageDepth = 'quick' | 'complete';
 export type ContactTrack = 'home' | 'presenca' | 'estrutura' | 'diagnostico';
 
 const questions = [
@@ -26,9 +27,11 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
   const formId = useId();
   const [status, setStatus] = useState<Status>('idle');
   const [ready, setReady] = useState(false);
+  const [triageDepth, setTriageDepth] = useState<TriageDepth>('quick');
   useEffect(() => setReady(true), []);
   const busy = !ready || status === 'sending';
   const fieldClass = 'field-line w-full min-w-0 border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark focus:border-shock';
+  const visibleQuestions = triageDepth === 'quick' ? questions.slice(0, 4) : questions;
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -87,6 +90,7 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
       <input type="hidden" name="lang" value={lang} />
       <input type="hidden" name="track" value={track} />
       <input type="hidden" name="triage_type" value="initial_triage" />
+      <input type="hidden" name="triage_depth" value={triageDepth} />
       <input type="hidden" name="source_path" value="" />
       <div className="hidden" aria-hidden="true">
         <input type="text" name="website" tabIndex={-1} autoComplete="off" />
@@ -126,15 +130,32 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
       </fieldset>
       <fieldset disabled={busy} className="min-w-0">
         <legend className="label-mono mb-4 text-secondary"><span className="mr-3 text-accent">02</span>{t('form_context')}</legend>
+        <div className="mb-6 grid gap-3 sm:grid-cols-2" role="group" aria-label={t('form_depth_label')}>
+          {(['quick', 'complete'] as const).map((depth) => (
+            <button
+              key={depth}
+              type="button"
+              onClick={() => setTriageDepth(depth)}
+              className={`min-h-20 rounded-sm border p-4 text-left transition-colors ${
+                triageDepth === depth
+                  ? 'border-shock bg-paper-rose text-paper'
+                  : 'border-line bg-transparent text-ink-dark hover:border-shock'
+              }`}
+            >
+              <span className="label-mono block text-[10px]">{t(`form_depth_${depth}_label`)}</span>
+              <span className="mt-2 block text-sm leading-relaxed">{t(`form_depth_${depth}_description`)}</span>
+            </button>
+          ))}
+        </div>
         <div className="flex flex-col gap-6">
-          {questions.map(([name, label], index) => (
+          {visibleQuestions.map(([name, label], index) => (
             <label key={name} className="block min-w-0 text-sm leading-relaxed text-ink-dark">
               <span>{index + 1}. {t(label)}</span>
               <textarea name={name} required rows={2} className={`${fieldClass} resize-y`} />
             </label>
           ))}
           <label className="block min-w-0 text-sm leading-relaxed text-ink-dark">
-            <span>11. {t('question_looking_for')}</span>
+            <span>{visibleQuestions.length + 1}. {t('question_looking_for')}</span>
             <select name="looking_for" required defaultValue="" className={fieldClass}>
               <option value="" disabled>{t('form_select')}</option>
               <option value="diagnosis">{t('looking_for_diagnosis')}</option>
@@ -142,8 +163,14 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
               <option value="unsure">{t('looking_for_unsure')}</option>
             </select>
           </label>
+          {triageDepth === 'quick' && (
+            <label className="block min-w-0 text-sm leading-relaxed text-ink-dark">
+              <span>{visibleQuestions.length + 2}. {t('question_urgency')}</span>
+              <input name="start_timing" required className={fieldClass} />
+            </label>
+          )}
           <label className="block min-w-0 text-sm leading-relaxed text-ink-dark">
-            <span>12. {t('question_investment')}</span>
+            <span>{visibleQuestions.length + (triageDepth === 'quick' ? 3 : 2)}. {t('question_investment')}</span>
             <input name="investment_range" className={fieldClass} />
           </label>
         </div>

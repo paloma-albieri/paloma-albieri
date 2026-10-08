@@ -1,4 +1,11 @@
 {
+  "analytics": {
+    "title": "Preferências de medição",
+    "description": "Com sua autorização, usamos Google Analytics para medir visitas e ações de contato. Os campos do formulário não são enviados ao Analytics. Você pode recusar e continuar usando o site normalmente.",
+    "accept": "Permitir medição",
+    "reject": "Recusar",
+    "preferences": "Preferências de medição"
+  },
   "marker": {
     "top_left": "PALOMA ALBIERI · BRASIL ⇄ JAPÃO",
     "top_right_availability": "DISPONÍVEL PARA TRIAGEM · AGENDA BRASIL & JAPÃO",

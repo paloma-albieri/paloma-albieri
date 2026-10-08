@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { isLocale } from '@/lib/i18n/config';
 import { bodyFont as latinBodyFont, editorialFont, monoFont } from '@/lib/fonts';
 import { buildJsonLd } from '@/lib/seo/jsonld';
+import { Analytics } from '@/components/analytics/Analytics';
 import '@/app/styles/globals.css';
 
 export const dynamic = 'force-dynamic';
@@ -35,6 +36,7 @@ export default function LocaleLayout({
           <Header lang={params.lang} />
           {children}
           <Footer lang={params.lang} />
+          <Analytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || 'G-68VJLE4KGY'} />
         </NextIntlClientProvider>
         <script
           type="application/ld+json"

@@ -1,4 +1,11 @@
 {
+  "analytics": {
+    "title": "アクセス解析の設定",
+    "description": "同意いただいた場合、Google Analyticsで訪問と問い合わせに関する操作を測定します。フォームの入力内容はAnalyticsに送信しません。同意しなくてもサイトをご利用いただけます。",
+    "accept": "測定に同意する",
+    "reject": "同意しない",
+    "preferences": "アクセス解析の設定"
+  },
   "marker": {
     "top_left": "パロマ・アルビエリ · BRASIL ⇄ JAPAN",
     "top_right_availability": "初回チェック受付中 · ブラジル & 日本",

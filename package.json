@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "test:copy": "node --test tests/copy.test.mjs",
+    "test:tracking": "node --test tests/tracking.test.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

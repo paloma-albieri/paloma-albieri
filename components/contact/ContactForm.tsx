@@ -1,8 +1,9 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { getAttribution, trackTriageStart, trackTriageSubmit, trackTriageSuccess, trackTriageError } from '@/lib/tracking';
 
 type Status = 'idle' | 'sending' | 'ok' | 'error';
 type TriageDepth = 'quick' | 'complete';
@@ -28,6 +29,7 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
   const [status, setStatus] = useState<Status>('idle');
   const [ready, setReady] = useState(false);
   const [triageDepth, setTriageDepth] = useState<TriageDepth>('quick');
+  const started = useRef(false);
   useEffect(() => setReady(true), []);
   const busy = !ready || status === 'sending';
   const fieldClass = 'field-line w-full min-w-0 border-0 border-b border-line bg-transparent py-3 text-base text-ink-dark focus:border-shock';
@@ -45,11 +47,14 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
       }
     }
     data.set('source_path', window.location.pathname);
+    for (const [key, value] of Object.entries(getAttribution())) data.set(key, value);
     const body = new URLSearchParams();
     data.forEach((value, key) => {
       if (typeof value === 'string') body.append(key, value);
     });
     setStatus('sending');
+    const context = { language: lang, track, triage_depth: triageDepth };
+    trackTriageSubmit(context);
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 20000);
 
@@ -61,12 +66,16 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
         signal: controller.signal
       });
       if (!response.ok) {
+        trackTriageError(context, 'http');
         setStatus('error');
         return;
       }
       form.reset();
+      trackTriageSuccess(context);
+      started.current = false;
       setStatus('ok');
     } catch {
+      trackTriageError(context, controller.signal.aborted ? 'timeout' : 'network');
       setStatus('error');
     } finally {
       window.clearTimeout(timeout);
@@ -89,6 +98,11 @@ export function ContactForm({ track = 'home' }: { track?: ContactTrack }) {
 
   return (
     <form name="contact" method="POST" action="/__forms.html" onSubmit={handleSubmit} aria-busy={busy}
+      onChange={() => {
+        if (started.current) return;
+        started.current = true;
+        trackTriageStart({ language: lang, track, triage_depth: triageDepth });
+      }}
       className="contact-editorial-form flex flex-col gap-8">
       <div className="border-b border-line pb-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
